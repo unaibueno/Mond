@@ -1,0 +1,236 @@
+
+
+@font-face {
+  font-family: 'swiss';
+  src: url('../fonts/swiss.otf') format('woff2');
+  /* Agrega otras propiedades según sea necesario, como font-weight y font-style */
+}
+
+@font-face {
+  font-family: 'grold';
+  src: url('../fonts/GROLD.otf') format('woff2');
+  /* Agrega otras propiedades según sea necesario, como font-weight y font-style */
+}
+
+@font-face {
+  font-family: 'graphik-black';
+  src: url('../fonts/GraphikBlack.otf') format('woff2');
+  /* Agrega otras propiedades según sea necesario, como font-weight y font-style */
+}
+
+@font-face {
+  font-family: 'graphik-bold';
+  src: url('../fonts/GraphikBold.otf') format('woff2');
+  /* Agrega otras propiedades según sea necesario, como font-weight y font-style */
+}
+
+@font-face {
+  font-family: 'sf-bold';
+  src: url('../fonts/SF-Pro-Display-Bold.otf') format('woff2');
+  /* Agrega otras propiedades según sea necesario, como font-weight y font-style */
+}
+
+@font-face {
+  font-family: 'sf-black';
+  src: url('../fonts/SF-Pro-Display-Black.otf') format('woff2');
+  /* Agrega otras propiedades según sea necesario, como font-weight y font-style */
+}
+
+@font-face {
+  font-family: 'sf-regular';
+  src: url('../fonts/SF-Pro-Text-Regular.otf') format('woff2');
+  /
+}
+
+body {
+  font-family: 'sf-regular', sans-serif;
+}
+.navbar{
+  height: 100px;
+    font-family: 'sf-bold', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.navbar .boton {
+    letter-spacing: 0.4px;
+}
+.boton {
+  border-radius: 35px;
+  border: none;
+  background: #f7f7f7;
+  color: #222222;
+  padding: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+.container-fluid {
+  padding-right:100px;
+  padding-left: 100px;
+
+}
+.nav-link{
+  color: #222222;
+}
+
+.navbar-custom {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.page-title{
+  font-size: 80px;
+  font-weight: bold;
+  font-family: 'sf-bold', sans-serif;
+}
+
+.imagen-destacada{
+  object-fit: cover;
+  border-radius: 30px;
+  margin-bottom: 90px; 
+  margin-top: 90px;
+}
+.page-title-description{
+    font-size: 23px;
+      font-family: 'sf-regular', sans-serif;
+      margin: 40px 0px;;
+}
+
+.text-icons{
+  text-align: center;
+  font-size: 24px;
+        font-family: 'sf-bold', sans-serif;
+}
+
+.titulo-container-1{
+  font-family: 'sf-bold', sans-serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.welcome-title{
+    font-family: 'sf-black', sans-serif;
+
+}
+
+.tarea-dashboard{
+  height:14vh; 
+  margin-top:10px;
+  border-radius: 35px;
+  background-color: rgba(44, 44, 44, 0.8); 
+  opacity: 60%;
+  padding: 0;
+}
+
+.tarea{
+  height: 100%;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.tarea .tarea-icon{
+  background-color: rgba(34, 34, 34); 
+  height: 100%;
+  width: 11%;
+  border-radius: 20px;
+}
+.tarea-timer{
+  width: 20%;
+  height: 100%;
+  width: 18%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+}
+
+.tarea-timer .time-btn{
+  margin: auto 0;
+  border: none;
+
+ 
+}
+.tarea-content{
+  background-color: rgba(34, 34, 34); 
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+
+
+.time-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgba(34, 34, 34); 
+
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sing-icon {
+  font-size: 20px;
+  color: white;
+}
+
+/* text */
+.time-btn .text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+/* hover effect on button width */
+.time-btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.time-btn:hover .sign {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.time-btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.time-btn:active {
+  transform: translate(2px, 2px);
+}
+
+
+.vistazo-general{
+  background-color: rgba(44, 44, 44, 0.5); 
+  height:85vh;
+  border-radius: 30px;
+}

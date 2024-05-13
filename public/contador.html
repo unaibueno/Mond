@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador</title>
+  </head>
+  <body>
+    <h1>Contador</h1>
+    <p id="contador">00:00:00</p>
+    <button id="startButton" onclick="toggleContador()">Iniciar</button>
+
+    <script>
+      var contadorInterval;
+      var contadorActivo = false;
+      var contador = 0;
+
+      function toggleContador() {
+        if (contadorActivo) {
+          detenerContador();
+          document.getElementById("startButton").innerText = "Iniciar";
+        } else {
+          iniciarContador();
+          document.getElementById("startButton").innerText = "Detener";
+        }
+        contadorActivo = !contadorActivo;
+      }
+
+      function iniciarContador() {
+        if (localStorage.getItem("contador")) {
+          contador = parseInt(localStorage.getItem("contador"));
+        }
+        actualizarContador(contador);
+        contadorInterval = setInterval(function () {
+          contador++;
+          actualizarContador(contador);
+        }, 1000);
+      }
+
+      function detenerContador() {
+        clearInterval(contadorInterval);
+        localStorage.setItem("contador", contador);
+      }
+
+      function actualizarContador(segundos) {
+        var horas = Math.floor(segundos / 3600);
+        var minutos = Math.floor((segundos % 3600) / 60);
+        var segundosRestantes = segundos % 60;
+        document.getElementById("contador").innerText =
+          formatTiempo(horas) +
+          ":" +
+          formatTiempo(minutos) +
+          ":" +
+          formatTiempo(segundosRestantes);
+      }
+
+      function formatTiempo(tiempo) {
+        return tiempo < 10 ? "0" + tiempo : tiempo;
+      }
+
+      window.onload = function () {
+        if (localStorage.getItem("contador")) {
+          iniciarContador();
+          contadorActivo = true;
+          document.getElementById("startButton").innerText = "Detener";
+        }
+      };
+    </script>
+  </body>
+</html>
