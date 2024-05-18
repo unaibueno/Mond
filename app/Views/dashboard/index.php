@@ -48,7 +48,6 @@
           <div class=" pl-1">
             <h2 class="welcome-title pt-3 ">ALOHA, UNAI!</h2>
             <p>¿Preparado para una sesión de organización?</p>
-            <?= $tareas ?>
           </div>
         </div>
         <div class="col-12 tareas-dashboard" style=" height:70vh;">

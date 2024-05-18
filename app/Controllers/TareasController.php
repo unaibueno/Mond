@@ -21,7 +21,7 @@ class TareasController extends BaseController
         $data['title'] = "HAZ RTVE | Tareas";
         $data['page_title'] = "Tareas";
 
-        $data['tareas'] = $this->TareasModel->getTareas();
+        $data['tareas'] = $this->TareasModel->getTareaById(1);
 
         return view('tareas/index', $data);
     }

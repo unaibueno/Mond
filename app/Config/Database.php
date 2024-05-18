@@ -24,12 +24,14 @@ class Database extends Config
     /**
      * The default database connection.
      */
+
+
     public array $default = [
         'DSN' => '',
-        'hostname' => 'localhost:3306',
+        'hostname' => '212.227.231.241',
         'username' => 'unaibueno',
         'password' => 'Mejbef-6kinwo-sugxyb',
-        'database' => 'mond_db                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      _db',
+        'database' => 'mond_db',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
