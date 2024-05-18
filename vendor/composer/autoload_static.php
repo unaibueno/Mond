@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
 {
     public static $files = array (
+        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -40,6 +41,16 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Console\\' => 26,
         ),
+        'R' => 
+        array (
+            'React\\Stream\\' => 13,
+            'React\\Socket\\' => 13,
+            'React\\Promise\\' => 14,
+            'React\\EventLoop\\' => 16,
+            'React\\Dns\\' => 10,
+            'React\\ChildProcess\\' => 19,
+            'React\\Cache\\' => 12,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -63,7 +74,12 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         ),
         'F' => 
         array (
+            'Fidry\\CpuCoreCounter\\' => 21,
             'Faker\\' => 6,
+        ),
+        'E' => 
+        array (
+            'Evenement\\' => 10,
         ),
         'D' => 
         array (
@@ -76,6 +92,7 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
             'Composer\\Pcre\\' => 14,
             'CodeIgniter\\CodingStandard\\' => 27,
             'CodeIgniter\\' => 12,
+            'Clue\\React\\NDJson\\' => 18,
         ),
     );
 
@@ -144,6 +161,34 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'React\\Stream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/stream/src',
+        ),
+        'React\\Socket\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/socket/src',
+        ),
+        'React\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/promise/src',
+        ),
+        'React\\EventLoop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/event-loop/src',
+        ),
+        'React\\Dns\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/dns/src',
+        ),
+        'React\\ChildProcess\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/child-process/src',
+        ),
+        'React\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/cache/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -180,9 +225,17 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         array (
             0 => __DIR__ . '/..' . '/kint-php/kint/src',
         ),
+        'Fidry\\CpuCoreCounter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fidry/cpu-core-counter/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
+        ),
+        'Evenement\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/evenement/evenement/src',
         ),
         'DeepCopy\\' => 
         array (
@@ -208,6 +261,10 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         array (
             0 => __DIR__ . '/../..' . '/system',
         ),
+        'Clue\\React\\NDJson\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clue/ndjson-react/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -223,6 +280,8 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'CURLStringFile' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php',
+        'Clue\\React\\NDJson\\Decoder' => __DIR__ . '/..' . '/clue/ndjson-react/src/Decoder.php',
+        'Clue\\React\\NDJson\\Encoder' => __DIR__ . '/..' . '/clue/ndjson-react/src/Encoder.php',
         'CodeIgniter\\API\\ResponseTrait' => __DIR__ . '/../..' . '/system/API/ResponseTrait.php',
         'CodeIgniter\\Autoloader\\Autoloader' => __DIR__ . '/../..' . '/system/Autoloader/Autoloader.php',
         'CodeIgniter\\Autoloader\\FileLocator' => __DIR__ . '/../..' . '/system/Autoloader/FileLocator.php',
@@ -672,6 +731,9 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'Evenement\\EventEmitter' => __DIR__ . '/..' . '/evenement/evenement/src/EventEmitter.php',
+        'Evenement\\EventEmitterInterface' => __DIR__ . '/..' . '/evenement/evenement/src/EventEmitterInterface.php',
+        'Evenement\\EventEmitterTrait' => __DIR__ . '/..' . '/evenement/evenement/src/EventEmitterTrait.php',
         'Faker\\Calculator\\Ean' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Ean.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Inn.php',
@@ -1178,6 +1240,32 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         'Faker\\Provider\\zh_TW\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/zh_TW/Text.php',
         'Faker\\UniqueGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/UniqueGenerator.php',
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/ValidGenerator.php',
+        'Fidry\\CpuCoreCounter\\CpuCoreCounter' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/CpuCoreCounter.php',
+        'Fidry\\CpuCoreCounter\\Diagnoser' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Diagnoser.php',
+        'Fidry\\CpuCoreCounter\\Executor\\ProcOpenExecutor' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Executor/ProcOpenExecutor.php',
+        'Fidry\\CpuCoreCounter\\Executor\\ProcessExecutor' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Executor/ProcessExecutor.php',
+        'Fidry\\CpuCoreCounter\\Finder\\CmiCmdletLogicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/CmiCmdletLogicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\CmiCmdletPhysicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/CmiCmdletPhysicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\CpuCoreFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/CpuCoreFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\CpuInfoFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/CpuInfoFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\DummyCpuCoreFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/DummyCpuCoreFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\FinderRegistry' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/FinderRegistry.php',
+        'Fidry\\CpuCoreCounter\\Finder\\HwLogicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/HwLogicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\HwPhysicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/HwPhysicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\LscpuLogicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/LscpuLogicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\LscpuPhysicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/LscpuPhysicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\NProcFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/NProcFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\NProcessorFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/NProcessorFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\NullCpuCoreFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/NullCpuCoreFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\OnlyInPowerShellFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/OnlyInPowerShellFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\OnlyOnOSFamilyFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/OnlyOnOSFamilyFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\ProcOpenBasedFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/ProcOpenBasedFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\SkipOnOSFamilyFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/SkipOnOSFamilyFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\WindowsRegistryLogicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/WindowsRegistryLogicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\WmicLogicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/WmicLogicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\WmicPhysicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/WmicPhysicalFinder.php',
+        'Fidry\\CpuCoreCounter\\Finder\\_NProcessorFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/_NProcessorFinder.php',
+        'Fidry\\CpuCoreCounter\\NumberOfCpuCoreNotFound' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/NumberOfCpuCoreNotFound.php',
         'Kint\\CallFinder' => __DIR__ . '/..' . '/kint-php/kint/src/CallFinder.php',
         'Kint\\FacadeInterface' => __DIR__ . '/..' . '/kint-php/kint/src/FacadeInterface.php',
         'Kint\\Kint' => __DIR__ . '/..' . '/kint-php/kint/src/Kint.php',
@@ -2277,6 +2365,7 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         'PhpCsFixer\\Console\\Command\\ListFilesCommand' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Console/Command/ListFilesCommand.php',
         'PhpCsFixer\\Console\\Command\\ListSetsCommand' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Console/Command/ListSetsCommand.php',
         'PhpCsFixer\\Console\\Command\\SelfUpdateCommand' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Console/Command/SelfUpdateCommand.php',
+        'PhpCsFixer\\Console\\Command\\WorkerCommand' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Console/Command/WorkerCommand.php',
         'PhpCsFixer\\Console\\ConfigurationResolver' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php',
         'PhpCsFixer\\Console\\Output\\ErrorOutput' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Console/Output/ErrorOutput.php',
         'PhpCsFixer\\Console\\Output\\OutputContext' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Console/Output/OutputContext.php',
@@ -2326,6 +2415,7 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         'PhpCsFixer\\Documentation\\RuleSetDocumentationGenerator' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Documentation/RuleSetDocumentationGenerator.php',
         'PhpCsFixer\\Error\\Error' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Error/Error.php',
         'PhpCsFixer\\Error\\ErrorsManager' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Error/ErrorsManager.php',
+        'PhpCsFixer\\Error\\SourceExceptionFactory' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Error/SourceExceptionFactory.php',
         'PhpCsFixer\\ExecutorWithoutErrorHandler' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/ExecutorWithoutErrorHandler.php',
         'PhpCsFixer\\ExecutorWithoutErrorHandlerException' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/ExecutorWithoutErrorHandlerException.php',
         'PhpCsFixer\\FileReader' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/FileReader.php',
@@ -2662,6 +2752,7 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         'PhpCsFixer\\Linter\\TokenizerLinter' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Linter/TokenizerLinter.php',
         'PhpCsFixer\\Linter\\TokenizerLintingResult' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Linter/TokenizerLintingResult.php',
         'PhpCsFixer\\Linter\\UnavailableLinterException' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Linter/UnavailableLinterException.php',
+        'PhpCsFixer\\ParallelAwareConfigInterface' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/ParallelAwareConfigInterface.php',
         'PhpCsFixer\\PharChecker' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/PharChecker.php',
         'PhpCsFixer\\PharCheckerInterface' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/PharCheckerInterface.php',
         'PhpCsFixer\\Preg' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Preg.php',
@@ -2720,10 +2811,21 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         'PhpCsFixer\\RuleSet\\Sets\\PhpCsFixerSet' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/RuleSet/Sets/PhpCsFixerSet.php',
         'PhpCsFixer\\RuleSet\\Sets\\SymfonyRiskySet' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/RuleSet/Sets/SymfonyRiskySet.php',
         'PhpCsFixer\\RuleSet\\Sets\\SymfonySet' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/RuleSet/Sets/SymfonySet.php',
-        'PhpCsFixer\\Runner\\FileCachingLintingIterator' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/FileCachingLintingIterator.php',
+        'PhpCsFixer\\Runner\\FileCachingLintingFileIterator' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/FileCachingLintingFileIterator.php',
         'PhpCsFixer\\Runner\\FileFilterIterator' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/FileFilterIterator.php',
-        'PhpCsFixer\\Runner\\FileLintingIterator' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/FileLintingIterator.php',
+        'PhpCsFixer\\Runner\\LintingFileIterator' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/LintingFileIterator.php',
+        'PhpCsFixer\\Runner\\LintingResultAwareFileIteratorInterface' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/LintingResultAwareFileIteratorInterface.php',
+        'PhpCsFixer\\Runner\\Parallel\\ParallelAction' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/ParallelAction.php',
+        'PhpCsFixer\\Runner\\Parallel\\ParallelConfig' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/ParallelConfig.php',
+        'PhpCsFixer\\Runner\\Parallel\\ParallelConfigFactory' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/ParallelConfigFactory.php',
+        'PhpCsFixer\\Runner\\Parallel\\ParallelisationException' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/ParallelisationException.php',
+        'PhpCsFixer\\Runner\\Parallel\\Process' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/Process.php',
+        'PhpCsFixer\\Runner\\Parallel\\ProcessFactory' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/ProcessFactory.php',
+        'PhpCsFixer\\Runner\\Parallel\\ProcessIdentifier' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/ProcessIdentifier.php',
+        'PhpCsFixer\\Runner\\Parallel\\ProcessPool' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/ProcessPool.php',
+        'PhpCsFixer\\Runner\\Parallel\\WorkerException' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Parallel/WorkerException.php',
         'PhpCsFixer\\Runner\\Runner' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/Runner.php',
+        'PhpCsFixer\\Runner\\RunnerConfig' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Runner/RunnerConfig.php',
         'PhpCsFixer\\StdinFileInfo' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/StdinFileInfo.php',
         'PhpCsFixer\\Tokenizer\\AbstractTransformer' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Tokenizer/AbstractTransformer.php',
         'PhpCsFixer\\Tokenizer\\AbstractTypeTransformer' => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src/Tokenizer/AbstractTypeTransformer.php',
@@ -3585,6 +3687,85 @@ class ComposerStaticInitbc59f46788b4a68029550081739fc4ac
         'Psr\\Log\\LoggerInterface' => __DIR__ . '/..' . '/psr/log/src/LoggerInterface.php',
         'Psr\\Log\\LoggerTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerTrait.php',
         'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/src/NullLogger.php',
+        'React\\Cache\\ArrayCache' => __DIR__ . '/..' . '/react/cache/src/ArrayCache.php',
+        'React\\Cache\\CacheInterface' => __DIR__ . '/..' . '/react/cache/src/CacheInterface.php',
+        'React\\ChildProcess\\Process' => __DIR__ . '/..' . '/react/child-process/src/Process.php',
+        'React\\Dns\\BadServerException' => __DIR__ . '/..' . '/react/dns/src/BadServerException.php',
+        'React\\Dns\\Config\\Config' => __DIR__ . '/..' . '/react/dns/src/Config/Config.php',
+        'React\\Dns\\Config\\HostsFile' => __DIR__ . '/..' . '/react/dns/src/Config/HostsFile.php',
+        'React\\Dns\\Model\\Message' => __DIR__ . '/..' . '/react/dns/src/Model/Message.php',
+        'React\\Dns\\Model\\Record' => __DIR__ . '/..' . '/react/dns/src/Model/Record.php',
+        'React\\Dns\\Protocol\\BinaryDumper' => __DIR__ . '/..' . '/react/dns/src/Protocol/BinaryDumper.php',
+        'React\\Dns\\Protocol\\Parser' => __DIR__ . '/..' . '/react/dns/src/Protocol/Parser.php',
+        'React\\Dns\\Query\\CachingExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/CachingExecutor.php',
+        'React\\Dns\\Query\\CancellationException' => __DIR__ . '/..' . '/react/dns/src/Query/CancellationException.php',
+        'React\\Dns\\Query\\CoopExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/CoopExecutor.php',
+        'React\\Dns\\Query\\ExecutorInterface' => __DIR__ . '/..' . '/react/dns/src/Query/ExecutorInterface.php',
+        'React\\Dns\\Query\\FallbackExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/FallbackExecutor.php',
+        'React\\Dns\\Query\\HostsFileExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/HostsFileExecutor.php',
+        'React\\Dns\\Query\\Query' => __DIR__ . '/..' . '/react/dns/src/Query/Query.php',
+        'React\\Dns\\Query\\RetryExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/RetryExecutor.php',
+        'React\\Dns\\Query\\SelectiveTransportExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/SelectiveTransportExecutor.php',
+        'React\\Dns\\Query\\TcpTransportExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/TcpTransportExecutor.php',
+        'React\\Dns\\Query\\TimeoutException' => __DIR__ . '/..' . '/react/dns/src/Query/TimeoutException.php',
+        'React\\Dns\\Query\\TimeoutExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/TimeoutExecutor.php',
+        'React\\Dns\\Query\\UdpTransportExecutor' => __DIR__ . '/..' . '/react/dns/src/Query/UdpTransportExecutor.php',
+        'React\\Dns\\RecordNotFoundException' => __DIR__ . '/..' . '/react/dns/src/RecordNotFoundException.php',
+        'React\\Dns\\Resolver\\Factory' => __DIR__ . '/..' . '/react/dns/src/Resolver/Factory.php',
+        'React\\Dns\\Resolver\\Resolver' => __DIR__ . '/..' . '/react/dns/src/Resolver/Resolver.php',
+        'React\\Dns\\Resolver\\ResolverInterface' => __DIR__ . '/..' . '/react/dns/src/Resolver/ResolverInterface.php',
+        'React\\EventLoop\\ExtEvLoop' => __DIR__ . '/..' . '/react/event-loop/src/ExtEvLoop.php',
+        'React\\EventLoop\\ExtEventLoop' => __DIR__ . '/..' . '/react/event-loop/src/ExtEventLoop.php',
+        'React\\EventLoop\\ExtLibevLoop' => __DIR__ . '/..' . '/react/event-loop/src/ExtLibevLoop.php',
+        'React\\EventLoop\\ExtLibeventLoop' => __DIR__ . '/..' . '/react/event-loop/src/ExtLibeventLoop.php',
+        'React\\EventLoop\\ExtUvLoop' => __DIR__ . '/..' . '/react/event-loop/src/ExtUvLoop.php',
+        'React\\EventLoop\\Factory' => __DIR__ . '/..' . '/react/event-loop/src/Factory.php',
+        'React\\EventLoop\\Loop' => __DIR__ . '/..' . '/react/event-loop/src/Loop.php',
+        'React\\EventLoop\\LoopInterface' => __DIR__ . '/..' . '/react/event-loop/src/LoopInterface.php',
+        'React\\EventLoop\\SignalsHandler' => __DIR__ . '/..' . '/react/event-loop/src/SignalsHandler.php',
+        'React\\EventLoop\\StreamSelectLoop' => __DIR__ . '/..' . '/react/event-loop/src/StreamSelectLoop.php',
+        'React\\EventLoop\\Tick\\FutureTickQueue' => __DIR__ . '/..' . '/react/event-loop/src/Tick/FutureTickQueue.php',
+        'React\\EventLoop\\TimerInterface' => __DIR__ . '/..' . '/react/event-loop/src/TimerInterface.php',
+        'React\\EventLoop\\Timer\\Timer' => __DIR__ . '/..' . '/react/event-loop/src/Timer/Timer.php',
+        'React\\EventLoop\\Timer\\Timers' => __DIR__ . '/..' . '/react/event-loop/src/Timer/Timers.php',
+        'React\\Promise\\Deferred' => __DIR__ . '/..' . '/react/promise/src/Deferred.php',
+        'React\\Promise\\Exception\\CompositeException' => __DIR__ . '/..' . '/react/promise/src/Exception/CompositeException.php',
+        'React\\Promise\\Exception\\LengthException' => __DIR__ . '/..' . '/react/promise/src/Exception/LengthException.php',
+        'React\\Promise\\Internal\\CancellationQueue' => __DIR__ . '/..' . '/react/promise/src/Internal/CancellationQueue.php',
+        'React\\Promise\\Internal\\FulfilledPromise' => __DIR__ . '/..' . '/react/promise/src/Internal/FulfilledPromise.php',
+        'React\\Promise\\Internal\\RejectedPromise' => __DIR__ . '/..' . '/react/promise/src/Internal/RejectedPromise.php',
+        'React\\Promise\\Promise' => __DIR__ . '/..' . '/react/promise/src/Promise.php',
+        'React\\Promise\\PromiseInterface' => __DIR__ . '/..' . '/react/promise/src/PromiseInterface.php',
+        'React\\Socket\\Connection' => __DIR__ . '/..' . '/react/socket/src/Connection.php',
+        'React\\Socket\\ConnectionInterface' => __DIR__ . '/..' . '/react/socket/src/ConnectionInterface.php',
+        'React\\Socket\\Connector' => __DIR__ . '/..' . '/react/socket/src/Connector.php',
+        'React\\Socket\\ConnectorInterface' => __DIR__ . '/..' . '/react/socket/src/ConnectorInterface.php',
+        'React\\Socket\\DnsConnector' => __DIR__ . '/..' . '/react/socket/src/DnsConnector.php',
+        'React\\Socket\\FdServer' => __DIR__ . '/..' . '/react/socket/src/FdServer.php',
+        'React\\Socket\\FixedUriConnector' => __DIR__ . '/..' . '/react/socket/src/FixedUriConnector.php',
+        'React\\Socket\\HappyEyeBallsConnectionBuilder' => __DIR__ . '/..' . '/react/socket/src/HappyEyeBallsConnectionBuilder.php',
+        'React\\Socket\\HappyEyeBallsConnector' => __DIR__ . '/..' . '/react/socket/src/HappyEyeBallsConnector.php',
+        'React\\Socket\\LimitingServer' => __DIR__ . '/..' . '/react/socket/src/LimitingServer.php',
+        'React\\Socket\\SecureConnector' => __DIR__ . '/..' . '/react/socket/src/SecureConnector.php',
+        'React\\Socket\\SecureServer' => __DIR__ . '/..' . '/react/socket/src/SecureServer.php',
+        'React\\Socket\\Server' => __DIR__ . '/..' . '/react/socket/src/Server.php',
+        'React\\Socket\\ServerInterface' => __DIR__ . '/..' . '/react/socket/src/ServerInterface.php',
+        'React\\Socket\\SocketServer' => __DIR__ . '/..' . '/react/socket/src/SocketServer.php',
+        'React\\Socket\\StreamEncryption' => __DIR__ . '/..' . '/react/socket/src/StreamEncryption.php',
+        'React\\Socket\\TcpConnector' => __DIR__ . '/..' . '/react/socket/src/TcpConnector.php',
+        'React\\Socket\\TcpServer' => __DIR__ . '/..' . '/react/socket/src/TcpServer.php',
+        'React\\Socket\\TimeoutConnector' => __DIR__ . '/..' . '/react/socket/src/TimeoutConnector.php',
+        'React\\Socket\\UnixConnector' => __DIR__ . '/..' . '/react/socket/src/UnixConnector.php',
+        'React\\Socket\\UnixServer' => __DIR__ . '/..' . '/react/socket/src/UnixServer.php',
+        'React\\Stream\\CompositeStream' => __DIR__ . '/..' . '/react/stream/src/CompositeStream.php',
+        'React\\Stream\\DuplexResourceStream' => __DIR__ . '/..' . '/react/stream/src/DuplexResourceStream.php',
+        'React\\Stream\\DuplexStreamInterface' => __DIR__ . '/..' . '/react/stream/src/DuplexStreamInterface.php',
+        'React\\Stream\\ReadableResourceStream' => __DIR__ . '/..' . '/react/stream/src/ReadableResourceStream.php',
+        'React\\Stream\\ReadableStreamInterface' => __DIR__ . '/..' . '/react/stream/src/ReadableStreamInterface.php',
+        'React\\Stream\\ThroughStream' => __DIR__ . '/..' . '/react/stream/src/ThroughStream.php',
+        'React\\Stream\\Util' => __DIR__ . '/..' . '/react/stream/src/Util.php',
+        'React\\Stream\\WritableResourceStream' => __DIR__ . '/..' . '/react/stream/src/WritableResourceStream.php',
+        'React\\Stream\\WritableStreamInterface' => __DIR__ . '/..' . '/react/stream/src/WritableStreamInterface.php',
         'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',

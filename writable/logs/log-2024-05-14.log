@@ -1,0 +1,355 @@
+CRITICAL - 2024-05-14 10:28:46 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 10:29:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+WARNING - 2024-05-14 10:29:27 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareasController::$modelConvocatorias is deprecated in APPPATH/Controllers/TareasController.php on line 10.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\TareasController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 10:29:27 --> Error: Call to a member function getTemporizador() on null
+[Method: GET, Route: tareas]
+in APPPATH/Controllers/TareasController.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 10:29:27 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(Error), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(Error), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#5 {main}
+  thrown
+【Previous Exception】
+Error
+Call to a member function getTemporizador() on null
+#0 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\TareasController->index()
+#1 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+#2 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#4 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#5 /Users/unaibueno/Desktop/Mond/public/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#6 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#7 {main}
+[Method: GET, Route: tareas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-14 15:10:47 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 15:11:00 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 16:01:06 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 16:01:06 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+WARNING - 2024-05-14 16:01:23 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareasController::$modelConvocatorias is deprecated in APPPATH/Controllers/TareasController.php on line 10.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\TareasController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 16:01:23 --> Error: Call to a member function getTemporizador() on null
+[Method: GET, Route: tareas]
+in APPPATH/Controllers/TareasController.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 16:01:23 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(Error), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(Error), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#5 {main}
+  thrown
+【Previous Exception】
+Error
+Call to a member function getTemporizador() on null
+#0 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\TareasController->index()
+#1 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+#2 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#4 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#5 /Users/unaibueno/Desktop/Mond/public/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#6 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#7 {main}
+[Method: GET, Route: tareas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+WARNING - 2024-05-14 18:17:50 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareasController::$modelConvocatorias is deprecated in APPPATH/Controllers/TareasController.php on line 10.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\TareasController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 18:17:50 --> Error: Call to a member function getTemporizador() on null
+[Method: GET, Route: tareas]
+in APPPATH/Controllers/TareasController.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 18:17:50 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(Error), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(Error), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#5 {main}
+  thrown
+【Previous Exception】
+Error
+Call to a member function getTemporizador() on null
+#0 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\TareasController->index()
+#1 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+#2 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#4 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#5 /Users/unaibueno/Desktop/Mond/public/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#6 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#7 {main}
+[Method: GET, Route: tareas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+WARNING - 2024-05-14 18:19:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareasController::$modelConvocatorias is deprecated in APPPATH/Controllers/TareasController.php on line 10.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\TareasController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 18:19:35 --> Error: Call to a member function getTemporizador() on null
+[Method: GET, Route: tareas]
+in APPPATH/Controllers/TareasController.php on line 20.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 18:19:35 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(Error), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(Error), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#5 {main}
+  thrown
+【Previous Exception】
+Error
+Call to a member function getTemporizador() on null
+#0 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\TareasController->index()
+#1 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+#2 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#4 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#5 /Users/unaibueno/Desktop/Mond/public/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#6 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#7 {main}
+[Method: GET, Route: tareas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-14 18:21:00 --> InvalidArgumentException: You have not selected a database type to connect to.
+[Method: GET, Route: dashboard]
+in SYSTEMPATH/Database/Database.php on line 54.
+ 1 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load([...], 'default')
+ 2 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 3 SYSTEMPATH/Config/Factories.php(235): CodeIgniter\Model->__construct(null)
+ 4 SYSTEMPATH/Config/Factories.php(169): CodeIgniter\Config\Factories::createInstance('models', 'App\\Models\\TareasModel', [...])
+ 5 SYSTEMPATH/Common.php(802): CodeIgniter\Config\Factories::__callStatic('models', [...])
+ 6 APPPATH/Controllers/Dashboard.php(11): model('TareasModel')
+ 7 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Dashboard->__construct()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 18:21:00 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(InvalidArgumentException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(InvalidArgumentException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(InvalidArgumentException))
+#5 {main}
+  thrown
+【Previous Exception】
+InvalidArgumentException
+You have not selected a database type to connect to.
+#0 /Users/unaibueno/Desktop/Mond/system/Database/Config.php(84): CodeIgniter\Database\Database->load(Array, 'default')
+#1 /Users/unaibueno/Desktop/Mond/system/Model.php(155): CodeIgniter\Database\Config::connect('default')
+#2 /Users/unaibueno/Desktop/Mond/system/Config/Factories.php(235): CodeIgniter\Model->__construct(NULL)
+#3 /Users/unaibueno/Desktop/Mond/system/Config/Factories.php(169): CodeIgniter\Config\Factories::createInstance('models', 'App\\Models\\Tare...', Array)
+#4 /Users/unaibueno/Desktop/Mond/system/Common.php(802): CodeIgniter\Config\Factories::__callStatic('models', Array)
+#5 /Users/unaibueno/Desktop/Mond/app/Controllers/Dashboard.php(11): model('TareasModel')
+#6 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(903): App\Controllers\Dashboard->__construct()
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+#8 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/unaibueno/Desktop/Mond/public/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#13 {main}
+[Method: GET, Route: dashboard]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-14 18:21:00 --> InvalidArgumentException: You have not selected a database type to connect to.
+[Method: GET, Route: dashboard]
+in SYSTEMPATH/Database/Database.php on line 54.
+ 1 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load([...], 'default')
+ 2 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 3 SYSTEMPATH/Config/Factories.php(235): CodeIgniter\Model->__construct(null)
+ 4 SYSTEMPATH/Config/Factories.php(169): CodeIgniter\Config\Factories::createInstance('models', 'App\\Models\\TareasModel', [...])
+ 5 SYSTEMPATH/Common.php(802): CodeIgniter\Config\Factories::__callStatic('models', [...])
+ 6 APPPATH/Controllers/Dashboard.php(11): model('TareasModel')
+ 7 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Dashboard->__construct()
+ 8 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 18:21:00 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(InvalidArgumentException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(InvalidArgumentException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(InvalidArgumentException))
+#5 {main}
+  thrown
+【Previous Exception】
+InvalidArgumentException
+You have not selected a database type to connect to.
+#0 /Users/unaibueno/Desktop/Mond/system/Database/Config.php(84): CodeIgniter\Database\Database->load(Array, 'default')
+#1 /Users/unaibueno/Desktop/Mond/system/Model.php(155): CodeIgniter\Database\Config::connect('default')
+#2 /Users/unaibueno/Desktop/Mond/system/Config/Factories.php(235): CodeIgniter\Model->__construct(NULL)
+#3 /Users/unaibueno/Desktop/Mond/system/Config/Factories.php(169): CodeIgniter\Config\Factories::createInstance('models', 'App\\Models\\Tare...', Array)
+#4 /Users/unaibueno/Desktop/Mond/system/Common.php(802): CodeIgniter\Config\Factories::__callStatic('models', Array)
+#5 /Users/unaibueno/Desktop/Mond/app/Controllers/Dashboard.php(11): model('TareasModel')
+#6 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(903): App\Controllers\Dashboard->__construct()
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+#8 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/unaibueno/Desktop/Mond/public/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#13 {main}
+[Method: GET, Route: dashboard]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-14 18:27:43 --> ErrorException: Undefined property: App\Controllers\TestDB::$load
+[Method: GET, Route: base]
+in APPPATH/Controllers/TestDB.php on line 10.
+ 1 APPPATH/Controllers/TestDB.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\TestDB::$load', '/Users/unaibueno/Desktop/Mond/app/Controllers/TestDB.php', 10)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TestDB->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TestDB))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-14 18:27:43 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(ErrorException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(ErrorException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Undefined property: App\Controllers\TestDB::$load
+#0 /Users/unaibueno/Desktop/Mond/app/Controllers/TestDB.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', '/Users/unaibuen...', 10)
+#1 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\TestDB->index()
+#2 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TestDB))
+#3 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#5 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#6 /Users/unaibueno/Desktop/Mond/public/index.php(58): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#7 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#8 {main}
+[Method: GET, Route: base]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

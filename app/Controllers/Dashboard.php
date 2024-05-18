@@ -21,7 +21,6 @@ class Dashboard extends BaseController
         $data['title'] = "Mond | Inicio";
         $data['page_title'] = "Inicio";
 
-        $data['tareas'] = $this->TareasModel->getTareas();
 
         return view('dashboard/index', $data);
     }

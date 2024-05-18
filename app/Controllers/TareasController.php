@@ -7,8 +7,9 @@ class TareasController extends BaseController
     public $TareasModel = null;
     public function __construct()
     {
-        $this->modelConvocatorias = model('TareasModel');
+        $this->TareasModel = model('TareasModel');
     }
+
 
     public function index()
     {
@@ -17,11 +18,10 @@ class TareasController extends BaseController
         //     return redirect()->to('/');
         // }
 
-        $data['temporizador'] = $this->TareasModel->getTemporizador();
-
         $data['title'] = "HAZ RTVE | Tareas";
         $data['page_title'] = "Tareas";
 
+        $data['tareas'] = $this->TareasModel->getTareas();
 
         return view('tareas/index', $data);
     }
