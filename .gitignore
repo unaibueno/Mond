@@ -5,3 +5,4 @@
 
 .env
 app/Config/Database
+app/Config/App

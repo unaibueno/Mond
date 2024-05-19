@@ -2257,3 +2257,120 @@ Main connection [MySQLi]: Invalid character set was provided
 [Method: GET, Route: tareas]
 in APPPATH/Views/errors/html/error_exception.php on line 33.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-18 20:46:25 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "temporizadores/index.php"
+[Method: GET, Route: temporizador]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('temporizadores/index.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('temporizadores/index', [], true)
+ 3 APPPATH/Controllers/TemporizadoresController.php(24): view('temporizadores/index', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TemporizadoresController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TemporizadoresController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-18 20:46:25 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\View\Exceptions\ViewException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\View\Exceptions\ViewException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\View\Exceptions\ViewException))
+#5 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\View\Exceptions\ViewException
+Invalid file: "temporizadores/index.php"
+#0 /Users/unaibueno/Desktop/Mond/system/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('temporizadores/...')
+#1 /Users/unaibueno/Desktop/Mond/system/Common.php(1171): CodeIgniter\View\View->render('temporizadores/...', Array, true)
+#2 /Users/unaibueno/Desktop/Mond/app/Controllers/TemporizadoresController.php(24): view('temporizadores/...', Array)
+#3 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\TemporizadoresController->index()
+#4 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TemporizadoresController))
+#5 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#7 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#8 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#9 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#10 {main}
+[Method: GET, Route: temporizador]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-18 20:47:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "temporizadores/index.php"
+[Method: GET, Route: temporizador]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('temporizadores/index.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('temporizadores/index', [], true)
+ 3 APPPATH/Controllers/TemporizadoresController.php(24): view('temporizadores/index', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TemporizadoresController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TemporizadoresController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-18 20:47:19 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\View\Exceptions\ViewException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\View\Exceptions\ViewException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\View\Exceptions\ViewException))
+#5 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\View\Exceptions\ViewException
+Invalid file: "temporizadores/index.php"
+#0 /Users/unaibueno/Desktop/Mond/system/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('temporizadores/...')
+#1 /Users/unaibueno/Desktop/Mond/system/Common.php(1171): CodeIgniter\View\View->render('temporizadores/...', Array, true)
+#2 /Users/unaibueno/Desktop/Mond/app/Controllers/TemporizadoresController.php(24): view('temporizadores/...', Array)
+#3 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\TemporizadoresController->index()
+#4 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TemporizadoresController))
+#5 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#7 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#8 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#9 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#10 {main}
+[Method: GET, Route: temporizador]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-18 20:47:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "temporizadores/index.php"
+[Method: GET, Route: temporizador]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('temporizadores/index.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('temporizadores/index', [], true)
+ 3 APPPATH/Controllers/TemporizadoresController.php(24): view('temporizadores/index', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TemporizadoresController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TemporizadoresController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-18 20:47:20 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\View\Exceptions\ViewException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\View\Exceptions\ViewException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\View\Exceptions\ViewException))
+#5 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\View\Exceptions\ViewException
+Invalid file: "temporizadores/index.php"
+#0 /Users/unaibueno/Desktop/Mond/system/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('temporizadores/...')
+#1 /Users/unaibueno/Desktop/Mond/system/Common.php(1171): CodeIgniter\View\View->render('temporizadores/...', Array, true)
+#2 /Users/unaibueno/Desktop/Mond/app/Controllers/TemporizadoresController.php(24): view('temporizadores/...', Array)
+#3 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\TemporizadoresController->index()
+#4 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TemporizadoresController))
+#5 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#7 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#8 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#9 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#10 {main}
+[Method: GET, Route: temporizador]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

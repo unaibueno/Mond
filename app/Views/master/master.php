@@ -4,8 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mond | <?= $page_title ?></title>
+  <meta name="robots" content="noindex, nofollow">
 
+  <title>Mond | <?= $page_title ?></title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #count_click {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+  </style>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -31,220 +39,7 @@
   <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
 
   <style>
-    body {
-      font-family: 'sf-regular', sans-serif;
-      background-color: #1c1c1c;
-      margin-right: 27px;
-      z-index: 9999999;
-    }
 
-    .left-section {
-      background-color: #f8f9fa;
-      padding: 20px;
-      flex-grow: 1;
-    }
-
-    .right-section {
-      padding: 20px;
-      flex-grow: 1;
-    }
-
-    .content_header {
-      background: white;
-    }
-
-    .main-sidebar {
-      background-color: #1c1c1c;
-      padding-top: 25px;
-
-    }
-
-    .brand-link {
-      padding-bottom: 25px;
-
-    }
-
-    .nav-sidebar .nav-item>.nav-link {
-      position: relative;
-      margin-bottom: 15px;
-      font-family: 'swiss', sans-serif;
-    }
-
-    .main-sidebar .nav-item p {
-      color: #868b8f;
-      font-weight: 600;
-      padding-left: 10px;
-    }
-
-    .main-sidebar .nav-item i {
-      color: #868b8f;
-    }
-
-    [class*=sidebar-dark] .brand-link {
-      border-bottom: 0px;
-    }
-
-    .main-header {
-      background-color: #fbfbfb;
-      border: 0px;
-    }
-
-
-    [class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-link.active {
-      box-shadow: none;
-
-    }
-
-    .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
-    .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
-      background: #efefef;
-      border-radius: 10px;
-      color: #2d2f32;
-
-    }
-
-    .main-sidebar .nav-sidebar>.nav-item>.nav-link.active i,
-    .main-sidebar .nav-sidebar>.nav-item>.nav-link.active p {
-      color: #2d2f32;
-
-    }
-
-    .container .card {
-      background-color: white;
-      box-shadow: none
-    }
-
-    .card {
-      border-radius: 15px;
-    }
-
-    .preloader {
-      background: #1c1c1c;
-    }
-
-    .user-image {
-      margin-top: -95px;
-      margin-left: -45px;
-      float: left;
-      width: 135px;
-    }
-
-
-
-
-
-    /* TODO */
-
-    .option-input {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
-      position: relative;
-      top: 10.3px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 30px;
-      width: 30px;
-      background: #fce9eb;
-      border: 2px solid #e06c6e;
-      color: #fff;
-      cursor: pointer;
-      display: inline-block;
-      margin-right: 0.5rem;
-      outline: none;
-      position: relative;
-      z-index: 1000;
-    }
-
-
-    .option-input:checked {
-      background: #dc7274;
-    }
-
-    .option-input:checked::before {
-      height: 26px;
-      width: 26px;
-      position: absolute;
-      content: "\f058";
-      font-family: "Font Awesome 5 Free";
-      display: inline-block;
-      font-size: 16.7px;
-      text-align: center;
-      line-height: 27px;
-    }
-
-    .option-input:checked::after {
-      -webkit-animation: click-wave 0.25s;
-      -moz-animation: click-wave 0.25s;
-      background: red;
-      content: '';
-      display: block;
-      position: relative;
-      z-index: 100;
-    }
-
-    .option-input.radio {
-      border-radius: 50%;
-    }
-
-    .option-input.radio::after {
-      border-radius: 50%;
-    }
-
-    .completed {
-      color: gray;
-      text-decoration: line-through;
-    }
-
-    .line-text {
-      width: 100%;
-      text-align: center;
-      border-bottom: 1px solid #eee;
-      line-height: 0.1em;
-      margin: 10px 0 20px;
-    }
-
-    .line-text span {
-      background: #fff;
-      padding: 0 10px;
-      color: #212529;
-    }
-
-    .tareas-dashboard {
-      overflow: auto;
-
-    }
-
-    .content-wrapper {
-      background: white;
-      height: 90vh;
-      margin: 30px;
-      margin-right: 0;
-      border-radius: 30px;
-      padding: 20px;
-
-    }
-
-    .main-sidebar {
-      background: #1c1c1c;
-    }
-
-    .brand-link {
-      background: #1c1c1c;
-    }
-
-    .nav-pills {
-      padding: 15px;
-    }
-
-    .nav-pills .nav-link.active,
-    .nav-pills .show>.nav-link {
-      background: white;
-      border-radius: 20px;
-    }
   </style>
 </head>
 
@@ -260,19 +55,22 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item ">
-              <a href="<?= base_url('dashboard') ?>" class=" nav-link">
+              <a href="<?= base_url('dashboard') ?>" class="nav-link <?php if ($page_title == 'Inicio')
+                  echo 'active'; ?> ">
                 <i class="nav-icon fa-solid fa-house"></i>
                 <p>Dashboard</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('tareas') ?>" class="nav-link active">
+              <a href="<?= base_url('tareas') ?>" class="nav-link <?php if ($page_title == 'Tareas')
+                  echo 'active'; ?> ">
                 <i class="fa-solid fa-bars-progress nav-icon"></i>
                 <p>Tareas</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('temporizador') ?>" class="nav-link">
+              <a href="<?= base_url('temporizador') ?>" class="nav-link <?php if ($page_title == 'Temporizadores')
+                  echo 'active'; ?> ">
                 <i class="fa-solid fa-clock nav-icon"></i>
                 <p>Temporizador</p>
               </a>
