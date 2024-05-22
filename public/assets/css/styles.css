@@ -535,7 +535,7 @@ border: none;
 #time {
   text-align: center;
   color: #222;
-  font-size: 130px;
+  font-size: 170px;
   font-weight: 600;
   font-family: 'Graphik-bold', sans-serif;
 }
@@ -589,10 +589,396 @@ color: white;
   margin-top: 10px;
 }
 
-.selector-dia{
-  height: 8vh;
+.selector-dia {
+    height: 8vh;
+    background-color: white;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    border: 2px solid #ecebeb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que los botones estén a los lados */
+    padding: 0 10px; /* Opcional: Ajusta el espacio interno si es necesario */
+    margin: 0 auto;
+}
+
+
+
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+}
+
+.weekday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.weekday:hover {
+    background-color: #0056b3;
+}
+
+.weekday.selected {
+    background-color: #0056b3;
+}
+
+.selected-date {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+    .fc-theme-standard .fc-scrollgrid {
+        border: none;
+    }
+
+    .weekdays {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+
+    .weekday {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .weekday:hover {
+        background-color: #0056b3;
+    }
+
+    .weekday.selected {
+        background-color: #0056b3;
+    }
+
+    .selected-date {
+        display: inline-block;
+        width: 150px;
+        text-align: center;
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    .fc .fc-col-header {
+        display: none;
+    }
+
+    :root {
+        --fc-highlight-color: transparent;
+        /* Cambia este valor al color deseado */
+    }
+
+    /* Si deseas aplicar más personalizaciones, puedes agregar más reglas aquí */
+
+    .fc-timegrid-event-harness-inset .fc-timegrid-event,
+    .fc-timegrid-event.fc-event-mirror,
+    .fc-timegrid-more-link {
+        background-color: rgba(34, 34, 34, 0.7);
+        border: none;
+        border-left: solid 5px #222;
+        padding: 10px;
+        margin-left: 15px;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+
+    .fc-timegrid-event-harness .fc-timegrid-event-harness-inset {
+        background-color: transparent;
+    }
+
+
+
+    .fc .fc-timegrid-col.fc-day-today {
+        background-color: transparent;
+    }
+
+    .fc-theme-standard td,
+    .fc-theme-standard th {
+        border: 1px solid #f2f2f2;
+        border-right: none;
+        border-left: none;
+
+    }
+
+    .fc .fc-timegrid-now-indicator-arrow {
+        display: none;
+
+    }
+
+    .fc .fc-timegrid-slot-minor {
+        border: none;
+    }
+
+    #calendar {
+        max-width: 1100px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 25px;
+        height: 78vh;
+        margin-top:10px;
+        border: 2px solid #ecebeb;
+
+    }
+
+    .timeline {
+        border-radius: 25px;
+        height: 73vh;
+        padding: 20px;
+        background: #fff;
+        overflow-y: scroll;
+        position: relative;
+        user-select: none;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+        /* Could be more or less, depending on screen size */
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .selection-time {
+        position: absolute;
+        left: 10px;
+        top: -25px;
+        background: #000;
+        color: #fff;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 12px;
+        display: none;
+        /* Initially hidden */
+    }
+
+    #calendar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #calendar::-webkit-scrollbar-track {
+        background: transparent;
+        margin: 30px 0;
+
+    }
+
+    #calendar::-webkit-scrollbar-thumb {
+        background: transparent;
+        margin: 30px 0;
+
+    }
+
+    #calendar:-webkit-scrollbar-thumb:hover {
+        background: transparent;
+        margin: 30px 0;
+    }
+
+    .time-slot {
+        height: 10px;
+        /* Adjusted for better visualization */
+        position: relative;
+        user-select: none;
+    }
+
+    .time-slot[data-hour="true"] {
+        border-bottom: 1px solid #eee;
+    }
+
+    .time-label {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: #666;
+    }
+
+    .task {
+        position: absolute;
+        left: 80px;
+        right: 10px;
+        background-color: #fff0de;
+        border-left: 4px solid #222222;
+        border-radius: 3px;
+        font-size: 14px;
+        padding: 5px;
+        box-sizing: border-box;
+        user-select: none;
+    }
+
+    .current-time {
+        position: absolute;
+        left: 70px;
+        height: 2px;
+        background-color: red;
+        z-index: 10;
+    }
+
+    .current-time::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: -4px;
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+    }
+    .fc table{
+      font-size: 12px;
+      color:#848484;
+    }
+
+  .section {
+    display: none;
+  }
+
+  .section.active {
+    display: block;
+  }
+
+    #count_click {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: white !important;
+  margin: 5% auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 100% !important;
+  max-width: 800px;
+  display: flex;
+  top: 0;
+  height: 70vh;
+  border-radius: 20px !important;
+}
+
+.modal-content .col-3{
+  padding: 0;
+}
+
+.modal-sidebar{
+  height: 70vh;
+  border-radius: 20px 0 0 20px ;
+  background-color: #f2f2f2;
+}
+
+.modal-sidebar .nav-link{
+  font-size: 16px;
+  color: black;
+  width: 100%;
+  border: none;
+  text-align: left;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.modal-sidebar .nav-link:focus{
+  border-radius: 10px;
+}
+
+.modal-sidebar .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+ outline: none;
+   border-radius: 10px;
+color: black;
+}
+
+.modal-sidebar .nav-link:hover{
+  color: black;
   background-color: white;
-  border-radius: 30px;
-  margin-bottom: 10px;
-  border: 2px solid #ecebeb;
+}
+
+.modal-sidebar .nav-link a{
+  color: black;
+}
+
+
+.ajustes-content{
+    border-radius: 0 20px 20px 0;
+
+}
+
+.ajustes-title{
+  font-family: 'sf-bold';
+  margin-bottom:5px;
+  padding: 10px;
+}
+.modal-sidebar .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background: white;
+    color: black !important;
+    border-radius: 10px !important;
 }

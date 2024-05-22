@@ -1,162 +1,16 @@
 <?= $this->extend('master/master') ?>
 <?= $this->section('content') ?>
-<style>
-    .timeline {
-        border-radius: 25px;
-        height: 73vh;
-        padding: 20px;
-        background: #fff;
-        overflow-y: scroll;
-        position: relative;
-        user-select: none;
-        border: 2px solid #ecebeb;
-    }
 
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-        padding-top: 60px;
-    }
-
-    .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto;
-        /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 40%;
-        /* Could be more or less, depending on screen size */
-    }
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .timeline::before {
-        display: none;
-    }
-
-    .selection-time {
-        position: absolute;
-        left: 10px;
-        top: -25px;
-        background: #000;
-        color: #fff;
-        padding: 2px 5px;
-        border-radius: 3px;
-        font-size: 12px;
-        display: none;
-        /* Initially hidden */
-    }
-
-    .timeline::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .timeline::-webkit-scrollbar-track {
-        background: transparent;
-        margin: 30px 0;
-
-    }
-
-    .timeline::-webkit-scrollbar-thumb {
-        background: transparent;
-        margin: 30px 0;
-
-    }
-
-    .timeline::-webkit-scrollbar-thumb:hover {
-        background: transparent;
-        margin: 30px 0;
-    }
-
-    .time-slot {
-        height: 10px;
-        /* Adjusted for better visualization */
-        position: relative;
-        user-select: none;
-    }
-
-    .time-slot[data-hour="true"] {
-        border-bottom: 1px solid #eee;
-    }
-
-    .time-label {
-        position: absolute;
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 14px;
-        color: #666;
-    }
-
-    .task {
-        position: absolute;
-        left: 80px;
-        right: 10px;
-        background-color: #fff0de;
-        border-left: 4px solid #222222;
-        border-radius: 3px;
-        font-size: 14px;
-        padding: 5px;
-        box-sizing: border-box;
-        user-select: none;
-    }
-
-    .current-time {
-        position: absolute;
-        left: 70px;
-        height: 2px;
-        background-color: red;
-        z-index: 10;
-    }
-
-    .current-time::before {
-        content: '';
-        position: absolute;
-        left: -6px;
-        top: -4px;
-        width: 10px;
-        height: 10px;
-        background-color: red;
-        border-radius: 50%;
-    }
-</style>
 <section class="content-order">
     <!-- Modal Structure -->
     <div id="taskModal" class="modal">
         <div class="modal-content">
-            <h4>Nueva Tarea</h4>
+            <span class="close">&times;</span>
+            <h4>Completar Tarea</h4>
             <form id="taskForm">
                 <div class="form-group">
-                    <label for="taskTitle">Título:</label>
+                    <label for="taskTitle">Título de la Tarea:</label>
                     <input type="text" id="taskTitle" name="taskTitle" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="taskDescription">Descripción:</label>
-                    <textarea id="taskDescription" name="taskDescription" class="form-control" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="taskTimeRange">Hora:</label>
-                    <input type="text" id="taskTimeRange" name="taskTimeRange" class="form-control" readonly>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
@@ -164,7 +18,7 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-md-6 pomodoro-container fullscreen-style" id="pomodoroContainer">
+        <div class="col-12 col-md-7 pomodoro-container fullscreen-style" id="pomodoroContainer">
             <div class="col-12"
                 style="height:10vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <div class="section-container" style="display: flex; justify-content: center; gap: 10px;">
@@ -191,176 +45,133 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-6 pomodoro-notas-contenedor">
-            <div class="col-12 selector-dia">
-                <div></div>
+        <div class="col-12 col-md-5 pomodoro-notas-contenedor">
+            <div class="col-12">
+                <div class="col-12 selector-dia" id="selector-dia">
+                    <button id="prevDay" class="btn"><i class="fa-solid fa-angle-left"></i></button>
+                    <span id="selectedDate" class="selected-date"></span>
+                    <button id="nextDay" class="btn"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
             </div>
             <div class="col-12">
-                <div class="timeline" id="timeline">
-                </div>
+                <div id='calendar'></div>
             </div>
         </div>
     </div>
 </section>
-
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const timeline = document.getElementById("timeline");
-        const slotsPerHour = 4; // 4 slots per hour, each 15 minutes
-        const slotHeight = 25; // Height in pixels
-        updateCurrentTime();
-
-        for (let i = 0; i < 24 * slotsPerHour; i++) {
-            const timeSlot = document.createElement("div");
-            timeSlot.classList.add("time-slot");
-            timeSlot.dataset.time = i;
-
-            const hours = Math.floor(i / slotsPerHour);
-            const minutes = (i % slotsPerHour) * 15; // 15 minute intervals
-            if (minutes === 0) {
-                timeSlot.dataset.hour = "true";
-                const timeLabel = document.createElement("div");
-                timeLabel.classList.add("time-label");
-                timeLabel.textContent = `${String(hours).padStart(2, "0")}:00`;
-                timeSlot.appendChild(timeLabel);
-            }
-
-            timeline.appendChild(timeSlot);
-        }
-
-        let isSelecting = false;
-        let startSlot = null;
-        let taskElement = null;
-        let selectionTimeElement = null;
-
-        const taskModal = document.getElementById("taskModal");
-        const taskForm = document.getElementById("taskForm");
-        const taskTimeRangeInput = document.getElementById("taskTimeRange");
-
-        timeline.addEventListener("mousedown", (e) => {
-            if (e.target.classList.contains("time-slot")) {
-                isSelecting = true;
-                startSlot = parseInt(e.target.dataset.time);
-
-                taskElement = document.createElement("div");
-                taskElement.classList.add("task");
-                taskElement.style.top = `0px`; // Default to top of the slot
-                taskElement.style.height = `${slotHeight}px`; // Default to 15 minutes
-                taskElement.textContent = "Nueva Tarea";
-                e.target.appendChild(taskElement);
-
-                selectionTimeElement = document.createElement("div");
-                selectionTimeElement.classList.add("selection-time");
-                selectionTimeElement.textContent = getTimeRange(startSlot, startSlot);
-                taskElement.appendChild(selectionTimeElement);
-                selectionTimeElement.style.display = 'block';
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+        var today = new Date();
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            locale: 'es',
+            initialDate: today,
+            initialView: 'timeGridDay',
+            nowIndicator: true,
+            headerToolbar: false,
+            navLinks: true,
+            editable: true,
+            selectable: true,
+            selectMirror: true,
+            dayMaxEvents: true,
+            allDaySlot: false,
+            events: [],
+            slotLabelFormat: {
+                hour: '2-digit',
+                minute: '2-digit',
+                omitZeroMinute: false,
+                meridiem: false,
+                hour12: false
             }
         });
 
-        timeline.addEventListener("mousemove", (e) => {
-            if (isSelecting && e.target.classList.contains("time-slot")) {
-                const currentSlot = parseInt(e.target.dataset.time);
-                const duration = (currentSlot - startSlot + 1) * slotHeight;
-                taskElement.style.height = `${duration}px`;
-                selectionTimeElement.textContent = getTimeRange(startSlot, currentSlot);
-            }
-        });
+        calendar.render();
 
-        timeline.addEventListener("mouseup", () => {
-            isSelecting = false;
-            if (selectionTimeElement) {
-                selectionTimeElement.style.display = 'none';
-            }
-            showModal();
-        });
+        var prevDayButton = document.getElementById('prevDay');
+        var nextDayButton = document.getElementById('nextDay');
+        var selectedDateSpan = document.getElementById('selectedDate');
+        var weekdays = document.querySelectorAll('.weekday');
 
-        timeline.addEventListener("mouseleave", () => {
-            isSelecting = false;
-            if (selectionTimeElement) {
-                selectionTimeElement.style.display = 'none';
-            }
-        });
+        function formatDateString(date) {
+            var today = new Date();
+            var yesterday = new Date(today);
+            yesterday.setDate(today.getDate() - 1);
+            var tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
 
-        function getTimeRange(startSlot, endSlot) {
-            const startHours = Math.floor(startSlot / slotsPerHour);
-            const startMinutes = (startSlot % slotsPerHour) * 15;
-            const endHours = Math.floor(endSlot / slotsPerHour);
-            const endMinutes = (endSlot % slotsPerHour) * 15;
-            return `${String(startHours).padStart(2, "0")}:${String(startMinutes).padStart(2, "0")} - ${String(endHours).padStart(2, "0")}:${String(endMinutes).padStart(2, "0")}`;
-        }
-
-        function updateCurrentTime() {
-            const now = new Date();
-            const currentMinutes = now.getHours() * 60 + now.getMinutes();
-            let currentTimeIndicator = document.querySelector(".current-time");
-            if (!currentTimeIndicator) {
-                currentTimeIndicator = document.createElement("div");
-                currentTimeIndicator.classList.add("current-time");
-                timeline.appendChild(currentTimeIndicator);
-            }
-            currentTimeIndicator.style.top = `${(currentMinutes / 15) * slotHeight}px`;
-        }
-
-        function showModal() {
-            taskTimeRangeInput.value = selectionTimeElement.textContent;
-            taskModal.style.display = "block";
-        }
-
-        // Close the modal when clicking outside of it
-        window.onclick = function (event) {
-            if (event.target == taskModal) {
-                taskModal.style.display = "none";
+            if (date.toDateString() === today.toDateString()) {
+                return "hoy";
+            } else if (date.toDateString() === yesterday.toDateString()) {
+                return "ayer";
+            } else if (date.toDateString() === tomorrow.toDateString()) {
+                return "mañana";
+            } else {
+                var options = { weekday: 'short', day: 'numeric', month: 'long' };
+                return date.toLocaleDateString('es-ES', options);
             }
         }
 
-        // Handle form submission
-        taskForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const taskTitle = document.getElementById("taskTitle").value;
-            const taskDescription = document.getElementById("taskDescription").value;
-            const taskTimeRange = taskTimeRangeInput.value;
+        function updateSelectedDate(date) {
+            selectedDateSpan.textContent = formatDateString(date);
+        }
 
-            // Update task name
-            if (taskElement) {
-                taskElement.textContent = taskTitle;
-                taskElement.appendChild(selectionTimeElement); // Re-attach the selection time element
-            }
+        function setCalendarDate(dayOffset) {
+            var currentDate = calendar.getDate();
+            currentDate.setDate(currentDate.getDate() - currentDate.getDay() + dayOffset);
+            calendar.gotoDate(currentDate);
+            updateSelectedDate(currentDate);
+        }
 
-            taskModal.style.display = "none";
+        prevDayButton.addEventListener('click', function () {
+            calendar.prev();
+            updateSelectedDate(calendar.getDate());
         });
 
-        setInterval(updateCurrentTime, 60000);
-    });
+        nextDayButton.addEventListener('click', function () {
+            calendar.next();
+            updateSelectedDate(calendar.getDate());
+        });
 
+        weekdays.forEach(function (weekday) {
+            weekday.addEventListener('click', function () {
+                weekdays.forEach(function (day) {
+                    day.classList.remove('selected');
+                });
+                weekday.classList.add('selected');
+                var dayOffset = parseInt(weekday.getAttribute('data-day'));
+                setCalendarDate(dayOffset);
+            });
+        });
 
-</script>
+        updateSelectedDate(calendar.getDate());
 
-<script>
-    let focusButton = document.getElementById("focus");
-    let buttons = document.querySelectorAll(".btn");
-    let shortBreakButton = document.getElementById("shortbreak");
-    let longBreakButton = document.getElementById("longbreak");
-    let startBtn = document.getElementById("btn-start");
-    let reset = document.getElementById("btn-reset");
-    let pause = document.getElementById("btn-pause");
-    let time = document.getElementById("time");
-    let fullscreenBtn = document.getElementById("btn-fullscreen");
-    let pomodoroContainer = document.getElementById("pomodoroContainer");
-    let set;
-    let active = "focus";
-    let count = 59;
-    let paused = true;
-    let minCount = 24;
-    time.textContent = `${minCount + 1}:00`;
+        // Pomodoro logic
+        let focusButton = document.getElementById("focus");
+        let buttons = document.querySelectorAll(".btn");
+        let shortBreakButton = document.getElementById("shortbreak");
+        let longBreakButton = document.getElementById("longbreak");
+        let startBtn = document.getElementById("btn-start");
+        let reset = document.getElementById("btn-reset");
+        let pause = document.getElementById("btn-pause");
+        let time = document.getElementById("time");
+        let fullscreenBtn = document.getElementById("btn-fullscreen");
+        let pomodoroContainer = document.getElementById("pomodoroContainer");
+        let taskModal = document.getElementById("taskModal");
+        let taskForm = document.getElementById("taskForm");
+        let sound = new Audio('assets/audio/crono.mp3'); // Reemplaza con la ruta a tu archivo de sonido
+        let worker;
+        let active = "focus";
+        let count = 59;
+        let paused = true;
+        let minCount = 24;
+        time.textContent = `${minCount + 1}:00`;
 
-    const appendZero = (value) => {
-        value = value < 10 ? `0${value}` : value;
-        return value;
-    };
+        const appendZero = (value) => {
+            value = value < 10 ? `0${value}` : value;
+            return value;
+        };
 
-    reset.addEventListener(
-        "click",
-        (resetTime = () => {
+        const resetTime = () => {
             pauseTimer();
             switch (active) {
                 case "long":
@@ -375,97 +186,152 @@
             }
             count = 59;
             time.textContent = `${minCount + 1}:00`;
-        })
-    );
+        };
 
-    const removeFocus = () => {
-        buttons.forEach((btn) => {
-            btn.classList.remove("btn-focus");
-        });
-    };
+        const removeFocus = () => {
+            buttons.forEach((btn) => {
+                btn.classList.remove("btn-focus");
+            });
+        };
 
-    focusButton.addEventListener("click", () => {
-        removeFocus();
-        focusButton.classList.add("btn-focus");
-        pauseTimer();
-        minCount = 24;
-        count = 59;
-        time.textContent = `${minCount + 1}:00`;
-    });
-
-    shortBreakButton.addEventListener("click", () => {
-        active = "short";
-        removeFocus();
-        shortBreakButton.classList.add("btn-focus");
-        pauseTimer();
-        minCount = 4;
-        count = 59;
-        time.textContent = `${appendZero(minCount + 1)}:00`;
-    });
-
-    longBreakButton.addEventListener("click", () => {
-        active = "long";
-        removeFocus();
-        longBreakButton.classList.add("btn-focus");
-        pauseTimer();
-        minCount = 14;
-        count = 59;
-        time.textContent = `${minCount + 1}:00`;
-    });
-
-    pause.addEventListener(
-        "click",
-        (pauseTimer = () => {
+        const pauseTimer = () => {
             paused = true;
-            clearInterval(set);
+            if (worker) {
+                worker.terminate();
+                worker = null;
+            }
             startBtn.classList.remove("hide");
             pause.classList.remove("show");
             reset.classList.remove("show");
-        })
-    );
+        };
 
-    startBtn.addEventListener("click", () => {
-        reset.classList.add("show");
-        pause.classList.add("show");
-        startBtn.classList.add("hide");
-        startBtn.classList.remove("show");
-        if (paused) {
-            paused = false;
-            time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
-            set = setInterval(() => {
-                count--;
+        const openTaskModal = () => {
+            taskModal.style.display = "block";
+        };
+
+        const addPomodoroToCalendar = (title, start, end) => {
+            calendar.addEvent({
+                title: title,
+                start: start,
+                end: end
+            });
+        };
+
+        focusButton.addEventListener("click", () => {
+            removeFocus();
+            focusButton.classList.add("btn-focus");
+            pauseTimer();
+            minCount = 24;
+            count = 59;
+            time.textContent = `${minCount + 1}:00`;
+        });
+
+        shortBreakButton.addEventListener("click", () => {
+            active = "short";
+            removeFocus();
+            shortBreakButton.classList.add("btn-focus");
+            pauseTimer();
+            minCount = 4;
+            count = 59;
+            time.textContent = `${appendZero(minCount + 1)}:00`;
+        });
+
+        longBreakButton.addEventListener("click", () => {
+            active = "long";
+            removeFocus();
+            longBreakButton.classList.add("btn-focus");
+            pauseTimer();
+            minCount = 14;
+            count = 59;
+            time.textContent = `${minCount + 1}:00`;
+        });
+
+        pause.addEventListener("click", pauseTimer);
+
+        startBtn.addEventListener("click", () => {
+            let pomodoroStart = new Date();
+            reset.classList.add("show");
+            pause.classList.add("show");
+            startBtn.classList.add("hide");
+            startBtn.classList.remove("show");
+
+            if (paused) {
+                paused = false;
                 time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
-                if (count == 0) {
-                    if (minCount != 0) {
-                        minCount--;
-                        count = 60;
-                    } else {
-                        clearInterval(set);
+
+                if (typeof (Worker) !== "undefined") {
+                    if (typeof (worker) === "undefined") {
+                        worker = new Worker("assets/js/pomodoro/pomodoro_worker.js");
                     }
+
+                    worker.postMessage({
+                        action: 'start',
+                        minCount: minCount,
+                        count: count
+                    });
+
+                    worker.onmessage = function (event) {
+                        const data = event.data;
+                        if (data.action === 'tick') {
+                            minCount = data.minCount;
+                            count = data.count;
+                            time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
+                        } else if (data.action === 'complete') {
+                            clearInterval(set);
+                            openTaskModal();
+                            let pomodoroEnd = new Date();
+                            addPomodoroToCalendar("Pomodoro", pomodoroStart, pomodoroEnd);
+                            sound.play(); // Reproducir sonido al completar
+                        }
+                    };
+                } else {
+                    alert("Sorry! No Web Worker support.");
                 }
-            }, 1000);
-        }
-    });
+            }
+        });
 
-    fullscreenBtn.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-            pomodoroContainer.requestFullscreen().then(() => {
-                pomodoroContainer.classList.add('fullscreen-active');
-            }).catch((err) => {
-                console.log(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-            });
-        } else {
-            document.exitFullscreen().then(() => {
+        fullscreenBtn.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                pomodoroContainer.requestFullscreen().then(() => {
+                    pomodoroContainer.classList.add('fullscreen-active');
+                }).catch((err) => {
+                    console.log(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen().then(() => {
+                    pomodoroContainer.classList.remove('fullscreen-active');
+                });
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
                 pomodoroContainer.classList.remove('fullscreen-active');
-            });
-        }
-    });
+            }
+        });
 
-    // Detecta cuando se sale del modo pantalla completa usando el evento
-    document.addEventListener('fullscreenchange', () => {
-        if (!document.fullscreenElement) {
-            pomodoroContainer.classList.remove('fullscreen-active');
-        }
+        taskForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var taskTitle = document.getElementById('taskTitle').value;
+            var taskStart = new Date().toISOString().split('T')[0];
+            calendar.addEvent({
+                title: taskTitle,
+                start: taskStart,
+                allDay: true
+            });
+            taskModal.style.display = "none";
+        });
+
+        document.querySelector(".close").addEventListener('click', function () {
+            taskModal.style.display = "none";
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target == taskModal) {
+                taskModal.style.display = "none";
+            }
+        });
     });
 </script>
+
 <?= $this->endSection() ?>
