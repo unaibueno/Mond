@@ -26,50 +26,97 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-    <!-- Ajustes Modal -->
-    <div id="ajustesModal" class="modal">
-      <div class="modal-content">
-        <div class="row">
-          <div class="col-3">
-            <div class="nav flex-column nav-pills me-3 modal-sidebar" id="v-pills-tab" role="tablist"
-              aria-orientation="vertical">
-              <span class="ajustes-title">Configuración</span>
-              <button class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
-                type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i
-                  class="fa-regular fa-circle-user mr-2"></i>Cuenta</button>
-              <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
-                type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                <i class="fa-solid fa-fingerprint mr-2"></i>Tus datos</button>
-              <button class="nav-link " id="v-pills-messages-tab" data-bs-toggle="pill"
-                data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                aria-selected="false"><i class="fa-solid fa-paint-roller mr-2"></i>Colores</button>
-              <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
-                data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                aria-selected="false"><i class="fa-solid fa-sliders mr-2"></i>Preferencias</button>
-            </div>
-          </div>
-          <div class="col-9 ajustes-content">
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-              ..f
-            </div>
-            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">.ss
-            </div>
-            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-              sss
-            </div>
-            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-              dd </div>
+    <div class="ajustes-modal">
+      <div class="ajustes-contenedor">
+        <div class="ajustes">
+          <div class="ajustes-sidebar">
+            <span class="conf-title">Configuración</span>
+            <ul>
+              <li ata-option="cuentas" onclick="showContent('cuentas')">
+                <span>
+                  <ion-icon name="person-outline"></ion-icon>
+                  Cuenta
+                </span>
+              </li>
+              <li data-option="integraciones" onclick="showContent('integraciones')">
+                <span>
+                  <ion-icon name="copy-outline"></ion-icon>
+                  Integraciones
+                </span>
+              </li>
+              <li data-option="social" onclick="showContent('social')">
+                <span>
+                  <ion-icon name="people-outline"></ion-icon> Social
+                </span>
+              </li>
+
+
+              <li data-option="preferencias" onclick="showContent('preferencias')">
+                <span>
+                  <ion-icon name="moon-outline"></ion-icon>
+                  Preferencias
+                </span>
+              </li>
+
+              <li data-option="seguridad" onclick="showContent('seguridad')">
+                <span>
+                  <ion-icon name="lock-closed-outline"></ion-icon>
+                  Seguridad
+                </span>
+              </li>
+
+
+              <li data-option="privacidad" onclick="showContent('privacidad')">
+                <span>
+                  <ion-icon name="finger-print-outline"></ion-icon> Privacidad
+                </span>
+              </li>
+            </ul>
 
           </div>
+          <div class="ajustes-panel">
+            <div class="main-content" id="cuentas">
+              <div class="seccion-ajuste">
+                <h2 class="titulo-configuracion">Insercion</h2>
+                <div class="secciones">s</div>
+
+              </div>
+            </div>
+            <div class="main-content" id="integraciones">
+              <div class="seccion-ajuste">
+                <h2 class="titulo-configuracion">Cuentas</h2>
+                <!-- Your contents -->
+              </div>
+            </div>
+            <div class="main-content" id="social">
+              <div class="seccion-ajuste">
+                <h2 class="titulo-configuracion">Control errores</h2>
+                <!-- Your contents -->
+              </div>
+            </div>
+            <div class="main-content" id="seguridad">
+              <div class="seccion-ajuste">
+                <h2 class="titulo-configuracion">Herramientas</h2>
+                <!-- Your contents -->
+              </div>
+            </div>
+            <div class="main-content" id="preferencias">
+              <div class="seccion-ajuste">
+                <h2 class="titulo-configuracion">Seguridad</h2>
+                <!-- Your contents -->
+              </div>
+            </div>
+            <div class="main-content" id="privacidad">
+              <div class="seccion-ajuste">
+                <h2 class="titulo-configuracion">Seguridad</h2>
+                <!-- Your contents -->
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-
-
-
-    <!-- Incluye los scripts de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 
 
     <aside class="main-sidebar">
@@ -90,44 +137,46 @@
             <li class="nav-item">
               <a href="<?= base_url('tareas') ?>" class="nav-link <?php if ($page_title == 'Tareas')
                   echo 'active'; ?> ">
-                <i class="fa-solid fa-bars-progress nav-icon"></i>
+                <ion-icon name="chevron-down-circle"></ion-icon>
                 <p>Tareas</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= base_url('temporizador') ?>" class="nav-link <?php if ($page_title == 'Temporizadores')
                   echo 'active'; ?> ">
-                <i class="fa-solid fa-clock nav-icon"></i>
+                <ion-icon name="stopwatch"></ion-icon>
                 <p>Temporizador</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('calendario') ?>" class="nav-link">
-                <i class="fa-regular fa-sun nav-icon"></i>
+              <a href="<?= base_url('calendario') ?>" class="nav-link <?php if ($page_title == 'Calendario')
+                  echo 'active'; ?> ">
+                <ion-icon name="calendar-number"></ion-icon>
                 <p>Calendario</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('notas') ?>" class="nav-link">
-                <i class="fa-solid fa-bolt nav-icon"></i>
-                <p>Notas rápidas</p>
+              <a href="<?= base_url('notas') ?>" class="nav-link <?php if ($page_title == 'Notas')
+                  echo 'active'; ?> ">
+                <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                <p>Notas</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= base_url('proyectos') ?>" class="nav-link">
-                <i class="fa-solid fa-diagram-project nav-icon"></i>
+                <ion-icon name="bug"></ion-icon>
                 <p>Proyectos</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= base_url('equipos') ?>" class="nav-link">
-                <i class="fa-solid fa-calendar-check nav-icon"></i>
+                <ion-icon name="people-circle"></ion-icon>
                 <p>Equipos</p>
               </a>
             </li>
             <li class="nav-item">
               <a id="ajustes" class="nav-link">
-                <i class="fa-solid fa-gear nav-icon"></i>
+                <ion-icon name="hammer"></ion-icon>
                 <p>Ajustes</p>
               </a>
             </li>
@@ -143,42 +192,48 @@
   </div>
 
   <script>
-    $(document).ready(function () {
-      // Get the modal
-      var modal = document.getElementById("ajustesModal");
+    function showContent(option) {
+      const sections = document.querySelectorAll(".main-content");
+      const sidebarItems = document.querySelectorAll(".ajustes-sidebar li");
 
-      // Get the button that opens the modal
-      var btn = document.getElementById("ajustes");
-
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks the button, open the modal 
-      btn.onclick = function () {
-        modal.style.display = "block";
-      }
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function () {
-        modal.style.display = "none";
-      }
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-
-      // Handle section switching
-      $('.modal-sidebar ul li').click(function () {
-        var sectionToShow = $(this).data('section');
-        $('.section').removeClass('active');
-        $('#' + sectionToShow).addClass('active');
+      sections.forEach((section) => {
+        section.style.display = "none";
       });
-    });
-  </script>
 
+      sidebarItems.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      document.getElementById(option).style.display = "block";
+      document.querySelector('.ajustes-sidebar li[data-option="' + option + '"]').classList.add("active");
+    }
+
+    $(document).ready(function () {
+      $("#ajustes").on("click", function (e) {
+        e.stopPropagation();
+        $(".ajustes-modal").addClass("visible");
+      });
+
+      $(document).on("click", function (e) {
+        if (!$(e.target).closest('.ajustes-modal, #ajustes').length) {
+          $(".ajustes-modal").removeClass("visible");
+        }
+      });
+
+      $(".ajustes-modal").on("click", function (e) {
+        e.stopPropagation();
+      });
+
+      // Initialize first tab
+      showContent('insercion');
+    });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

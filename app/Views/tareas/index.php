@@ -9,15 +9,18 @@
                     <div class="pl-1">
                         <h2 class="welcome-title pt-3">TAREAS</h2>
                     </div>
-                    <div class="col-12 selector-tareas">
 
-                    </div>
                 </div>
-                <div class="col-12 tareas-dashboard" style="height:70vh;">
+                <div class="col-12 tareas-contenedor">
                     <div class="col-12 tarea-dashboard" id="tarea-dashboard-1">
                         <div class="tarea">
-                            <div class="tarea-icon"></div>
-                            <div class="tarea-content">TAREA 1</div>
+                            <div class="tarea-content">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    <span class="text">Launch Beta version</span>
+                                </label>
+                            </div>
                             <div class="tarea-timer">
                                 <button name="toggle_timer" class="time-btn" id="time-btn-1" data-timer-id="1">
                                     <div class="sign">
@@ -30,16 +33,64 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 tarea-dashboard" id="tarea-dashboard-2">
+                    <div class="col-12 tarea-dashboard" id="tarea-dashboard-1">
                         <div class="tarea">
-                            <div class="tarea-icon"></div>
-                            <div class="tarea-content">TAREA 2.</div>
+                            <div class="tarea-content">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    <span class="text">Launch Beta version</span>
+                                </label>
+                            </div>
                             <div class="tarea-timer">
-                                <button name="toggle_timer" class="time-btn" id="time-btn-2" data-timer-id="2">
+                                <button name="toggle_timer" class="time-btn" id="time-btn-1" data-timer-id="1">
                                     <div class="sign">
-                                        <i class="sing-icon fa-solid fa-play" id="timer-icon-2"></i>
+                                        <i class="sing-icon fa-solid fa-play" id="timer-icon-1"></i>
                                     </div>
-                                    <div id="count_click-2" class="time-text" style="color:white; font-size:13px;">
+                                    <div id="count_click-1" class="time-text" style="color:white; font-size:13px;">
+                                        00:00:00
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 tarea-dashboard" id="tarea-dashboard-1">
+                        <div class="tarea">
+                            <div class="tarea-content">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    <span class="text">Launch Beta version</span>
+                                </label>
+                            </div>
+                            <div class="tarea-timer">
+                                <button name="toggle_timer" class="time-btn" id="time-btn-1" data-timer-id="1">
+                                    <div class="sign">
+                                        <i class="sing-icon fa-solid fa-play" id="timer-icon-1"></i>
+                                    </div>
+                                    <div id="count_click-1" class="time-text" style="color:white; font-size:13px;">
+                                        00:00:00
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 tarea-dashboard" id="tarea-dashboard-1">
+                        <div class="tarea">
+                            <div class="tarea-content">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    <span class="text">Launch Beta version</span>
+                                </label>
+                            </div>
+                            <div class="tarea-timer">
+                                <button name="toggle_timer" class="time-btn" id="time-btn-1" data-timer-id="1">
+                                    <div class="sign">
+                                        <i class="sing-icon fa-solid fa-play" id="timer-icon-1"></i>
+                                    </div>
+                                    <div id="count_click-1" class="time-text" style="color:white; font-size:13px;">
                                         00:00:00
                                     </div>
                                 </button>
