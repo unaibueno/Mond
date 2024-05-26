@@ -8,10 +8,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link type="text/css" href="vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link type="text/css" href="assets/css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
 
+    <style>
+        .navbar .boton {
+            letter-spacing: 0.4px;
+        }
 
+        .boton {
+            border-radius: 35px;
+            border: none;
+            background: #f7f7f7;
+            color: #222222;
+            padding: 18px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container-fluid {
+            padding-right: 100px;
+            padding-left: 100px;
+
+        }
+
+        .nav-link {
+            color: #222222;
+        }
+
+        .navbar-custom {
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-title {
+            font-size: 80px;
+            font-weight: bold;
+            font-family: 'sf-bold', sans-serif;
+        }
+
+        .imagen-destacada {
+            object-fit: cover;
+            border-radius: 30px;
+            margin-bottom: 90px;
+            margin-top: 90px;
+        }
+
+        .page-title-description {
+            font-size: 23px;
+            font-family: 'sf-regular', sans-serif;
+            margin: 40px 0px;
+            ;
+        }
+
+        .text-icons {
+            text-align: center;
+            font-size: 24px;
+            font-family: 'sf-bold', sans-serif;
+        }
+
+        .titulo-container-1 {
+            font-family: 'sf-bold', sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .welcome-title {
+            font-family: 'sf-black', sans-serif;
+
+        }
+    </style>
 </head>
 
 <body>

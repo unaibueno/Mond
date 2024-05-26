@@ -16,3 +16,9 @@ $routes->post('save-event', 'CalendarioController::saveEvent');
 $routes->post('update-event', 'CalendarioController::updateEvent'); // Ruta para actualizar eventos
 $routes->post('delete-event', 'CalendarioController::deleteEvent'); // Ruta para eliminar eventos
 $routes->get('get-events', 'CalendarioController::getEvents');
+
+
+$routes->post('/notas/saveTitle', 'NotasController::saveTitle');
+$routes->post('/notas/saveContent', 'NotasController::saveContent');
+$routes->post('/notas/delete/(:num)', 'NotasController::delete/$1');
+$routes->get('/notas/getNote/(:num)', 'NotasController::getNote/$1');

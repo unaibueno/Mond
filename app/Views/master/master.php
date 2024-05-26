@@ -12,6 +12,7 @@
 
   </style>
   <script src='assets/js/calendario/index.global.js'></script>
+  <script src='assets/js/ckeditor.js'></script>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -22,6 +23,9 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/css/adminlte.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

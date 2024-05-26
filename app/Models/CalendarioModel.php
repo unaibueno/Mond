@@ -7,7 +7,7 @@ class CalendarioModel extends Model
 {
     protected $table = 'calendario';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['titulo', 'descripcion', 'fecha_inicio', 'fecha_fin'];
+    protected $allowedFields = ['titulo', 'descripcion', 'fecha_inicio', 'fecha_fin', 'color'];
     protected $useTimestamps = true;
 
     public function saveEvent($data)

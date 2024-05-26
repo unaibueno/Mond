@@ -1,0 +1,529 @@
+INFO - 2024-05-26 06:34:17 --> Datos recibidos para guardar evento: {"titulo":"s","descripcion":"s","fecha_inicio":"2024-05-18","fecha_fin":"2024-05-19","color":"#f2dae0"}
+INFO - 2024-05-26 06:34:30 --> Datos recibidos para guardar evento: {"titulo":"sss","descripcion":"ss","fecha_inicio":"2024-05-19","fecha_fin":"2024-05-20","color":"#def5e6"}
+INFO - 2024-05-26 06:34:42 --> ID del evento recibido para eliminar: 31
+INFO - 2024-05-26 06:34:48 --> Datos recibidos para actualizar evento: {"titulo":"ssdd","descripcion":"d","fecha_inicio":"2024-05-10","fecha_fin":"2024-05-12","color":"#f4e8d2"}
+INFO - 2024-05-26 06:34:57 --> Datos recibidos para guardar evento: {"titulo":"dd","descripcion":"dd","fecha_inicio":"2024-05-10","fecha_fin":"2024-05-11","color":"#def5e6"}
+INFO - 2024-05-26 06:37:14 --> ID del evento recibido para eliminar: 35
+INFO - 2024-05-26 06:37:27 --> ID del evento recibido para eliminar: 37
+INFO - 2024-05-26 06:46:09 --> Datos recibidos para guardar evento: {"titulo":"s","descripcion":"s","fecha_inicio":"2024-05-08T10:47","fecha_fin":"2024-04-30T10:47","color":"#FF9800"}
+INFO - 2024-05-26 06:46:43 --> Datos recibidos para actualizar evento: {"titulo":"s","descripcion":"ss","fecha_inicio":"2024-06-13T18:03","fecha_fin":"2024-06-14T23:59","color":"#FF9800"}
+INFO - 2024-05-26 06:46:57 --> Datos recibidos para actualizar evento: {"titulo":null,"descripcion":null,"fecha_inicio":null,"fecha_fin":null,"color":null}
+CRITICAL - 2024-05-26 06:46:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: update-event]
+in SYSTEMPATH/Model.php on line 445.
+ 1 SYSTEMPATH/BaseModel.php(1028): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH/Model.php(854): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH/Controllers/CalendarioController.php(66): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CalendarioController->updateEvent()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalendarioController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-26 06:47:12 --> Datos recibidos para actualizar evento: {"titulo":"s","descripcion":"","fecha_inicio":"2024-06-13T20:07","fecha_fin":"2024-06-14T21:59","color":"#FF9800"}
+INFO - 2024-05-26 06:47:17 --> Datos recibidos para actualizar evento: {"titulo":"s","descripcion":"","fecha_inicio":"2024-06-13T20:07","fecha_fin":"2024-06-14T00:01","color":"#FF9800"}
+INFO - 2024-05-26 06:47:30 --> Datos recibidos para actualizar evento: {"titulo":"s","descripcion":"","fecha_inicio":"2024-06-14T21:08","fecha_fin":"2024-06-14T00:01","color":"#FF9800"}
+INFO - 2024-05-26 06:47:50 --> Datos recibidos para actualizar evento: {"titulo":"s","descripcion":"","fecha_inicio":"2024-06-12T14:00","fecha_fin":"2024-06-12T23:59","color":"#FF9800"}
+INFO - 2024-05-26 06:48:13 --> Datos recibidos para actualizar evento: {"titulo":"s","descripcion":"","fecha_inicio":"2024-05-11T00:00","fecha_fin":"2024-05-12T23:59","color":"#def5e6"}
+INFO - 2024-05-26 06:49:11 --> Datos recibidos para actualizar evento: {"titulo":"ssss","descripcion":"","fecha_inicio":"2024-05-12T22:00","fecha_fin":"2024-05-16T22:00","color":"#e0f2f7"}
+INFO - 2024-05-26 06:49:22 --> Datos recibidos para actualizar evento: {"titulo":"dd","descripcion":"","fecha_inicio":"2024-05-09T22:00","fecha_fin":"2024-05-10T22:00","color":"#f2dae0"}
+INFO - 2024-05-26 06:49:28 --> Datos recibidos para actualizar evento: {"titulo":"ss","descripcion":"","fecha_inicio":"2024-05-01T22:00","fecha_fin":"2024-05-02T22:00","color":"#f2dae0"}
+INFO - 2024-05-26 06:49:36 --> Datos recibidos para actualizar evento: {"titulo":"sjdbhaguybdjsakdnsdghinuydhyhtdgnuy","descripcion":"","fecha_inicio":"2024-05-07T22:00","fecha_fin":"2024-05-08T22:00","color":"#FF9800"}
+INFO - 2024-05-26 06:49:47 --> Datos recibidos para actualizar evento: {"titulo":"ssss","descripcion":"","fecha_inicio":"2024-05-27T22:00","fecha_fin":"2024-05-31T22:00","color":"#e0f2f7"}
+INFO - 2024-05-26 06:49:53 --> Datos recibidos para actualizar evento: {"titulo":"ssss","descripcion":"","fecha_inicio":"2024-05-20T22:00","fecha_fin":"2024-05-24T22:00","color":"#000000"}
+INFO - 2024-05-26 06:50:23 --> Datos recibidos para actualizar evento: {"titulo":"ssss","descripcion":"","fecha_inicio":"2024-05-27T20:00","fecha_fin":"2024-05-27T20:00","color":"#e0f2f7"}
+INFO - 2024-05-26 06:50:42 --> Datos recibidos para actualizar evento: {"titulo":"ssss","descripcion":"","fecha_inicio":"2024-05-27T18:00","fecha_fin":"2024-05-27T09:51","color":"#e0f2f7"}
+INFO - 2024-05-26 06:51:10 --> Datos recibidos para actualizar evento: {"titulo":"Reunion","descripcion":"","fecha_inicio":"2024-05-27T16:00","fecha_fin":"2024-05-27T19:51","color":"#e0f2f7"}
+INFO - 2024-05-26 07:10:54 --> Datos recibidos para actualizar evento: {"titulo":"Reunion","descripcion":"SSSS","fecha_inicio":"2024-05-27T14:00","fecha_fin":"2024-05-27T17:51","color":"#e0f2f7"}
+CRITICAL - 2024-05-26 16:33:51 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:55:06 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:56:09 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:56:16 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:56:19 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:56:21 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:56:37 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:57:00 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:57:26 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 16:59:43 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-26 16:59:58 --> Datos recibidos para guardar evento: {"titulo":"ss","descripcion":"","fecha_inicio":"2024-05-09T00:00","fecha_fin":"2024-05-10T23:59","color":"#FF9800"}
+CRITICAL - 2024-05-26 17:27:54 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-26 17:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 17:28:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-26 17:28:02 --> mysqli_sql_exception: Column 'id_usuario' cannot be null in /Users/unaibueno/Desktop/Mond/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Database/MySQLi/Connection.php(308): mysqli->query('INSERT INTO `no...', 0)
+#1 /Users/unaibueno/Desktop/Mond/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 /Users/unaibueno/Desktop/Mond/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 /Users/unaibueno/Desktop/Mond/system/Database/BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 /Users/unaibueno/Desktop/Mond/system/Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Users/unaibueno/Desktop/Mond/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Users/unaibueno/Desktop/Mond/system/Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(43): CodeIgniter\Model->insert(Array)
+#8 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->save()
+#9 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#10 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#15 {main}
+CRITICAL - 2024-05-26 17:28:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id_usuario' cannot be null
+[Method: POST, Route: notas/save]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `notas` (`id_usuario`, `titulo_nota`, `contenido_nota`, `fecha_actualizacion`, `fecha_creacion`) VALUES (:id_usuario:, :titulo_nota:, :contenido_nota:, :fecha_actualizacion:, :fecha_creacion:)', [...], false)
+ 2 SYSTEMPATH/Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH/Controllers/NotasController.php(43): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NotasController->save()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:28:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id_usuario' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `notas` (`id_usuario`, `titulo_nota`, `contenido_nota`, `fecha_actualizacion`, `fecha_creacion`) VALUES (NULL, \'sss\', \'<p>ss</p>\', \'2024-05-26 17:28:02\', \'2024-05-26 17:28:02\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `notas` (`id_usuario`, `titulo_nota`, `contenido_nota`, `fecha_actualizacion`, `fecha_creacion`) VALUES (NULL, \'sss\', \'<p>ss</p>\', \'2024-05-26 17:28:02\', \'2024-05-26 17:28:02\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `notas` (`id_usuario`, `titulo_nota`, `contenido_nota`, `fecha_actualizacion`, `fecha_creacion`) VALUES (:id_usuario:, :titulo_nota:, :contenido_nota:, :fecha_actualizacion:, :fecha_creacion:)', [...], false)
+ 4 SYSTEMPATH/Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH/Controllers/NotasController.php(43): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NotasController->save()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:28:02 --> [Caused by] mysqli_sql_exception: Column 'id_usuario' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('INSERT INTO `notas` (`id_usuario`, `titulo_nota`, `contenido_nota`, `fecha_actualizacion`, `fecha_creacion`) VALUES (NULL, \'sss\', \'<p>ss</p>\', \'2024-05-26 17:28:02\', \'2024-05-26 17:28:02\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `notas` (`id_usuario`, `titulo_nota`, `contenido_nota`, `fecha_actualizacion`, `fecha_creacion`) VALUES (NULL, \'sss\', \'<p>ss</p>\', \'2024-05-26 17:28:02\', \'2024-05-26 17:28:02\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `notas` (`id_usuario`, `titulo_nota`, `contenido_nota`, `fecha_actualizacion`, `fecha_creacion`) VALUES (NULL, \'sss\', \'<p>ss</p>\', \'2024-05-26 17:28:02\', \'2024-05-26 17:28:02\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `notas` (`id_usuario`, `titulo_nota`, `contenido_nota`, `fecha_actualizacion`, `fecha_creacion`) VALUES (:id_usuario:, :titulo_nota:, :contenido_nota:, :fecha_actualizacion:, :fecha_creacion:)', [...], false)
+ 5 SYSTEMPATH/Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/NotasController.php(43): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NotasController->save()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:28:02 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Database\Exceptions\DatabaseException
+Column 'id_usuario' cannot be null
+#0 /Users/unaibueno/Desktop/Mond/system/Database/BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#1 /Users/unaibueno/Desktop/Mond/system/Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#2 /Users/unaibueno/Desktop/Mond/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#3 /Users/unaibueno/Desktop/Mond/system/Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#4 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(43): CodeIgniter\Model->insert(Array)
+#5 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->save()
+#6 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#12 {main}
+[Method: POST, Route: notas/save]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-05-26 17:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 17:29:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-26 17:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 17:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 17:29:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 17:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 17:30:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-26 17:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 17:30:55 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-26 17:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 17:30:59 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:31:01 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:31:01 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:31:02 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-26 17:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 17:31:06 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-26 17:31:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-26 17:31:11 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:31:49 --> ErrorException: Undefined variable $session
+[Method: GET, Route: notas]
+in APPPATH/Controllers/NotasController.php on line 22.
+ 1 APPPATH/Controllers/NotasController.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', '/Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php', 22)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NotasController->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:31:49 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(ErrorException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(ErrorException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Undefined variable $session
+#0 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/Users/unaibuen...', 22)
+#1 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->index()
+#2 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#3 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#5 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#6 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#7 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#8 {main}
+[Method: GET, Route: notas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-26 17:32:04 --> ErrorException: Undefined variable $notes
+[Method: GET, Route: notas]
+in APPPATH/Views/notas/index.php on line 84.
+ 1 APPPATH/Views/notas/index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $notes', '/Users/unaibueno/Desktop/Mond/app/Views/notas/index.php', 84)
+ 2 SYSTEMPATH/View/View.php(234): include('/Users/unaibueno/Desktop/Mond/app/Views/notas/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('notas/index', [], true)
+ 5 APPPATH/Controllers/NotasController.php(23): view('notas/index', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NotasController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:32:04 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(ErrorException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(ErrorException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+【Previous Exception】
+ErrorException
+Undefined variable $notes
+#0 /Users/unaibueno/Desktop/Mond/app/Views/notas/index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', '/Users/unaibuen...', 84)
+#1 /Users/unaibueno/Desktop/Mond/system/View/View.php(234): include('/Users/unaibuen...')
+#2 /Users/unaibueno/Desktop/Mond/system/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/unaibueno/Desktop/Mond/system/Common.php(1171): CodeIgniter\View\View->render('notas/index', Array, true)
+#4 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(23): view('notas/index', Array)
+#5 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->index()
+#6 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#12 {main}
+[Method: GET, Route: notas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-26 17:32:16 --> ErrorException: foreach() argument must be of type array|object, int given
+[Method: GET, Route: notas]
+in APPPATH/Views/notas/index.php on line 84.
+ 1 APPPATH/Views/notas/index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, int given', '/Users/unaibueno/Desktop/Mond/app/Views/notas/index.php', 84)
+ 2 SYSTEMPATH/View/View.php(234): include('/Users/unaibueno/Desktop/Mond/app/Views/notas/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('notas/index', [], true)
+ 5 APPPATH/Controllers/NotasController.php(24): view('notas/index', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NotasController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:32:16 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(ErrorException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(ErrorException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+【Previous Exception】
+ErrorException
+foreach() argument must be of type array|object, int given
+#0 /Users/unaibueno/Desktop/Mond/app/Views/notas/index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', '/Users/unaibuen...', 84)
+#1 /Users/unaibueno/Desktop/Mond/system/View/View.php(234): include('/Users/unaibuen...')
+#2 /Users/unaibueno/Desktop/Mond/system/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/unaibueno/Desktop/Mond/system/Common.php(1171): CodeIgniter\View\View->render('notas/index', Array, true)
+#4 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(24): view('notas/index', Array)
+#5 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->index()
+#6 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#12 {main}
+[Method: GET, Route: notas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-26 17:32:17 --> ErrorException: foreach() argument must be of type array|object, int given
+[Method: GET, Route: notas]
+in APPPATH/Views/notas/index.php on line 84.
+ 1 APPPATH/Views/notas/index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, int given', '/Users/unaibueno/Desktop/Mond/app/Views/notas/index.php', 84)
+ 2 SYSTEMPATH/View/View.php(234): include('/Users/unaibueno/Desktop/Mond/app/Views/notas/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('notas/index', [], true)
+ 5 APPPATH/Controllers/NotasController.php(24): view('notas/index', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NotasController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-26 17:32:17 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(ErrorException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(ErrorException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+【Previous Exception】
+ErrorException
+foreach() argument must be of type array|object, int given
+#0 /Users/unaibueno/Desktop/Mond/app/Views/notas/index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', '/Users/unaibuen...', 84)
+#1 /Users/unaibueno/Desktop/Mond/system/View/View.php(234): include('/Users/unaibuen...')
+#2 /Users/unaibueno/Desktop/Mond/system/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Users/unaibueno/Desktop/Mond/system/Common.php(1171): CodeIgniter\View\View->render('notas/index', Array, true)
+#4 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(24): view('notas/index', Array)
+#5 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->index()
+#6 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#12 {main}
+[Method: GET, Route: notas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-26 17:34:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
