@@ -1,0 +1,82 @@
+ERROR - 2024-05-27 19:53:25 --> Error connecting to the database: mysqli_sql_exception: Network is unreachable in /Users/unaibueno/Desktop/Mond/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('212.227.231.241', 'unaibueno', Object(SensitiveParameterValue), 'mond_db', 3306, '', 0)
+#1 /Users/unaibueno/Desktop/Mond/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/unaibueno/Desktop/Mond/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/unaibueno/Desktop/Mond/system/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/unaibueno/Desktop/Mond/system/Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/unaibueno/Desktop/Mond/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(21): CodeIgniter\BaseModel->findAll()
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->index()
+#8 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#9 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Network is unreachable in /Users/unaibueno/Desktop/Mond/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/unaibueno/Desktop/Mond/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/unaibueno/Desktop/Mond/system/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/unaibueno/Desktop/Mond/system/Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/unaibueno/Desktop/Mond/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(21): CodeIgniter\BaseModel->findAll()
+#6 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->index()
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#8 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#13 {main}
+CRITICAL - 2024-05-27 19:53:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Network is unreachable
+[Method: GET, Route: notas]
+in SYSTEMPATH/Database/BaseConnection.php on line 457.
+ 1 SYSTEMPATH/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `notas`
+WHERE `id_usuario` = :id_usuario:', [...], false)
+ 3 SYSTEMPATH/Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/NotasController.php(21): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NotasController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-27 19:53:25 --> ErrorException: Uncaught Error: Call to undefined method CodeIgniter\Debug\ExceptionHandler::cleanPath() in /Users/unaibueno/Desktop/Mond/app/Views/errors/html/error_exception.php:33
+Stack trace:
+#0 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(266): include()
+#1 /Users/unaibueno/Desktop/Mond/system/Debug/BaseExceptionHandler.php(269): CodeIgniter\Debug\BaseExceptionHandler->CodeIgniter\Debug\{closure}()
+#2 /Users/unaibueno/Desktop/Mond/system/Debug/ExceptionHandler.php(114): CodeIgniter\Debug\BaseExceptionHandler->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500, '/Users/unaibuen...')
+#3 /Users/unaibueno/Desktop/Mond/system/Debug/Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#5 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Database\Exceptions\DatabaseException
+Unable to connect to the database.
+Main connection [MySQLi]: Network is unreachable
+#0 /Users/unaibueno/Desktop/Mond/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Users/unaibueno/Desktop/Mond/system/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 /Users/unaibueno/Desktop/Mond/system/Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#3 /Users/unaibueno/Desktop/Mond/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#4 /Users/unaibueno/Desktop/Mond/app/Controllers/NotasController.php(21): CodeIgniter\BaseModel->findAll()
+#5 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(933): App\Controllers\NotasController->index()
+#6 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotasController))
+#7 /Users/unaibueno/Desktop/Mond/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/unaibueno/Desktop/Mond/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 /Users/unaibueno/Desktop/Mond/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Users/unaibueno/Desktop/Mond/public/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Users/unaibueno/Desktop/Mond/system/Commands/Server/rewrite.php(49): require_once('/Users/unaibuen...')
+#12 {main}
+[Method: GET, Route: notas]
+in APPPATH/Views/errors/html/error_exception.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-05-27 21:01:40 --> Datos recibidos para guardar evento: {"titulo":"jk k","descripcion":"","fecha_inicio":"2024-05-16T00:00","fecha_fin":"2024-05-18T23:59","color":"#FF9800"}

@@ -1,191 +1,270 @@
 <?= $this->extend('master/master') ?>
 <?= $this->section('content') ?>
+<style>
+    .task-container-title {
+        border-radius: 13px;
+        font-weight: bold;
+    }
+
+    .en-proceso {
+        background-color: #fff4ea !important;
+        color: #8c6b4c;
+        margin-bottom: 10px;
+    }
+
+    .revisar {
+        background-color: #fff0f1;
+        color: #a35b5b;
+        margin-bottom: 10px;
+    }
+
+    .pendiente {
+        background-color: #f2f2f2;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .completado {
+        background-color: #eff9f4;
+        color: #63a782;
+        margin-bottom: 10px;
+    }
+
+    .tasks-container {
+        min-height: 20vh;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+
+    .task-item {
+        background-color: #f2f2f2;
+        border-radius: 12px;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: move;
+        position: relative;
+    }
+
+    .task-item h4,
+    .task-item p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .task-item .edit-task,
+    .task-item .delete-task {
+        position: absolute;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    .task-item .edit-task {
+        right: 40px;
+        color: green;
+    }
+
+    .task-item .delete-task {
+        right: 10px;
+        color: red;
+    }
+
+    .selector-vista-task {
+        display: block;
+        width: 100%;
+        border-bottom: 2px solid #f1f1f1;
+        margin-bottom: 8px;
+    }
+
+    .titulo-tareas {
+        padding: 20px;
+        font-family: "sf-bold";
+    }
+</style>
 
 <section style="padding:20px">
-    <div class="row">
-        <div class="col-8" style="height:90vh; border-radius:15px;">
-            <div class="row justify-content-left">
-                <div class="col-12">
-                    <div class="pl-1">
-                        <h2 class="welcome-title pt-3">TAREAS</h2>
-                    </div>
-
-                </div>
-                <div class="col-12 tareas-contenedor">
-                    <div class="col-12 tarea-dashboard" id="tarea-dashboard-1">
-                        <div class="tarea">
-                            <div class="tarea-content">
-                                <label class="checkbox-container">
-                                    <input type="checkbox" />
-                                    <span class="checkmark"></span>
-                                    <span class="text">Launch Beta version</span>
-                                </label>
-                            </div>
-                            <div class="tarea-timer">
-                                <button name="toggle_timer" class="time-btn" id="time-btn-1" data-timer-id="1">
-                                    <div class="sign">
-                                        <i class="sing-icon fa-solid fa-play" id="timer-icon-1"></i>
-                                    </div>
-                                    <div id="count_click-1" class="time-text" style="color:white; font-size:13px;">
-                                        00:00:00
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 tarea-dashboard" id="tarea-dashboard-1">
-                        <div class="tarea">
-                            <div class="tarea-content">
-                                <label class="checkbox-container">
-                                    <input type="checkbox" />
-                                    <span class="checkmark"></span>
-                                    <span class="text">Launch Beta version</span>
-                                </label>
-                            </div>
-                            <div class="tarea-timer">
-                                <button name="toggle_timer" class="time-btn" id="time-btn-1" data-timer-id="1">
-                                    <div class="sign">
-                                        <i class="sing-icon fa-solid fa-play" id="timer-icon-1"></i>
-                                    </div>
-                                    <div id="count_click-1" class="time-text" style="color:white; font-size:13px;">
-                                        00:00:00
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 tarea-dashboard" id="tarea-dashboard-1">
-                        <div class="tarea">
-                            <div class="tarea-content">
-                                <label class="checkbox-container">
-                                    <input type="checkbox" />
-                                    <span class="checkmark"></span>
-                                    <span class="text">Launch Beta version</span>
-                                </label>
-                            </div>
-                            <div class="tarea-timer">
-                                <button name="toggle_timer" class="time-btn" id="time-btn-1" data-timer-id="1">
-                                    <div class="sign">
-                                        <i class="sing-icon fa-solid fa-play" id="timer-icon-1"></i>
-                                    </div>
-                                    <div id="count_click-1" class="time-text" style="color:white; font-size:13px;">
-                                        00:00:00
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 tarea-dashboard" id="tarea-dashboard-1">
-                        <div class="tarea">
-                            <div class="tarea-content">
-                                <label class="checkbox-container">
-                                    <input type="checkbox" />
-                                    <span class="checkmark"></span>
-                                    <span class="text">Launch Beta version</span>
-                                </label>
-                            </div>
-                            <div class="tarea-timer">
-                                <button name="toggle_timer" class="time-btn" id="time-btn-1" data-timer-id="1">
-                                    <div class="sign">
-                                        <i class="sing-icon fa-solid fa-play" id="timer-icon-1"></i>
-                                    </div>
-                                    <div id="count_click-1" class="time-text" style="color:white; font-size:13px;">
-                                        00:00:00
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+    <div class="row titulo-tareas">
+        <div class="selector-vista-task"><i class="fa-solid fa-bars-progress"></i>
+            <span class="ml-2">Tabla general</span>
         </div>
-        <div class="col-md-4" style="height:85vh; border-radius:15px;">
-            <div class="col-12 vistazo-general">
-                <!-- Contenido adicional -->
-            </div>
+    </div>
+    <div class="container overflow-hidden">
+        <div class="row gy-5">
+            <?php foreach (['0' => 'pendiente', '1' => 'en-proceso', '2' => 'revisar', '3' => 'completado'] as $estado => $estadoTexto): ?>
+                <div class="col-3">
+                    <div class="p-3 task-container-title <?= $estadoTexto ?>">
+                        <span class="mr-2"><?= ucfirst(str_replace('-', ' ', $estadoTexto)) ?></span>
+                        <span
+                            class="badge <?= $estadoTexto ?>-badge"><?= count(array_filter($tasks, fn($task) => $task['estado'] == $estado)) ?></span>
+                        <i class="fa-solid fa-plus add-task-btn" data-column="<?= $estadoTexto ?>"></i>
+                    </div>
+                    <div class=" tasks-container" id="<?= $estadoTexto ?>">
+                        <?php foreach ($tasks as $task): ?>
+                            <?php if ($task['estado'] == $estado): ?>
+                                <div class="task-item" data-id="<?= $task['id_tarea'] ?>">
+                                    <h4><?= $task['nombre_tarea'] ?></h4>
+                                    <p><?= $task['descripcion_tarea'] ?></p>
+                                    <i class="fa-solid fa-edit edit-task"></i>
+                                    <i class="fa-solid fa-trash delete-task"></i>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script>
-    var timers = {};
-
-    // Formatea el tiempo en formato 00:00:00
-    function formatTime(seconds) {
-        var hrs = Math.floor(seconds / 3600);
-        var mins = Math.floor((seconds % 3600) / 60);
-        var secs = seconds % 60;
-        return (
-            (hrs < 10 ? "0" : "") + hrs + ":" +
-            (mins < 10 ? "0" : "") + mins + ":" +
-            (secs < 10 ? "0" : "") + secs
-        );
-    }
-
-    // Calcula el tiempo transcurrido desde la hora de inicio
-    function calculateElapsedTime(startTime) {
-        var currentTime = new Date();
-        var elapsedTime = Math.floor((currentTime - new Date(startTime)) / 1000);
-        return elapsedTime;
-    }
-
-    // Actualiza el contador de tiempo
-    function update_timer(timerId) {
-        var startTime = localStorage.getItem("startTime-" + timerId);
-        if (startTime) {
-            var elapsedTime = calculateElapsedTime(startTime);
-            $("#count_click-" + timerId).text(formatTime(elapsedTime));
-        }
-    }
-
-    // Inicia el contador
-    function start_timer(timerId) {
-        if (!localStorage.getItem("startTime-" + timerId)) {
-            var startTime = new Date();
-            localStorage.setItem("startTime-" + timerId, startTime);
-        }
-        if (!timers[timerId]) {
-            timers[timerId] = setInterval(function () { update_timer(timerId); }, 1000);
-        }
-        $("#timer-icon-" + timerId).removeClass("fa-play").addClass("fa-pause");
-        $("#time-btn-" + timerId).addClass("active");
-    }
-
-    // Detiene el contador y limpia la hora de inicio del almacenamiento local
-    function stop_timer(timerId) {
-        clearInterval(timers[timerId]);
-        timers[timerId] = null;
-        localStorage.removeItem("startTime-" + timerId);
-        $("#count_click-" + timerId).text("00:00:00");
-        $("#timer-icon-" + timerId).removeClass("fa-pause").addClass("fa-play");
-        $("#time-btn-" + timerId).removeClass("active");
-    }
-
-    // Alterna el temporizador
-    function toggle_timer(timerId) {
-        if (timers[timerId]) {
-            stop_timer(timerId);
-        } else {
-            start_timer(timerId);
-        }
-    }
-
-    // Añade el evento de click a los botones
     $(document).ready(function () {
-        $("button[name='toggle_timer']").click(function () {
-            var timerId = $(this).data("timer-id");
-            toggle_timer(timerId);
+        // Añadir nueva tarea
+        $(document).on('click', '.add-task-btn', function () {
+            var column = $(this).data("column");
+            var newTask = $('<div class="task-item">' +
+                '<input type="text" placeholder="Nombre de la Tarea">' +
+                '<textarea placeholder="Descripción"></textarea>' +
+                '<i class="fa-solid fa-check save-task"></i>' +
+                '<i class="fa-solid fa-edit edit-task"></i>' +
+                '<i class="fa-solid fa-trash delete-task"></i>' +
+                '</div>');
+            $("#" + column).append(newTask);
+            newTask.find("input").focus();
         });
 
-        // Inicia los temporizadores si ya se han iniciado previamente
-        $("button[name='toggle_timer']").each(function () {
-            var timerId = $(this).data("timer-id");
-            if (localStorage.getItem("startTime-" + timerId)) {
-                start_timer(timerId);
+        // Guardar la tarea
+        $(document).on('click', '.save-task', function () {
+            var taskItem = $(this).closest('.task-item');
+            var taskName = taskItem.find("input").val();
+            var taskDesc = taskItem.find("textarea").val();
+            var column = taskItem.closest('.tasks-container').attr('id');
+            var estado;
+
+            switch (column) {
+                case 'pendiente':
+                    estado = '0';
+                    break;
+                case 'en-proceso':
+                    estado = '1';
+                    break;
+                case 'revisar':
+                    estado = '2';
+                    break;
+                case 'completado':
+                    estado = '3';
+                    break;
+            }
+
+            if (taskName.trim() !== "") {
+                $.ajax({
+                    url: '<?= base_url('tareas/save') ?>',
+                    method: 'POST',
+                    data: {
+                        nombre_tarea: taskName,
+                        descripcion_tarea: taskDesc,
+                        estado: estado
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            console.log(response.message);
+                            taskItem.html('<h4>' + taskName + '</h4>' +
+                                '<p>' + taskDesc + '</p>' +
+                                '<i class="fa-solid fa-edit edit-task"></i>' +
+                                '<i class="fa-solid fa-trash delete-task"></i>');
+                        } else {
+                            console.log(response.message);
+                        }
+                    },
+                    error: function () {
+                        console.log('Error al guardar la tarea');
+                    }
+                });
+            } else {
+                taskItem.remove();
             }
         });
+
+        // Editar la tarea
+        $(document).on('click', '.edit-task', function () {
+            var taskItem = $(this).closest('.task-item');
+            var taskName = taskItem.find("h4").text();
+            var taskDesc = taskItem.find("p:first").text();
+            taskItem.html('<input type="text" value="' + taskName + '">' +
+                '<textarea>' + taskDesc + '</textarea>' +
+                '<i class="fa-solid fa-check save-task"></i>' +
+                '<i class="fa-solid fa-trash delete-task"></i>');
+        });
+
+        // Eliminar la tarea
+        $(document).on('click', '.delete-task', function () {
+            var taskItem = $(this).closest('.task-item');
+            var taskId = taskItem.data('id');
+
+            $.ajax({
+                url: '<?= base_url('tareas/delete') ?>',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    id_tarea: taskId
+                }),
+                success: function (response) {
+                    if (response.success) {
+                        console.log(response.message);
+                        taskItem.remove();
+                    } else {
+                        console.log(response.message);
+                    }
+                },
+                error: function () {
+                    console.log('Error al eliminar la tarea');
+                }
+            });
+        });
+
+        // Hacer las tareas arrastrables y dropeables
+        $(".tasks-container").sortable({
+            connectWith: ".tasks-container",
+            placeholder: "ui-state-highlight",
+            start: function (event, ui) {
+                ui.placeholder.height(ui.item.height());
+            },
+            update: function (event, ui) {
+                var taskId = ui.item.data('id');
+                var newState = ui.item.closest('.tasks-container').attr('id');
+                var estado;
+
+                switch (newState) {
+                    case 'pendiente':
+                        estado = '0';
+                        break;
+                    case 'en-proceso':
+                        estado = '1';
+                        break;
+                    case 'revisar':
+                        estado = '2';
+                        break;
+                    case 'completado':
+                        estado = '3';
+                        break;
+                }
+
+                $.ajax({
+                    url: '<?= base_url('tareas/updateState') ?>',
+                    method: 'POST',
+                    data: {
+                        id_tarea: taskId,
+                        estado: estado
+                    },
+                    success: function (response) {
+                        console.log(response.message);
+                    },
+                    error: function () {
+                        console.log('Error al actualizar el estado');
+                    }
+                });
+            }
+        }).disableSelection();
     });
 </script>
 
