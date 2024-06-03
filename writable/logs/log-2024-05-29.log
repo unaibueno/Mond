@@ -1,0 +1,128 @@
+CRITICAL - 2024-05-29 13:48:36 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-29 13:48:58 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:48:58 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:48:59 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:48:59 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:49:02 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:49:02 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:49:08 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:49:08 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:49:11 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:49:11 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea en proceso","descripcion_tarea":"Tarea en proceso","estado":"1"}
+INFO - 2024-05-29 13:49:23 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Esta es una nueva tarea","descripcion_tarea":"Tarea 4","estado":"2"}
+INFO - 2024-05-29 13:49:23 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Esta es una nueva tarea","descripcion_tarea":"Tarea 4","estado":"2"}
+CRITICAL - 2024-05-29 16:43:28 --> ErrorException: Undefined property: stdClass::$id_tarea
+[Method: POST, Route: tareas/delete]
+in APPPATH/Controllers/TareasController.php on line 65.
+ 1 APPPATH/Controllers/TareasController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_tarea', '/Users/unaibueno/Desktop/Mond/app/Controllers/TareasController.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->delete()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-29 16:43:28 --> ErrorException: Undefined property: stdClass::$id_tarea
+[Method: POST, Route: tareas/delete]
+in APPPATH/Controllers/TareasController.php on line 65.
+ 1 APPPATH/Controllers/TareasController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_tarea', '/Users/unaibueno/Desktop/Mond/app/Controllers/TareasController.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->delete()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-29 16:43:29 --> ErrorException: Undefined property: stdClass::$id_tarea
+[Method: POST, Route: tareas/delete]
+in APPPATH/Controllers/TareasController.php on line 65.
+ 1 APPPATH/Controllers/TareasController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_tarea', '/Users/unaibueno/Desktop/Mond/app/Controllers/TareasController.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->delete()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-29 16:43:29 --> ErrorException: Undefined property: stdClass::$id_tarea
+[Method: POST, Route: tareas/delete]
+in APPPATH/Controllers/TareasController.php on line 65.
+ 1 APPPATH/Controllers/TareasController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_tarea', '/Users/unaibueno/Desktop/Mond/app/Controllers/TareasController.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->delete()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+CRITICAL - 2024-05-29 16:47:21 --> ErrorException: Undefined property: stdClass::$id_tarea
+[Method: POST, Route: tareas/delete]
+in APPPATH/Controllers/TareasController.php on line 65.
+ 1 APPPATH/Controllers/TareasController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_tarea', '/Users/unaibueno/Desktop/Mond/app/Controllers/TareasController.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\TareasController->delete()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareasController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-29 16:47:55 --> Datos recibidos para guardar tarea: {"nombre_tarea":"ss","descripcion_tarea":"ss","estado":"0"}
+INFO - 2024-05-29 16:47:55 --> Datos recibidos para guardar tarea: {"nombre_tarea":"ss","descripcion_tarea":"ss","estado":"0"}
+INFO - 2024-05-29 16:47:55 --> Datos recibidos para guardar tarea: {"nombre_tarea":"ss","descripcion_tarea":"ss","estado":"0"}
+INFO - 2024-05-29 16:47:55 --> Datos recibidos para guardar tarea: {"nombre_tarea":"ss","descripcion_tarea":"ss","estado":"0"}
+INFO - 2024-05-29 16:48:00 --> ID de la tarea recibido para eliminar: 20
+INFO - 2024-05-29 16:48:00 --> ID de la tarea recibido para eliminar: 20
+INFO - 2024-05-29 16:48:00 --> Tarea eliminada correctamente
+INFO - 2024-05-29 17:36:52 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea 1","descripcion_tarea":"esto es una nueva tarea","estado":"0"}
+INFO - 2024-05-29 17:36:52 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea 1","descripcion_tarea":"esto es una nueva tarea","estado":"0"}
+INFO - 2024-05-29 17:36:54 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea 1","descripcion_tarea":"esto es una nueva tarea","estado":"0"}
+INFO - 2024-05-29 17:36:54 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea 1","descripcion_tarea":"esto es una nueva tarea","estado":"0"}
+INFO - 2024-05-29 17:37:14 --> ID de la tarea recibido para eliminar: 19
+INFO - 2024-05-29 17:37:14 --> ID de la tarea recibido para eliminar: 19
+INFO - 2024-05-29 17:37:15 --> Tarea eliminada correctamente
+INFO - 2024-05-29 17:37:15 --> ID de la tarea recibido para eliminar: 21
+INFO - 2024-05-29 17:37:15 --> ID de la tarea recibido para eliminar: 21
+INFO - 2024-05-29 17:37:16 --> Tarea eliminada correctamente
+INFO - 2024-05-29 17:37:16 --> ID de la tarea recibido para eliminar: 22
+INFO - 2024-05-29 17:37:16 --> ID de la tarea recibido para eliminar: 22
+INFO - 2024-05-29 17:37:16 --> Tarea eliminada correctamente
+INFO - 2024-05-29 17:37:18 --> ID de la tarea recibido para eliminar: 12
+INFO - 2024-05-29 17:37:18 --> ID de la tarea recibido para eliminar: 12
+INFO - 2024-05-29 17:37:18 --> Tarea eliminada correctamente
+INFO - 2024-05-29 17:39:23 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea 1","descripcion_tarea":"esto es una nueva tarea","estado":"0"}
+INFO - 2024-05-29 17:39:23 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea 1","descripcion_tarea":"esto es una nueva tarea","estado":"0"}
+INFO - 2024-05-29 18:16:37 --> ID de la tarea recibido para eliminar: 15
+INFO - 2024-05-29 18:16:37 --> ID de la tarea recibido para eliminar: 15
+INFO - 2024-05-29 18:16:38 --> Tarea eliminada correctamente
+INFO - 2024-05-29 18:16:41 --> ID de la tarea recibido para eliminar: 14
+INFO - 2024-05-29 18:16:41 --> ID de la tarea recibido para eliminar: 14
+INFO - 2024-05-29 18:16:41 --> Tarea eliminada correctamente
+INFO - 2024-05-29 18:16:42 --> ID de la tarea recibido para eliminar: 16
+INFO - 2024-05-29 18:16:42 --> ID de la tarea recibido para eliminar: 16
+INFO - 2024-05-29 18:16:42 --> Tarea eliminada correctamente
+INFO - 2024-05-29 18:16:43 --> ID de la tarea recibido para eliminar: 17
+INFO - 2024-05-29 18:16:43 --> ID de la tarea recibido para eliminar: 17
+INFO - 2024-05-29 18:16:43 --> Tarea eliminada correctamente
+INFO - 2024-05-29 18:16:43 --> ID de la tarea recibido para eliminar: 18
+INFO - 2024-05-29 18:16:43 --> ID de la tarea recibido para eliminar: 18
+INFO - 2024-05-29 18:16:44 --> Tarea eliminada correctamente
+INFO - 2024-05-29 18:16:44 --> ID de la tarea recibido para eliminar: 18
+INFO - 2024-05-29 18:16:44 --> ID de la tarea recibido para eliminar: 18
+INFO - 2024-05-29 18:16:44 --> Tarea eliminada correctamente
+INFO - 2024-05-29 18:16:50 --> ID de la tarea recibido para eliminar: 23
+INFO - 2024-05-29 18:16:50 --> ID de la tarea recibido para eliminar: 23
+INFO - 2024-05-29 18:16:51 --> Tarea eliminada correctamente
+INFO - 2024-05-29 18:35:46 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-29 18:35:46 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-29 18:35:47 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-29 18:35:47 --> Datos recibidos para actualizar tarea: {"estado":null}

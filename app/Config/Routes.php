@@ -28,3 +28,13 @@ $routes->post('tareas/save', 'TareasController::save');
 $routes->post('tareas/update', 'TareasController::update');
 $routes->post('tareas/delete', 'TareasController::delete');
 $routes->post('tareas/updateState', 'TareasController::updateState');
+
+
+// Authentication routes
+$routes->get('auth/login', 'AuthController::login', ['as' => 'login']);
+$routes->post('auth/dologin', 'AuthController::do_login');
+$routes->get('auth/logout', 'AuthController::logout');
+
+// Registration routes
+$routes->get('auth/register', 'AuthController::register');
+$routes->post('auth/do_register', 'AuthController::do_register');

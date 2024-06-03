@@ -1,0 +1,131 @@
+CRITICAL - 2024-05-30 16:17:23 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-30 16:18:38 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 16:18:38 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 16:18:39 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 16:18:39 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 16:25:48 --> Datos recibidos para guardar tarea: {"nombre_tarea":"ss","descripcion_tarea":"ss","estado":"2"}
+INFO - 2024-05-30 16:25:48 --> Datos recibidos para guardar tarea: {"nombre_tarea":"ss","descripcion_tarea":"ss","estado":"2"}
+INFO - 2024-05-30 16:26:58 --> Datos recibidos para guardar tarea: {"nombre_tarea":"asafd","descripcion_tarea":"fdadafas","estado":"1"}
+INFO - 2024-05-30 16:26:58 --> Datos recibidos para guardar tarea: {"nombre_tarea":"asafd","descripcion_tarea":"fdadafas","estado":"1"}
+INFO - 2024-05-30 16:37:06 --> Datos recibidos para guardar tarea: {"nombre_tarea":"s","descripcion_tarea":"ss","estado":"2"}
+INFO - 2024-05-30 16:37:06 --> Datos recibidos para guardar tarea: {"nombre_tarea":"s","descripcion_tarea":"ss","estado":"2"}
+INFO - 2024-05-30 16:37:16 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sdads","descripcion_tarea":"dsads","estado":"3"}
+INFO - 2024-05-30 16:37:16 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sdads","descripcion_tarea":"dsads","estado":"3"}
+INFO - 2024-05-30 16:37:25 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 16:37:25 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 16:37:31 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 16:37:31 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 16:37:38 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 16:37:38 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 16:52:06 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 16:52:06 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 16:52:09 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 16:52:09 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 16:52:10 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 16:52:10 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 17:05:33 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 17:05:33 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 17:05:34 --> Datos recibidos para actualizar estado de la tarea: {"estado":null}
+INFO - 2024-05-30 17:05:34 --> Datos recibidos para actualizar tarea: {"estado":null}
+INFO - 2024-05-30 17:05:39 --> Datos recibidos para guardar tarea: {"nombre_tarea":"s","descripcion_tarea":"s","estado":"0"}
+INFO - 2024-05-30 17:05:39 --> Datos recibidos para guardar tarea: {"nombre_tarea":"s","descripcion_tarea":"s","estado":"0"}
+INFO - 2024-05-30 17:05:46 --> ID de la tarea recibido para eliminar: 26
+INFO - 2024-05-30 17:05:46 --> ID de la tarea recibido para eliminar: 26
+INFO - 2024-05-30 17:05:46 --> Tarea eliminada correctamente
+INFO - 2024-05-30 17:05:47 --> ID de la tarea recibido para eliminar: 27
+INFO - 2024-05-30 17:05:47 --> ID de la tarea recibido para eliminar: 27
+INFO - 2024-05-30 17:05:47 --> Tarea eliminada correctamente
+INFO - 2024-05-30 17:05:47 --> ID de la tarea recibido para eliminar: 25
+INFO - 2024-05-30 17:05:47 --> ID de la tarea recibido para eliminar: 25
+INFO - 2024-05-30 17:05:47 --> Tarea eliminada correctamente
+INFO - 2024-05-30 17:05:48 --> ID de la tarea recibido para eliminar: 24
+INFO - 2024-05-30 17:05:48 --> ID de la tarea recibido para eliminar: 24
+INFO - 2024-05-30 17:05:48 --> Tarea eliminada correctamente
+INFO - 2024-05-30 17:05:49 --> ID de la tarea recibido para eliminar: 28
+INFO - 2024-05-30 17:05:49 --> ID de la tarea recibido para eliminar: 28
+INFO - 2024-05-30 17:05:49 --> Tarea eliminada correctamente
+INFO - 2024-05-30 17:07:35 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sd","descripcion_tarea":"ds","estado":"0"}
+INFO - 2024-05-30 17:07:35 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sd","descripcion_tarea":"ds","estado":"0"}
+INFO - 2024-05-30 17:07:38 --> Datos recibidos para guardar tarea: {"nombre_tarea":"dad","descripcion_tarea":"sd","estado":"0"}
+INFO - 2024-05-30 17:07:38 --> Datos recibidos para guardar tarea: {"nombre_tarea":"dad","descripcion_tarea":"sd","estado":"0"}
+INFO - 2024-05-30 18:49:38 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sdasd","descripcion_tarea":"dsds","estado":"0"}
+INFO - 2024-05-30 18:49:38 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sdasd","descripcion_tarea":"dsds","estado":"0"}
+INFO - 2024-05-30 18:49:42 --> Datos recibidos para guardar tarea: {"nombre_tarea":"dssdds","descripcion_tarea":"sdsad","estado":"0"}
+INFO - 2024-05-30 18:49:42 --> Datos recibidos para guardar tarea: {"nombre_tarea":"dssdds","descripcion_tarea":"sdsad","estado":"0"}
+INFO - 2024-05-30 18:49:46 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sdds","descripcion_tarea":"dssad","estado":"0"}
+INFO - 2024-05-30 18:49:46 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sdds","descripcion_tarea":"dssad","estado":"0"}
+INFO - 2024-05-30 18:50:39 --> ID de la tarea recibido para eliminar: 29
+INFO - 2024-05-30 18:50:39 --> ID de la tarea recibido para eliminar: 29
+INFO - 2024-05-30 18:50:40 --> Tarea eliminada correctamente
+INFO - 2024-05-30 18:50:41 --> ID de la tarea recibido para eliminar: 13
+INFO - 2024-05-30 18:50:41 --> ID de la tarea recibido para eliminar: 13
+INFO - 2024-05-30 18:50:41 --> Tarea eliminada correctamente
+INFO - 2024-05-30 18:50:41 --> ID de la tarea recibido para eliminar: 30
+INFO - 2024-05-30 18:50:41 --> ID de la tarea recibido para eliminar: 30
+INFO - 2024-05-30 18:50:41 --> Tarea eliminada correctamente
+INFO - 2024-05-30 18:50:42 --> ID de la tarea recibido para eliminar: 31
+INFO - 2024-05-30 18:50:42 --> ID de la tarea recibido para eliminar: 31
+INFO - 2024-05-30 18:50:42 --> Tarea eliminada correctamente
+INFO - 2024-05-30 18:50:54 --> Datos recibidos para guardar tarea: {"nombre_tarea":"fdd","descripcion_tarea":"fdf","estado":"1"}
+INFO - 2024-05-30 18:50:54 --> Datos recibidos para guardar tarea: {"nombre_tarea":"fdd","descripcion_tarea":"fdf","estado":"1"}
+INFO - 2024-05-30 18:53:06 --> Datos recibidos para actualizar tarea: {"nombre_tarea":null,"descripcion_tarea":"fdf","estado":null}
+INFO - 2024-05-30 18:53:06 --> Datos recibidos para actualizar tarea: {"nombre_tarea":null,"descripcion_tarea":"fdf","estado":null}
+INFO - 2024-05-30 18:53:07 --> Datos recibidos para actualizar tarea: {"nombre_tarea":null,"descripcion_tarea":"fdf","estado":null}
+INFO - 2024-05-30 18:53:07 --> Datos recibidos para actualizar tarea: {"nombre_tarea":null,"descripcion_tarea":"fdf","estado":null}
+INFO - 2024-05-30 18:53:07 --> Datos recibidos para actualizar tarea: {"nombre_tarea":null,"descripcion_tarea":"fdf","estado":null}
+INFO - 2024-05-30 18:53:07 --> Datos recibidos para actualizar tarea: {"nombre_tarea":null,"descripcion_tarea":"fdf","estado":null}
+INFO - 2024-05-30 18:53:16 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sdasdsdsda","descripcion_tarea":"dss\n\ns\ns\ns\n\ns\ns","estado":"0"}
+INFO - 2024-05-30 18:53:16 --> Datos recibidos para guardar tarea: {"nombre_tarea":"sdasdsdsda","descripcion_tarea":"dss\n\ns\ns\ns\n\ns\ns","estado":"0"}
+CRITICAL - 2024-05-30 18:57:38 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "@fortawesome"
+[Method: GET, Route: vendor/@fortawesome/fontawesome-free/css/all.min.css]
+in SYSTEMPATH/Router/Router.php on line 736.
+ 1 SYSTEMPATH/Router/Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('vendor/@fortawesome/fontawesome-free/css/all.min.css')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-05-30 19:01:46 --> Datos recibidos para guardar tarea: {"nombre_tarea":"dsds","descripcion_tarea":"dsds","estado":"1"}
+INFO - 2024-05-30 19:01:46 --> Datos recibidos para guardar tarea: {"nombre_tarea":"dsds","descripcion_tarea":"dsds","estado":"1"}
+INFO - 2024-05-30 19:01:52 --> ID de la tarea recibido para eliminar: 35
+INFO - 2024-05-30 19:01:52 --> ID de la tarea recibido para eliminar: 35
+INFO - 2024-05-30 19:01:52 --> Tarea eliminada correctamente
+INFO - 2024-05-30 19:01:53 --> ID de la tarea recibido para eliminar: 34
+INFO - 2024-05-30 19:01:53 --> ID de la tarea recibido para eliminar: 34
+INFO - 2024-05-30 19:01:53 --> Tarea eliminada correctamente
+INFO - 2024-05-30 19:01:54 --> ID de la tarea recibido para eliminar: 33
+INFO - 2024-05-30 19:01:54 --> ID de la tarea recibido para eliminar: 33
+INFO - 2024-05-30 19:01:54 --> Tarea eliminada correctamente
+INFO - 2024-05-30 19:01:54 --> ID de la tarea recibido para eliminar: 32
+INFO - 2024-05-30 19:01:54 --> ID de la tarea recibido para eliminar: 32
+INFO - 2024-05-30 19:01:55 --> Tarea eliminada correctamente
+INFO - 2024-05-30 19:02:00 --> Datos recibidos para actualizar estado de la tarea: {"estado":"1"}
+INFO - 2024-05-30 19:02:00 --> Datos recibidos para actualizar tarea: {"estado":"1"}
+INFO - 2024-05-30 19:02:00 --> Datos recibidos para actualizar estado de la tarea: {"estado":"1"}
+INFO - 2024-05-30 19:02:00 --> Datos recibidos para actualizar tarea: {"estado":"1"}
+INFO - 2024-05-30 19:02:01 --> Datos recibidos para actualizar estado de la tarea: {"estado":"0"}
+INFO - 2024-05-30 19:02:01 --> Datos recibidos para actualizar tarea: {"estado":"0"}
+INFO - 2024-05-30 19:02:01 --> Datos recibidos para actualizar estado de la tarea: {"estado":"0"}
+INFO - 2024-05-30 19:02:01 --> Datos recibidos para actualizar tarea: {"estado":"0"}
+INFO - 2024-05-30 19:02:11 --> ID de la tarea recibido para eliminar: 11
+INFO - 2024-05-30 19:02:11 --> ID de la tarea recibido para eliminar: 11
+INFO - 2024-05-30 19:02:11 --> Tarea eliminada correctamente
+INFO - 2024-05-30 19:02:12 --> ID de la tarea recibido para eliminar: 36
+INFO - 2024-05-30 19:02:12 --> ID de la tarea recibido para eliminar: 36
+INFO - 2024-05-30 19:02:12 --> Tarea eliminada correctamente
+INFO - 2024-05-30 19:02:31 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea de prueba","descripcion_tarea":"Esta tarea es una prueba","estado":"0"}
+INFO - 2024-05-30 19:02:31 --> Datos recibidos para guardar tarea: {"nombre_tarea":"Tarea de prueba","descripcion_tarea":"Esta tarea es una prueba","estado":"0"}
+INFO - 2024-05-30 19:23:32 --> Datos recibidos para guardar tarea: {"nombre_tarea":"xadsa","descripcion_tarea":"sd","estado":"1"}
+INFO - 2024-05-30 19:23:32 --> Datos recibidos para guardar tarea: {"nombre_tarea":"xadsa","descripcion_tarea":"sd","estado":"1"}

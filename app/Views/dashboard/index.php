@@ -10,6 +10,7 @@
           <div class=" pl-1">
             <h2 class="welcome-title pt-3 ">ALOHA, UNAI!</h2>
             <p>¿Preparado para una sesión de organización?</p>
+            <?php echo session()->get('username'); ?>
           </div>
         </div>
 

@@ -10,10 +10,18 @@ class NotasController extends BaseController
     public function __construct()
     {
         $this->NotasModel = new NotasModel();
+        $session = session();
+        if (!$session->has('isLoggedIn')) {
+            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
+        }
     }
 
     public function index()
     {
+        $session = session();
+        if (!$session->has('isLoggedIn')) {
+            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
+        }
         $defaultUserId = 1;
 
         $data['title'] = "HAZ RTVE | Notas";

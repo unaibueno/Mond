@@ -12,10 +12,18 @@ class TareasController extends BaseController
     public function __construct()
     {
         $this->TareasModel = new TareasModel();
+        $session = session();
+        if (!$session->has('isLoggedIn')) {
+            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
+        }
     }
 
     public function index()
     {
+        $session = session();
+        if (!$session->has('isLoggedIn')) {
+            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
+        }
         $data['title'] = "HAZ RTVE | Tareas";
         $data['page_title'] = "Tareas";
         $data['tasks'] = $this->TareasModel->findAll();

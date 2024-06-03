@@ -8,11 +8,19 @@ class ProyectosController extends BaseController
     public function __construct()
     {
         $this->ProyectosModel = model('ProyectosModel');
+        $session = session();
+        if (!$session->has('isLoggedIn')) {
+            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
+        }
     }
 
 
     public function index()
     {
+        $session = session();
+        if (!$session->has('isLoggedIn')) {
+            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
+        }
         // $session = session();
         // if (!$session->has('usuario_id')) {
         //     return redirect()->to('/');

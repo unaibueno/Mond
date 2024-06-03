@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="assets/css/adminlte.css">
+  <link rel="stylesheet" href="assets/css/general.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -75,6 +75,9 @@
                   <ion-icon name="finger-print-outline"></ion-icon> Privacidad
                 </span>
               </li>
+              <form action="<?= site_url('auth/logout') ?>" method="get">
+                <button type="submit">Salir</button>
+              </form>
             </ul>
 
           </div>
@@ -164,18 +167,6 @@
                   echo 'active'; ?> ">
                 <ion-icon name="file-tray-stacked-outline"></ion-icon>
                 <p>Notas</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('proyectos') ?>" class="nav-link">
-                <ion-icon name="bug"></ion-icon>
-                <p>Proyectos</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('equipos') ?>" class="nav-link">
-                <ion-icon name="people-circle"></ion-icon>
-                <p>Equipos</p>
               </a>
             </li>
             <li class="nav-item">

@@ -11,10 +11,18 @@ class CalendarioController extends BaseController
     public function __construct()
     {
         $this->calendarioModel = new CalendarioModel();
+        $session = session();
+        if (!$session->has('isLoggedIn')) {
+            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
+        }
     }
 
     public function index()
     {
+        $session = session();
+        if (!$session->has('isLoggedIn')) {
+            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
+        }
         $data['title'] = "HAZ RTVE | Calendario";
         $data['page_title'] = "Calendario";
 
