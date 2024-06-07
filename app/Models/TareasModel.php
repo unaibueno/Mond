@@ -27,7 +27,7 @@ class TareasModel extends Model
 
         try {
             if ($this->insert($data)) {
-                return ['success' => true];
+                return ['success' => true, 'id' => $this->insertID()]; // Devolver el ID de la tarea recién creada
             } else {
                 $errors = $this->errors();
                 log_message('error', 'Error al guardar la tarea: ' . json_encode($errors));
@@ -38,6 +38,7 @@ class TareasModel extends Model
             return ['success' => false, 'error' => 'Failed to save task'];
         }
     }
+
 
     public function updateTask($id, $data)
     {

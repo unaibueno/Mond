@@ -30,7 +30,6 @@ class TareasController extends BaseController
 
         return view('tareas/index', $data);
     }
-
     public function save()
     {
         $data = [
@@ -43,11 +42,13 @@ class TareasController extends BaseController
 
         $result = $this->TareasModel->saveTask($data);
         if ($result['success']) {
-            return $this->response->setJSON(['success' => true, 'message' => 'Tarea guardada exitosamente']);
+            return $this->response->setJSON(['success' => true, 'message' => 'Tarea guardada exitosamente', 'id_tarea' => $result['id']]);
         } else {
             return $this->response->setJSON(['success' => false, 'message' => 'Error al guardar la tarea', 'errors' => $result['error']]);
         }
     }
+
+
 
     public function update()
     {

@@ -1,6 +1,112 @@
 <?= $this->extend('master/master') ?>
 <?= $this->section('content') ?>
 
+<style>
+    .fc .fc-toolbar {
+        background-color: red;
+        color: #fff;
+    }
+
+    .fc-button {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+        color: #fff;
+    }
+
+    .fc-button:hover {
+        background-color: #45A049;
+        border-color: #45A049;
+    }
+
+    .fc-daygrid-day {
+        background-color: white;
+        border: solid 1px #e9e9e9 !important;
+    }
+
+    .fc-daygrid-day:hover {
+        background-color: #e0e0e0;
+    }
+
+    .fc .fc-daygrid-bg-harness {
+        background-color: #e0e0e0 !important;
+    }
+
+    .fc-event {
+        background-color: #222;
+        border-color: #222;
+        color: #222;
+    }
+
+    #calendar {
+        height: 80vh;
+    }
+
+    /* Asegura que solo haya borde en las horas principales */
+    .fc-timegrid-slot.fc-timegrid-slot-label {
+        position: relative;
+    }
+
+    .fc-timegrid-slot.fc-timegrid-slot-label .fc-timegrid-slot-label-frame::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100vw;
+        /* Usa el ancho de la ventana */
+        border-top: 1px solid #ddd;
+        z-index: 1;
+    }
+
+    /* Elimina el borde de los intervalos menores */
+    .fc-timegrid-slot.fc-timegrid-slot-minor {
+        border-top: none !important;
+    }
+
+    /* Eliminar cualquier margen o padding que limite el ancho */
+    .fc-timegrid-slot.fc-timegrid-slot-label,
+    .fc-timegrid-slot.fc-timegrid-slot-label .fc-timegrid-slot-label-frame::after {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* Borde sólido en el centro de cada hora que ocupa todo el ancho del calendario */
+    .fc-timegrid-slot.fc-timegrid-slot-label {
+        position: relative;
+    }
+
+    .fc-timegrid-slot.fc-timegrid-slot-label .fc-timegrid-slot-label-frame::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100vw;
+        border-top: 1px solid #ddd;
+        z-index: 1;
+    }
+
+    /* Coloca las horas por encima de las líneas */
+    .fc-timegrid-slot.fc-timegrid-slot-label .fc-timegrid-slot-label-cushion {
+        position: relative;
+        z-index: 2;
+        background-color: #f2f2f2;
+    }
+
+    /* Elimina el borde de los intervalos menores */
+    .fc-timegrid-slot.fc-timegrid-slot-minor {
+        border-top: none !important;
+    }
+
+    /* Eliminar cualquier margen o padding que limite el ancho */
+    .fc-timegrid-slot.fc-timegrid-slot-label,
+    .fc-timegrid-slot.fc-timegrid-slot-label .fc-timegrid-slot-label-frame::after {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+
+
 <section class="content-order">
     <!-- Modal Structure -->
     <div id="taskModal" class="modal">
@@ -75,51 +181,59 @@
             selectMirror: true,
             dayMaxEvents: true,
             allDaySlot: false,
-            events: [],
+            events: '<?= base_url('get-events') ?>',
             slotLabelFormat: {
                 hour: '2-digit',
                 minute: '2-digit',
                 omitZeroMinute: false,
                 meridiem: false,
                 hour12: false
+            },
+            select: function (info) {
+                var title = prompt('Event Title:');
+                if (title) {
+                    var eventData = {
+                        title: title,
+                        start: info.startStr,
+                        end: info.endStr
+                    };
+                    calendar.addEvent(eventData);
+                    saveEvent(eventData);
+                }
+                calendar.unselect();
             }
         });
 
         calendar.render();
 
+        function saveEvent(event) {
+            fetch('<?= base_url('save-event') ?>', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(event)
+            }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Event saved successfully');
+                    } else {
+                        alert('Failed to save event');
+                    }
+                });
+        }
+
         var prevDayButton = document.getElementById('prevDay');
         var nextDayButton = document.getElementById('nextDay');
         var selectedDateSpan = document.getElementById('selectedDate');
-        var weekdays = document.querySelectorAll('.weekday');
 
         function formatDateString(date) {
-            var today = new Date();
-            var yesterday = new Date(today);
-            yesterday.setDate(today.getDate() - 1);
-            var tomorrow = new Date(today);
-            tomorrow.setDate(today.getDate() + 1);
-
-            if (date.toDateString() === today.toDateString()) {
-                return "hoy";
-            } else if (date.toDateString() === yesterday.toDateString()) {
-                return "ayer";
-            } else if (date.toDateString() === tomorrow.toDateString()) {
-                return "mañana";
-            } else {
-                var options = { weekday: 'short', day: 'numeric', month: 'long' };
-                return date.toLocaleDateString('es-ES', options);
-            }
+            var options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return date.toLocaleDateString('es-ES', options);
         }
 
         function updateSelectedDate(date) {
             selectedDateSpan.textContent = formatDateString(date);
-        }
-
-        function setCalendarDate(dayOffset) {
-            var currentDate = calendar.getDate();
-            currentDate.setDate(currentDate.getDate() - currentDate.getDay() + dayOffset);
-            calendar.gotoDate(currentDate);
-            updateSelectedDate(currentDate);
         }
 
         prevDayButton.addEventListener('click', function () {
@@ -132,17 +246,6 @@
             updateSelectedDate(calendar.getDate());
         });
 
-        weekdays.forEach(function (weekday) {
-            weekday.addEventListener('click', function () {
-                weekdays.forEach(function (day) {
-                    day.classList.remove('selected');
-                });
-                weekday.classList.add('selected');
-                var dayOffset = parseInt(weekday.getAttribute('data-day'));
-                setCalendarDate(dayOffset);
-            });
-        });
-
         updateSelectedDate(calendar.getDate());
 
         // Pomodoro logic
@@ -151,169 +254,68 @@
         let shortBreakButton = document.getElementById("shortbreak");
         let longBreakButton = document.getElementById("longbreak");
         let startBtn = document.getElementById("btn-start");
-        let reset = document.getElementById("btn-reset");
-        let pause = document.getElementById("btn-pause");
+        let resetBtn = document.getElementById("btn-reset");
+        let pauseBtn = document.getElementById("btn-pause");
         let time = document.getElementById("time");
         let fullscreenBtn = document.getElementById("btn-fullscreen");
         let pomodoroContainer = document.getElementById("pomodoroContainer");
         let taskModal = document.getElementById("taskModal");
         let taskForm = document.getElementById("taskForm");
         let sound = new Audio('assets/audio/crono.mp3'); // Reemplaza con la ruta a tu archivo de sonido
-        let worker;
-        let active = "focus";
-        let count = 59;
-        let paused = true;
-        let minCount = 24;
-        time.textContent = `${minCount + 1}:00`;
+        let timerInterval;
+        let isPaused = true;
+        let remainingTime = { minutes: 25, seconds: 0 };
 
-        const appendZero = (value) => {
-            value = value < 10 ? `0${value}` : value;
-            return value;
+        const updateTimeDisplay = () => {
+            time.textContent = `${String(remainingTime.minutes).padStart(2, '0')}:${String(remainingTime.seconds).padStart(2, '0')}`;
         };
 
-        const resetTime = () => {
-            pauseTimer();
-            switch (active) {
-                case "long":
-                    minCount = 14;
-                    break;
-                case "short":
-                    minCount = 4;
-                    break;
-                default:
-                    minCount = 24;
-                    break;
+        const startTimer = () => {
+            if (isPaused) {
+                isPaused = false;
+                startBtn.classList.add("hide");
+                pauseBtn.classList.remove("hide");
+                resetBtn.classList.remove("hide");
+                timerInterval = setInterval(() => {
+                    if (remainingTime.seconds === 0) {
+                        if (remainingTime.minutes === 0) {
+                            clearInterval(timerInterval);
+                            sound.play();
+                            openTaskModal();
+                        } else {
+                            remainingTime.minutes--;
+                            remainingTime.seconds = 59;
+                        }
+                    } else {
+                        remainingTime.seconds--;
+                    }
+                    updateTimeDisplay();
+                }, 1000);
             }
-            count = 59;
-            time.textContent = `${minCount + 1}:00`;
-        };
-
-        const removeFocus = () => {
-            buttons.forEach((btn) => {
-                btn.classList.remove("btn-focus");
-            });
         };
 
         const pauseTimer = () => {
-            paused = true;
-            if (worker) {
-                worker.terminate();
-                worker = null;
-            }
+            isPaused = true;
+            clearInterval(timerInterval);
             startBtn.classList.remove("hide");
-            pause.classList.remove("show");
-            reset.classList.remove("show");
+            pauseBtn.classList.add("hide");
+        };
+
+        const resetTimer = () => {
+            pauseTimer();
+            remainingTime = { minutes: 25, seconds: 0 };
+            updateTimeDisplay();
+            resetBtn.classList.add("hide");
         };
 
         const openTaskModal = () => {
             taskModal.style.display = "block";
         };
 
-        const addPomodoroToCalendar = (title, start, end) => {
-            calendar.addEvent({
-                title: title,
-                start: start,
-                end: end
-            });
-        };
-
-        focusButton.addEventListener("click", () => {
-            removeFocus();
-            focusButton.classList.add("btn-focus");
-            pauseTimer();
-            minCount = 24;
-            count = 59;
-            time.textContent = `${minCount + 1}:00`;
-        });
-
-        shortBreakButton.addEventListener("click", () => {
-            active = "short";
-            removeFocus();
-            shortBreakButton.classList.add("btn-focus");
-            pauseTimer();
-            minCount = 4;
-            count = 59;
-            time.textContent = `${appendZero(minCount + 1)}:00`;
-        });
-
-        longBreakButton.addEventListener("click", () => {
-            active = "long";
-            removeFocus();
-            longBreakButton.classList.add("btn-focus");
-            pauseTimer();
-            minCount = 14;
-            count = 59;
-            time.textContent = `${minCount + 1}:00`;
-        });
-
-        pause.addEventListener("click", pauseTimer);
-
-        startBtn.addEventListener("click", () => {
-            let pomodoroStart = new Date();
-            reset.classList.add("show");
-            pause.classList.add("show");
-            startBtn.classList.add("hide");
-            startBtn.classList.remove("show");
-
-            if (paused) {
-                paused = false;
-                time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
-
-                if (typeof (Worker) !== "undefined") {
-                    if (typeof (worker) === "undefined") {
-                        worker = new Worker("assets/js/pomodoro/pomodoro_worker.js");
-                    }
-
-                    worker.postMessage({
-                        action: 'start',
-                        minCount: minCount,
-                        count: count
-                    });
-
-                    worker.onmessage = function (event) {
-                        const data = event.data;
-                        if (data.action === 'tick') {
-                            minCount = data.minCount;
-                            count = data.count;
-                            time.textContent = `${appendZero(minCount)}:${appendZero(count)}`;
-                        } else if (data.action === 'complete') {
-                            clearInterval(set);
-                            openTaskModal();
-                            let pomodoroEnd = new Date();
-                            addPomodoroToCalendar("Pomodoro", pomodoroStart, pomodoroEnd);
-                            sound.play(); // Reproducir sonido al completar
-                        }
-                    };
-                } else {
-                    alert("Sorry! No Web Worker support.");
-                }
-            }
-        });
-
-        fullscreenBtn.addEventListener("click", () => {
-            if (!document.fullscreenElement) {
-                pomodoroContainer.requestFullscreen().then(() => {
-                    pomodoroContainer.classList.add('fullscreen-active');
-                }).catch((err) => {
-                    console.log(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-                });
-            } else {
-                document.exitFullscreen().then(() => {
-                    pomodoroContainer.classList.remove('fullscreen-active');
-                });
-            }
-        });
-
-        document.addEventListener('fullscreenchange', () => {
-            if (!document.fullscreenElement) {
-                pomodoroContainer.classList.remove('fullscreen-active');
-            }
-        });
-
         taskForm.addEventListener('submit', function (e) {
             e.preventDefault();
             var taskTitle = document.getElementById('taskTitle').value;
-            var taskStart = new Date().toISOString().split('T')[0];
+            var taskStart = new Date().toISOString();
             calendar.addEvent({
                 title: taskTitle,
                 start: taskStart,
@@ -331,6 +333,46 @@
                 taskModal.style.display = "none";
             }
         });
+
+        focusButton.addEventListener("click", () => {
+            resetTimer();
+            remainingTime = { minutes: 25, seconds: 0 };
+            updateTimeDisplay();
+        });
+
+        shortBreakButton.addEventListener("click", () => {
+            resetTimer();
+            remainingTime = { minutes: 5, seconds: 0 };
+            updateTimeDisplay();
+        });
+
+        longBreakButton.addEventListener("click", () => {
+            resetTimer();
+            remainingTime = { minutes: 15, seconds: 0 };
+            updateTimeDisplay();
+        });
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                pomodoroContainer.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                pomodoroContainer.classList.remove('fullscreen-active');
+            }
+        });
+
+        updateTimeDisplay();
     });
 </script>
 

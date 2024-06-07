@@ -2,7 +2,6 @@
 <?= $this->section('content') ?>
 <link type="text/css" href="assets/css/tareas.css" rel="stylesheet">
 
-
 <section style="padding:20px">
     <div class="row titulo-tareas">
         <button class="btn btn-active mr-2" id="btn-general">General</button>
@@ -13,8 +12,8 @@
             <div class="p-3 task-container-title">
                 <div class="tasks-container">
                     <?php foreach ($tasks as $task): ?>
-                        <div class="task-item row" data-id="<?= $task['id_tarea'] ?>">
-                            <div class=" col-12 d-flex justify-content-between align-items-center task-header"
+                        <div class="general-task task-item row" data-id="<?= $task['id_tarea'] ?>">
+                            <div class="col-12 d-flex justify-content-between align-items-center task-header"
                                 data-toggle="task-details-<?= $task['id_tarea'] ?>">
                                 <div class="checkbox-wrapper">
                                     <input type="checkbox" id="cbx-<?= $task['id_tarea'] ?>" class="inp-cbx"
@@ -25,39 +24,37 @@
                                     </label>
                                 </div>
 
-
                                 <div class=" tarea-timer">
                                     <button name="count_click" class="time-btn" data-task-id="<?= $task['id_tarea'] ?>">
                                         <div class="sign">
                                             <i class="sing-icon fa-solid fa-play play-icon"></i>
                                             <i class="sing-icon fa-solid fa-pause stop-icon" style="display: none;"></i>
                                         </div>
-                                        <div class=" time-display" id="time-display-<?= $task['id_tarea'] ?>">00:00:00
+                                        <div class="time-display" id="time-display-<?= $task['id_tarea'] ?>">00:00:00
                                         </div>
                                     </button>
                                 </div>
                             </div>
                             <div class="col-12 task-details closed" id="task-details-<?= $task['id_tarea'] ?>">
-                                <i class="fa-solid fa-trash delete-task"></i>
-                                <textarea class="form-control" rows="3"
-                                    data-field="descripcion_tarea"><?= $task['descripcion_tarea'] ?></textarea>
                                 <textarea class="form-control" rows="2"
                                     data-field="notas_tarea"><?= $task['notas_tarea'] ?></textarea>
-                                <button class="btn btn-success save-task"
-                                    data-id="<?= $task['id_tarea'] ?>">Guardar</button>
+                                <button class="task-accion-btn  save-task" data-id="<?= $task['id_tarea'] ?>">Guardar
+                                </button>
+                                <button class="task-accion-btn delete-task" data-id="<?= $task['id_tarea'] ?>">Borrar
+                                </button>
+
                             </div>
                         </div>
                     <?php endforeach; ?>
-
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container overflow-hidden">
-        <div class="row gy-5" id="vista-estado" style="display:none;">
+    <div class="vista-estado">
+        <div class="row gy-4" id="vista-estado" style="display:none;">
             <?php foreach (['0' => 'pendiente', '1' => 'en-proceso', '2' => 'revisar', '3' => 'completado'] as $estado => $estadoTexto): ?>
-                <div class="col-3">
+                <div class="task-size">
                     <div class="p-3 task-container-title <?= $estadoTexto ?>">
                         <div class="row">
                             <div class="col-10">
@@ -76,7 +73,6 @@
                                 <div class="task-item" data-id="<?= $task['id_tarea'] ?>">
                                     <h4 contenteditable="true"><?= $task['nombre_tarea'] ?></h4>
                                     <p contenteditable="true"><?= $task['descripcion_tarea'] ?></p>
-                                    <i class="fa-solid fa-trash delete-task"></i>
                                 </div>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -97,7 +93,8 @@
             <option value="" selected>Selecciona el estado</option>
             <option value="0">Pendiente</option>
             <option value="1">En proceso</option>
-            <option value="2">Revisar
+            <option value="2">Revisar</option>
+            <option value="3">Completado</option>
         </select>
         <button id="save-new-task">Guardar</button>
     </div>
@@ -105,7 +102,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script>$(document).ready(function () {
+<script>
+    $(document).ready(function () {
         $('#vista-general').show();
         $('#vista-estado').hide();
 
@@ -122,32 +120,31 @@
             $('#btn-estado').addClass('btn-active');
             $('#btn-general').removeClass('btn-active');
         });
-    });
-
-    $(document).ready(function () {
-        $('#vista-general').show();
-        $('#vista-estado').hide();
-
-        $('#btn-general').on('click', function () {
-            $('#vista-estado').hide();
-            $('#vista-general').show();
-        });
-
-        $('#btn-estado').on('click', function () {
-            $('#vista-general').hide();
-            $('#vista-estado').show();
-        });
 
         // Mostrar detalles de la tarea
-        $(document).on('click', '.edit-task', function () {
-            var toggleId = $(this).data('toggle');
-            $('#' + toggleId).toggle();
+        $(document).on('click', '.task-header', function (e) {
+            if (!$(e.target).closest('.time-btn').length) {
+                var toggleId = $(this).data('toggle');
+                var details = $('#' + toggleId);
+                if (details.hasClass('closed')) {
+                    details.removeClass('closed').addClass('open');
+                } else {
+                    details.removeClass('open').addClass('closed');
+                }
+            }
         });
 
-        // Mostrar el formulario de nueva tarea
+        // Mostrar el formulario de nueva tarea desde el botón fijo
         $('.add-task-fixed-btn').on('click', function () {
             $('.task-form').toggle();
             $(this).toggleClass('rotate');
+        });
+
+        // Mostrar el formulario de nueva tarea desde los botones "+" en la vista de estado
+        $(document).on('click', '.add-task-btn', function () {
+            $('.task-form').show();
+            $('.add-task-fixed-btn').addClass('rotate');
+            $('#new-task-status').val($(this).data('column'));
         });
 
         // Guardar la nueva tarea
@@ -167,9 +164,10 @@
                     },
                     success: function (response) {
                         if (response.success) {
-                            console.log(response.message);
-                            var newTask = $('<div class="task-item row" data-id="' + response.id_tarea + '">' +
-                                '<div class="col-8">' +
+                            // Crear la tarea para la vista general con el temporizador
+                            var newTaskGeneral = $(
+                                '<div class="task-item row" data-id="' + response.id_tarea + '">' +
+                                '<div class="col-12 d-flex justify-content-between align-items-center task-header" data-toggle="task-details-' + response.id_tarea + '">' +
                                 '<div class="checkbox-wrapper">' +
                                 '<input type="checkbox" id="cbx-' + response.id_tarea + '" class="inp-cbx" />' +
                                 '<label for="cbx-' + response.id_tarea + '" class="cbx">' +
@@ -177,21 +175,57 @@
                                 '<span>' + taskName + '</span>' +
                                 '</label>' +
                                 '</div>' +
+                                '<div class=" tarea-timer">' +
+                                '<button name="count_click" class="time-btn" data-task-id="' + response.id_tarea + '">' +
+                                '<div class="sign">' +
+                                '<i class="sing-icon fa-solid fa-play play-icon"></i>' +
+                                '<i class="sing-icon fa-solid fa-pause stop-icon" style="display: none;"></i>' +
                                 '</div>' +
-                                '<i class="fa-solid fa-chevron-down edit-task" data-toggle="task-details-' + response.id_tarea + '"></i>' +
+                                '<div class="time-display" id="time-display-' + response.id_tarea + '">00:00:00' +
+                                '</div>' +
+                                '</button>' +
+                                '</div>' +
+                                '</div>' +
+                                '<div class="col-12 task-details closed" id="task-details-' + response.id_tarea + '">' +
                                 '<i class="fa-solid fa-trash delete-task"></i>' +
-                                '<div class="col-12 task-details" id="task-details-' + response.id_tarea + '">' +
                                 '<textarea class="form-control" rows="3" data-field="descripcion_tarea">' + taskNotes + '</textarea>' +
                                 '<textarea class="form-control" rows="2" data-field="notas_tarea"></textarea>' +
-                                '<button class="btn btn-success save-task" data-id="' + response.id_tarea + '">Guardar</button>' +
+                                '<button class="btn task-accion-btn save-task" data-id="' + response.id_tarea + '">Guardar</button>' +
                                 '</div>' +
-                                '</div>');
+                                '</div>'
+                            );
 
-                            $("#" + taskStatus).append(newTask);
+                            // Crear la tarea para la vista de estado sin temporizador
+                            var newTaskEstado = $(
+                                '<div class="task-item" data-id="' + response.id_tarea + '">' +
+                                '<h4 contenteditable="true">' + taskName + '</h4>' +
+                                '<p contenteditable="true">' + taskNotes + '</p>' +
+                                '<i class="fa-solid fa-trash delete-task"></i>' +
+                                '</div>'
+                            );
+
+                            // Append the new task to the general task list
+                            $('#vista-general .tasks-container').append(newTaskGeneral);
+
+                            // Append the new task to the correct task list in vista de estado
+                            var statusColumn;
+                            if (taskStatus == '0') {
+                                statusColumn = '#pendiente';
+                            } else if (taskStatus == '1') {
+                                statusColumn = '#en-proceso';
+                            } else if (taskStatus == '2') {
+                                statusColumn = '#revisar';
+                            } else if (taskStatus == '3') {
+                                statusColumn = '#completado';
+                            }
+
+                            $(statusColumn).append(newTaskEstado);
+
+                            // Reset the form
                             $('.task-form').hide();
                             $('#new-task-title').val('');
                             $('#new-task-notes').val('');
-                            $('#new-task-status').val('0');
+                            $('#new-task-status').val('');
                         } else {
                             console.log(response.message);
                         }
@@ -212,12 +246,9 @@
                 url: '<?= base_url('tareas/delete') ?>',
                 method: 'POST',
                 contentType: 'application/json',
-                data: JSON.stringify({
-                    id_tarea: taskId
-                }),
+                data: JSON.stringify({ id_tarea: taskId }),
                 success: function (response) {
                     if (response.success) {
-                        console.log(response.message);
                         taskItem.remove();
                     } else {
                         console.log(response.message);
@@ -301,83 +332,6 @@
             }
         }).disableSelection();
     });
-
-    var timers = {};
-
-    function formatTime(seconds) {
-        var hrs = Math.floor(seconds / 3600);
-        var mins = Math.floor((seconds % 3600) / 60);
-        var secs = seconds % 60;
-        return (hrs < 10 ? "0" : "") + hrs + ":" + (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
-    }
-
-    function calculateElapsedTime(startTime) {
-        var currentTime = new Date();
-        var elapsedTime = Math.floor((currentTime - new Date(startTime)) / 1000);
-        return elapsedTime;
-    }
-
-    function update_timer(taskId) {
-        var startTime = localStorage.getItem("startTime-" + taskId);
-        if (startTime) {
-            var elapsedTime = calculateElapsedTime(startTime);
-            $("#time-display-" + taskId).text(formatTime(elapsedTime));
-        }
-    }
-
-    function start_timer(taskId) {
-        if (!localStorage.getItem("startTime-" + taskId)) {
-            var startTime = new Date();
-            localStorage.setItem("startTime-" + taskId, startTime);
-        }
-
-        if (!timers[taskId]) {
-            timers[taskId] = setInterval(function () { update_timer(taskId); }, 1000);
-            $("[data-task-id='" + taskId + "']").addClass("running");
-        }
-    }
-
-    function stop_timer(taskId) {
-        clearInterval(timers[taskId]);
-        timers[taskId] = null;
-        localStorage.removeItem("startTime-" + taskId);
-        $("#time-display-" + taskId).text("00:00:00");
-        $("[data-task-id='" + taskId + "']").removeClass("running");
-    }
-
-    $(document).ready(function () {
-        $(".time-btn").click(function () {
-            var taskId = $(this).data("task-id");
-            if (!timers[taskId]) {
-                start_timer(taskId);
-            } else {
-                stop_timer(taskId);
-            }
-        });
-
-        $(".time-btn").each(function () {
-            var taskId = $(this).data("task-id");
-            if (localStorage.getItem("startTime-" + taskId)) {
-                start_timer(taskId);
-            }
-        });
-    });
 </script>
 
-<script>
-    // Mostrar detalles de la tarea con animación sin hover
-    $(document).on('click', '.task-header', function (e) {
-        if (!$(e.target).closest('.time-btn').length) {
-            var toggleId = $(this).data('toggle');
-            var details = $('#' + toggleId);
-            if (details.hasClass('closed')) {
-                details.removeClass('closed').addClass('open');
-            } else {
-                details.removeClass('open').addClass('closed');
-            }
-        }
-    });
-
-
-</script>
 <?= $this->endSection() ?>

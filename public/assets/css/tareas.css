@@ -1,3 +1,4 @@
+/* Otros estilos */
 .task-container-title {
   border-radius: 13px;
   font-weight: bold;
@@ -62,11 +63,32 @@
 
 .tasks-container {
   min-height: 20vh;
-  border-radius: 20px;
+  max-height: 30vh;
   margin-bottom: 10px;
-  overflow-y: auto;
-  max-height: 70vh;
+  overflow: auto;
+  max-height: 65vh;
   padding: 0 8px;
+}
+
+.tasks-container::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.tasks-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tasks-container::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.tasks-container::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+.tasks-container::-webkit-scrollbar-thumb:active {
+  background: transparent;
 }
 
 .add-task-fixed-btn.rotate {
@@ -82,11 +104,12 @@
 .task-item {
   background-color: #f2f2f2;
   border-radius: 30px;
-  padding: 10px;
+  padding: 14px;
   margin-bottom: 15px;
-  cursor: move;
+  cursor: pointer;
   position: relative;
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.2);
+  overflow: auto;
 }
 
 .task-item h4,
@@ -95,8 +118,7 @@
   padding: 0;
 }
 
-.task-item .edit-task,
-.task-item .delete-task {
+.task-item .edit-task {
   position: absolute;
   top: 10px;
   cursor: pointer;
@@ -114,7 +136,17 @@
   display: none;
   margin-top: 10px;
 }
+.task-details textarea {
+  border: 2px solid #ccc;
+  border-radius: 18px;
+  max-height: 30vh;
+}
 
+.task-details textarea:focus {
+  border: 2px solid #ccc;
+  border-radius: 18px;
+  max-height: 30vh;
+}
 .selector-vista-task {
   display: block;
   width: 100%;
@@ -184,12 +216,14 @@
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 15px;
+  max-height: 30vh;
 }
 
 .task-form input:focus,
 .task-form textarea:focus,
 .task-form select:focus {
   outline: none;
+  max-height: 30vh;
 }
 
 .time-btn {
@@ -264,10 +298,6 @@
   transform: translate(2px, 2px);
 }
 
-.time-btn:active {
-  transform: translate(2px, 2px);
-}
-
 @keyframes slideDown {
   from {
     height: 0;
@@ -314,7 +344,18 @@
 #vista-estado .tasks-container .task-item {
   border-radius: 15px !important;
 }
+.task-size {
+  width: 25%;
+  padding: 0 10px;
+}
 
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 100%;
+}
 .checkbox-wrapper {
   display: flex;
   align-items: center;
@@ -400,4 +441,22 @@
 
 .ml-3 {
   margin-left: 15px;
+}
+
+.task-accion-btn {
+  background-color: #222;
+  padding: 8px 13px;
+  border-radius: 20px;
+  margin-top: 13px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.task-accion-btn:focus {
+  outline: none;
+  border: none;
+}
+
+.task-accion-btn:hover {
+  color: white;
 }

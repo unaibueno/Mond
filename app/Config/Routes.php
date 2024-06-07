@@ -38,3 +38,8 @@ $routes->get('auth/logout', 'AuthController::logout');
 // Registration routes
 $routes->get('auth/register', 'AuthController::register');
 $routes->post('auth/do_register', 'AuthController::do_register');
+
+
+$routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/tasks', 'Dashboard::getTasks');
+$routes->get('/notes', 'Dashboard::getNotes');

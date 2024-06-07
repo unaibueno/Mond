@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 
 use App\Models\UserModel;
@@ -14,7 +13,6 @@ class AuthController extends Controller
 
     public function login()
     {
-        // Mostrar la vista de login
         return view('auth/login');
     }
 
@@ -27,19 +25,51 @@ class AuthController extends Controller
     {
         $model = new UserModel();
 
-        // Validar el formulario
         $rules = [
-            'nombre' => 'required|min_length[3]|max_length[255]',
-            'apellidos' => 'required|min_length[3]|max_length[255]',
-            'email' => 'required|valid_email|is_unique[usuarios.email]',
+            'nombre' => [
+                'label' => 'Nombre',
+                'rules' => 'required|min_length[3]|max_length[255]',
+                'errors' => [
+                    'required' => 'El {field} es obligatorio.',
+                    'min_length' => 'El {field} debe tener al menos {param} caracteres.',
+                    'max_length' => 'El {field} no puede tener más de {param} caracteres.',
+                ],
+            ],
+            'apellidos' => [
+                'label' => 'apellido',
+                'rules' => 'required|min_length[3]|max_length[255]',
+                'errors' => [
+                    'required' => 'Los {field} son obligatorios.',
+                    'min_length' => 'Los {field} debe tener al menos {param} caracteres.',
+                    'max_length' => 'Los {field} no puede tener más de {param} caracteres.',
+                ],
+            ],
+            'email' => [
+                'label' => 'Correo electrónico',
+                'rules' => 'required|valid_email|is_unique[usuarios.email]',
+                'errors' => [
+                    'required' => 'El {field} es obligatorio.',
+                    'valid_email' => 'El {field} debe ser una dirección de correo electrónico válida.',
+                    'is_unique' => 'El {field} ya está registrado.',
+                ],
+            ],
             'contraseña' => [
-                'label' => 'Contraseña',
+                'label' => 'contraseña',
                 'rules' => 'required|min_length[8]|max_length[255]|regex_match[/^(?=.*[A-Z])(?=.*\d).+$/]',
                 'errors' => [
-                    'regex_match' => 'La {field} debe tener al menos una letra mayúscula y un número.'
-                ]
+                    'required' => 'La {field} es obligatoria.',
+                    'min_length' => 'La {field} debe tener al menos {param} caracteres.',
+                    'max_length' => 'La {field} no puede tener más de {param} caracteres.',
+                    'regex_match' => 'La {field} debe tener al menos una letra mayúscula y un número.',
+                ],
             ],
-            'confirmar_contraseña' => 'matches[contraseña]'
+            'confirmar_contraseña' => [
+                'label' => 'Confirmar contraseña',
+                'rules' => 'matches[contraseña]',
+                'errors' => [
+                    'matches' => 'Las contraseñas no coinciden.',
+                ],
+            ],
         ];
 
         if ($this->validate($rules)) {
@@ -47,7 +77,7 @@ class AuthController extends Controller
                 'nombre' => $this->request->getPost('nombre'),
                 'apellidos' => $this->request->getPost('apellidos'),
                 'email' => $this->request->getPost('email'),
-                'contraseña' => $this->request->getPost('contraseña')
+                'contraseña' => password_hash($this->request->getPost('contraseña'), PASSWORD_DEFAULT)
             ];
 
             $model->save($data);
@@ -59,13 +89,11 @@ class AuthController extends Controller
             ]);
         }
     }
-
     public function do_login()
     {
         $session = session();
         $model = new UserModel();
 
-        // Validar el formulario
         $rules = [
             'email' => 'required|valid_email',
             'password' => 'required|min_length[8]|max_length[255]'
@@ -75,11 +103,9 @@ class AuthController extends Controller
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
 
-            // Verificar usuario
             $user = $model->where('email', $email)->first();
 
             if ($user && password_verify($password, $user['contraseña'])) {
-                // Usuario autenticado, establecer sesión
                 $session->set([
                     'id_usuario' => $user['id_usuario'],
                     'nombre' => $user['nombre'],
@@ -87,7 +113,6 @@ class AuthController extends Controller
                 ]);
                 return redirect()->to('/dashboard');
             } else {
-                // Credenciales inválidas
                 $session->setFlashdata('error', 'Correo electrónico o contraseña inválidos.');
                 return redirect()->to('/auth/login');
             }

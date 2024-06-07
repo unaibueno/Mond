@@ -1,6 +1,7 @@
 <?= $this->extend('master/master') ?>
 <?= $this->section('content') ?>
 <style>
+    /* Tus estilos existentes aquí... */
     .fc .fc-toolbar {
         background-color: #4C50;
         color: #fff;
@@ -123,11 +124,7 @@
 
     #eventForm {
         background-color: #fff;
-        padding: 14px;
-        border-radius: 15px;
-        border: 1px solid #E0E0E0;
-        margin-bottom: 15px;
-        height: 57vh;
+        padding: 5px;
     }
 
     .buscador {
@@ -142,7 +139,7 @@
         background-color: #f2f2f2;
         border: none;
         outline: none;
-        font-size: 15px;
+        font-size: 12px;
         padding: 5px;
         border-radius: 5px;
         color: black;
@@ -151,12 +148,12 @@
     }
 
     .apoyo-calendario {
-        background-color: #f2f2f2;
+        background-color: #fff;
         height: 92vh;
-        border-radius: 0 30px 30px 0;
+        border-radius: 0 35px 35px 0;
         width: 24%;
         padding: 12px;
-        border-left: 1px solid #f2f2f2;
+        border-left: 2px solid #f2f2f2;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -167,13 +164,9 @@
         text-align: center;
         width: 100%;
         overflow: auto;
-        padding: 17px;
         padding-bottom: 0px;
-        border: 1px solid #E0E0E0;
-        background-color: #fff;
-        border-radius: 20px;
-        margin-top: auto;
-        /* Asegura que el mini calendario se quede en la parte inferior */
+        border-radius: 25px;
+        padding: 12px;
     }
 
     .minicalendario ol {
@@ -182,7 +175,8 @@
         grid-template-columns: repeat(7, 1fr);
         margin: 0;
         padding: 0;
-        margin-bottom: 25px;
+        margin-bottom: 150px;
+        line-height: 2.2;
     }
 
     .minicalendario li {
@@ -204,7 +198,6 @@
         font-weight: bold;
         font-size: 12px;
         margin-bottom: 2px;
-        padding: 4px;
         text-align: center;
         text-transform: capitalize;
     }
@@ -214,13 +207,11 @@
         font-weight: bold;
         border-radius: 20%;
         color: white;
-        padding: 4px;
-
+        padding: 3px 7px;
     }
 
     .minicalendario .other-month {
         color: #aaa;
-        /* Color gris para los días de los meses adyacentes */
     }
 
     .minicalendario .prevMonthButton,
@@ -266,7 +257,8 @@
 
     .form-group input {
         flex: 1;
-        margin: 0 5px;
+        margin-right: 5px;
+        width: 30%;
     }
 
     select {
@@ -287,57 +279,75 @@
     .fc-h-event .fc-event-main {
         color: black;
     }
-</style>
 
+    .button-group {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .button-group #deleteButton {
+        margin-top: 0;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
+
+    .button-group #deleteButton:hover {
+        margin-top: 0;
+        background-color: #222;
+        color: white;
+
+    }
+
+    .button-group #deleteButton:focus {
+        margin-top: 0;
+        background-color: #222;
+        color: white;
+        outline: none;
+    }
+</style>
 
 <section>
     <div class="row">
-        <div class="col-9" id="calendar"></div>
+        <div class="col-12 col-md-9" id="calendar"></div>
         <div class="apoyo-calendario" id="eventSidebar">
             <form id="eventForm">
                 <label class="label-form-event" for="title">Evento</label>
                 <div class="form-group">
                     <input type="text" placeholder="Título" id="title" name="title" required>
                     <select id="color" name="color">
-                        <option value="#FF9800" style="background-color: #FF9800;">N</option>
-                        <option value="#def5e6" style="background-color: #def5e6;">V</option>
-                        <option value="#f2dae0" style="background-color: #f2dae0;">R</option>
-                        <option value="#e0f2f7" style="background-color: #e0f2f7;">A</option>
-                        <option value="#9E9E9E" style="background-color: #9E9E9E;">G</option>
-                        <option value="#000000" style="background-color: #000000;">N</option>
-                        <option value="#f4e8d2" style="background-color: #f4e8d2;">A</option>
+                        <option value="#f1e6cb">Amarillo</option>
+                        <option value="#fbe4e3">Rojo</option>
+                        <option value="#eeeaf9">Morado</option>
+                        <option value="#e9f4f5">Verde</option>
+                        <option value="#eef3fe">Azul</option>
                     </select>
                 </div>
-
-
                 <label class="label-form-event mt-3" for="description">Notas</label>
                 <input type="textarea" id="description" placeholder="Escribe aquí tus notas" name="description">
-
-                <label class="label-form-event mt-3" for="start">Fecha y Hora de Inicio</label>
+                <label class="label-form-event mt-3" for="start">Fecha de inicio</label>
                 <div class="form-group">
                     <input type="date" id="startDate" name="startDate" required>
                     <input type="time" id="startTime" name="startTime" required>
                 </div>
-
-                <label class="label-form-event mt-3" for="end">Fecha y Hora de Fin</label>
+                <label class="label-form-event mt-3" for="end">Fecha de fin</label>
                 <div class="form-group">
                     <input type="date" id="endDate" name="endDate" required>
                     <input type="time" id="endTime" name="endTime" required>
                 </div>
-
-
-
-                <button type="submit" class="guardar mt-2">Guardar</button>
-                <button type="button" id="deleteButton" style="display:none;">Borrar</button>
+                <div class="button-group">
+                    <button type="button" id="deleteButton" style="display:none;">Borrar</button>
+                </div>
             </form>
-
             <div id="eventDetails" style="display:none;">
                 <p><strong>Title:</strong> <span id="eventTitle"></span></p>
                 <p><strong>Description:</strong> <span id="eventDescription"></span></p>
                 <p><strong>Start:</strong> <span id="eventStart"></span></p>
                 <p><strong>End:</strong> <span id="eventEnd"></span></p>
             </div>
-            <div class="minicalendario">
+            <div class="minicalendario mt-2">
                 <div id="minicalendarioderecha"></div>
             </div>
         </div>
@@ -355,7 +365,6 @@
     const weekDays = [...Array(7).keys()].map(dayIndex => intlForWeeks.format(new Date(2021, 2, dayIndex + 1)));
 
     const getCalendarHtml = (year, month) => {
-        const monthName = intlForMonths.format(new Date(year, month));
         const daysOfMonth = new Date(year, month + 1, 0).getDate();
         const startsOn = new Date(year, month, 1).getDay();
         const prevMonthDays = new Date(year, month, 0).getDate();
@@ -383,7 +392,7 @@
 
         return `
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h2>${monthName} ${year}</h2>
+                <h2></h2>
                 <div>
                     <button class="prevMonthButton"><i class="fa-solid fa-angle-up"></i></button>
                     <button class="nextMonthButton"><i class="fa-solid fa-angle-down"></i></button>
@@ -473,31 +482,7 @@
                 if (!confirm("¿Estás seguro de este cambio?")) {
                     info.revert();
                 } else {
-                    fetch('<?= base_url('update-event') ?>', {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            id: info.event.id,
-                            title: info.event.title,
-                            description: info.event.extendedProps.description,
-                            start: info.event.start.toISOString(),
-                            end: info.event.end ? info.event.end.toISOString() : null,
-                            color: info.event.backgroundColor
-                        }),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }).then(response => response.json())
-                        .then(data => {
-                            if (data.success) {
-                                alert('Evento actualizado con éxito');
-                            } else {
-                                alert('Error al actualizar el evento: ' + JSON.stringify(data.error));
-                                info.revert();
-                            }
-                        }).catch(error => {
-                            console.error('Error:', error);
-                            info.revert();
-                        });
+                    saveEvent(info.event);
                 }
             },
             eventRender: function (info) {
@@ -521,33 +506,42 @@
         });
         calendar.render();
 
-        document.getElementById('eventForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            var eventId = this.dataset.eventId;
+        const saveEvent = (event) => {
+            var formData = new FormData();
             var start = document.getElementById('startDate').value + 'T' + document.getElementById('startTime').value;
             var end = document.getElementById('endDate').value + 'T' + document.getElementById('endTime').value;
+
+            formData.append('title', document.getElementById('title').value);
+            formData.append('description', document.getElementById('description').value);
             formData.append('start', start);
             formData.append('end', end);
             formData.append('color', document.getElementById('color').value);
 
-            if (eventId) {
-                formData.append('id', eventId);
+            if (event) {
+                formData.append('id', event.id);
             }
 
-            fetch(eventId ? '<?= base_url('update-event') ?>' : '<?= base_url('save-event') ?>', {
+            fetch(event ? '<?= base_url('update-event') ?>' : '<?= base_url('save-event') ?>', {
                 method: 'POST',
                 body: formData
             }).then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('Evento ' + (eventId ? 'actualizado' : 'guardado') + ' con éxito');
+                        // alert('Evento ' + (event ? 'actualizado' : 'guardado') + ' con éxito');
                         calendar.refetchEvents();
                     } else {
-                        alert('Error al ' + (eventId ? 'actualizar' : 'guardar') + ' el evento: ' + JSON.stringify(data.error));
+                        alert('Error al ' + (event ? 'actualizar' : 'guardar') + ' el evento: ' + JSON.stringify(data.error));
                     }
                 }).catch(error => console.error('Error:', error));
-        });
+        };
+
+        document.getElementById('title').addEventListener('input', () => saveEvent());
+        document.getElementById('description').addEventListener('input', () => saveEvent());
+        document.getElementById('startDate').addEventListener('change', () => saveEvent());
+        document.getElementById('startTime').addEventListener('change', () => saveEvent());
+        document.getElementById('endDate').addEventListener('change', () => saveEvent());
+        document.getElementById('endTime').addEventListener('change', () => saveEvent());
+        document.getElementById('color').addEventListener('change', () => saveEvent());
 
         document.getElementById('deleteButton').addEventListener('click', function () {
             var eventId = this.dataset.eventId;
@@ -562,7 +556,7 @@
                 }).then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                            alert('Evento eliminado con éxito');
+                            //  alert('Evento eliminado con éxito');
                             calendar.refetchEvents();
                         } else {
                             alert('Error al eliminar el evento: ' + JSON.stringify(data.error));
@@ -571,8 +565,6 @@
             }
         });
     });
-
-
 </script>
 
 <?= $this->endSection() ?>

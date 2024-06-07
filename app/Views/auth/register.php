@@ -46,6 +46,7 @@
         .login-title {
             font-family: 'graphik-black';
             font-size: 35px;
+            margin-left: -5px;
         }
 
         .descripcion-title {
@@ -334,31 +335,59 @@
             font-family: 'sf-bold';
             font-size: 15px;
         }
+
+        span {
+            margin-left: 10px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div class="container" id="container">
         <div class="overlay-container">
-            <div class="overlay">
-            </div>
+            <div class="overlay"></div>
         </div>
         <div class="form-container sign-in-container">
-            <form action="<?= site_url('auth/do_register') ?>" method="post">
+            <form action="<?= site_url('auth/do_register') ?>" method="post" autocomplete="off">
+                <?= csrf_field() ?>
                 <span class="login-title">¡Bienvenido, aventurero!</span>
-                <span class="descripcion-title">
-                    Descubre la app definitiva para gestionar tus tareas.
-                </span>
+                <span class="descripcion-title">Descubre la app definitiva para gestionar tus tareas.</span>
+                <?php if (isset($validation) && $validation->hasError('nombre')): ?>
+                    <span class="mensaje-error"><?= $validation->getError('nombre') ?></span>
+                <?php endif; ?>
+                <?php if (isset($validation) && $validation->hasError('apellidos')): ?>
+                    <span class="mensaje-error"><?= $validation->getError('apellidos') ?></span>
+                <?php endif; ?>
                 <div class="input-group">
+
                     <input type="text" name="nombre" placeholder="Escribe tu nombre" value="<?= set_value('nombre') ?>"
-                        class="half-width">
-                    <input type="text" name="apellidos" placeholder="Escribe tus apellidos"
-                        value="<?= set_value('apellidos') ?>" class="half-width">
+                        class="half-width" autocomplete="given-name">
+
+
+                    <input type="text" name="apellidos" placeholder="Escribe tus apellidos" class="half-width"
+                        value="<?= set_value('apellidos') ?>" autocomplete="family-name">
+
                 </div>
+                <?php if (isset($validation) && $validation->hasError('email')): ?>
+                    <span class="mensaje-error"><?= $validation->getError('email') ?></span>
+                <?php endif; ?>
+                <input type="email" name="email" placeholder="Escribe tu email" value="<?= set_value('email') ?>"
+                    autocomplete="email">
+
+                <?php if (isset($validation) && $validation->hasError('contraseña')): ?>
+                    <span class="mensaje-error"><?= $validation->getError('contraseña') ?></span>
+                <?php endif; ?>
+                <input type="password" placeholder="Escribe tu contraseña" name="contraseña" autocomplete="new-password"
+                    id="password">
 
 
-                <input type="email" name="email" placeholder="Escribe tu email" value="<?= set_value('email') ?>">
-                <input type="password" placeholder="Escribe tu contraseña" name="contraseña">
+                <?php if (isset($validation) && $validation->hasError('confirmar_contraseña')): ?>
+                    <span class="mensaje-error"><?= $validation->getError('confirmar_contraseña') ?></span>
+                <?php endif; ?>
+                <input type="password" name="confirmar_contraseña" placeholder="Confirmar contraseña"
+                    autocomplete="new-password">
+
                 <button type="submit" value="Register">Continuar</button>
                 <a class="redireccion-auth" href="<?= site_url('auth/login') ?>">Tengo una cuenta, <span
                         class="strong">Iniciar sesión</span></a>
