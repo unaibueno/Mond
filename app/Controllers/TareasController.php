@@ -30,6 +30,7 @@ class TareasController extends BaseController
 
         return view('tareas/index', $data);
     }
+
     public function save()
     {
         $data = [
@@ -47,8 +48,6 @@ class TareasController extends BaseController
             return $this->response->setJSON(['success' => false, 'message' => 'Error al guardar la tarea', 'errors' => $result['error']]);
         }
     }
-
-
 
     public function update()
     {
@@ -97,4 +96,38 @@ class TareasController extends BaseController
             return $this->response->setJSON(['success' => false, 'message' => 'Error al actualizar el estado', 'errors' => $result['error']]);
         }
     }
+
+    public function getTaskProgress()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->query('SELECT estado, COUNT(id_tarea) as count FROM tareas GROUP BY estado');
+        $results = $query->getResult();
+
+        $data = [
+            'en_progreso' => 0,
+            'revisadas' => 0,
+            'completadas' => 0,
+            'en_revision' => 0
+        ];
+
+        foreach ($results as $row) {
+            switch ($row->estado) {
+                case 0:
+                    $data['en_progreso'] = $row->count;
+                    break;
+                case 1:
+                    $data['revisadas'] = $row->count;
+                    break;
+                case 2:
+                    $data['completadas'] = $row->count;
+                    break;
+                case 3:
+                    $data['en_revision'] = $row->count;
+                    break;
+            }
+        }
+
+        return $this->response->setJSON($data);
+    }
+
 }

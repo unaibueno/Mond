@@ -28,6 +28,8 @@ $routes->post('tareas/save', 'TareasController::save');
 $routes->post('tareas/update', 'TareasController::update');
 $routes->post('tareas/delete', 'TareasController::delete');
 $routes->post('tareas/updateState', 'TareasController::updateState');
+$routes->get('tareas/progreso', 'TareasController::getTaskProgress');
+
 
 
 // Authentication routes
