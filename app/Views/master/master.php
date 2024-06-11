@@ -151,10 +151,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('temporizador') ?>" class="nav-link <?php if ($page_title == 'Temporizadores')
+              <a href="<?= base_url('pomodoro') ?>" class="nav-link <?php if ($page_title == 'Pomodoro')
                   echo 'active'; ?> ">
                 <ion-icon name="stopwatch"></ion-icon>
-                <p>Temporizador</p>
+                <p>Pomodoro</p>
               </a>
             </li>
             <li class="nav-item">

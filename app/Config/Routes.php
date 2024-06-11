@@ -6,15 +6,18 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/dashboard', 'Dashboard::index');
-$routes->get('/', 'LandingController::index');
+$routes->get('/', function () {
+    return view('landing-page');
+});
+
 $routes->get('tareas', 'TareasController::index');
-$routes->get('temporizador', 'TemporizadoresController::index');
+$routes->get('pomodoro', 'PomodoroController::index');
 $routes->get('calendario', 'CalendarioController::index');
 $routes->get('notas', 'NotasController::index');
 
 $routes->post('save-event', 'CalendarioController::saveEvent');
-$routes->post('update-event', 'CalendarioController::updateEvent'); // Ruta para actualizar eventos
-$routes->post('delete-event', 'CalendarioController::deleteEvent'); // Ruta para eliminar eventos
+$routes->post('update-event', 'CalendarioController::updateEvent');
+$routes->post('delete-event', 'CalendarioController::deleteEvent');
 $routes->get('get-events', 'CalendarioController::getEvents');
 
 
@@ -29,7 +32,6 @@ $routes->post('tareas/update', 'TareasController::update');
 $routes->post('tareas/delete', 'TareasController::delete');
 $routes->post('tareas/updateState', 'TareasController::updateState');
 $routes->get('tareas/progreso', 'TareasController::getTaskProgress');
-
 
 
 // Authentication routes
