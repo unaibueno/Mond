@@ -26,7 +26,7 @@ if (version_compare(PHP_VERSION, $minPhpVersion, '<')) {
  *---------------------------------------------------------------
  */
 // Define the application environment
-define('CI_ENVIRONMENT', 'development');
+define('CI_ENVIRONMENT', 'production');
 
 // Path to the front controller (this file)
 define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
