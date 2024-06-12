@@ -16,6 +16,9 @@
   <script src='assets/js/calendario/index.global.js'></script>
   <script src='assets/js/ckeditor.js'></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">

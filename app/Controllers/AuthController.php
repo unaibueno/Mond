@@ -95,8 +95,23 @@ class AuthController extends Controller
         $model = new UserModel();
 
         $rules = [
-            'email' => 'required|valid_email',
-            'password' => 'required|min_length[8]|max_length[255]'
+            'email' => [
+                'label' => 'Correo electrónico',
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => 'El {field} es obligatorio.',
+                    'valid_email' => 'El {field} debe ser una dirección de correo electrónico válida.'
+                ],
+            ],
+            'password' => [
+                'label' => 'contraseña',
+                'rules' => 'required|min_length[8]|max_length[255]',
+                'errors' => [
+                    'required' => 'La {field} es obligatoria.',
+                    'min_length' => 'La {field} debe tener al menos {param} caracteres.',
+                    'max_length' => 'La {field} no puede tener más de {param} caracteres.',
+                ],
+            ]
         ];
 
         if ($this->validate($rules)) {

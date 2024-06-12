@@ -1,565 +1,18 @@
 <?= $this->extend('master/master') ?>
 <?= $this->section('content') ?>
-
-<style>
-  /* Incluye tus estilos aquí */
-  .content-wrapper {
-    background-color: #f2f2f2;
-  }
-
-  .flex-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: normal;
-    align-items: normal;
-    align-content: normal;
-    height: 92vh;
-    padding: 15px;
-    gap: 10px;
-  }
-
-  .flex-items:nth-child(1) {
-    display: block;
-    flex-grow: 2.4;
-    flex-shrink: 0;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-  }
-
-  .flex-items:nth-child(2) {
-    display: block;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 10px;
-  }
-
-  .dashboard-row-1 {
-    height: 52%;
-    border-radius: 20px;
-    display: flex;
-    gap: 10px;
-  }
-
-  .dashboard-row-2 {
-    height: 46%;
-    border-radius: 20px;
-    display: flex;
-    gap: 10px;
-  }
-
-  .today-tasks {
-    background-color: #fff;
-    border-radius: 20px;
-    flex: 1.3;
-    padding: 10px;
-  }
-
-  .today-tasks .tarea-contenedor {
-    padding: 10px;
-    overflow-y: auto;
-    max-height: 190px;
-    /* Ajusta este valor según sea necesario */
-  }
-
-
-  .dashboard-calendar {
-    border-radius: 20px;
-    background-color: #fff;
-    flex: 1;
-    padding: 10px;
-  }
-
-  .progreso-tasks {
-    border-radius: 20px;
-    background-color: #fff;
-    flex: 1;
-    padding: 10px;
-  }
-
-  .titulo {
-    border-radius: 15px;
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    padding: 6px;
-    min-width: 300px;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-  }
-
-  .titulo-icono {
-    background-color: #f2f2f2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    color: #222;
-    width: 38px;
-    height: 38px;
-
-  }
-
-  .titulo-icono ion-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translate(25%, -12%);
-    font-size: 19px;
-  }
-
-  .titulo-icono i {
-    font-size: 16px;
-  }
-
-  .titulo-texto {
-    flex-grow: 10;
-    padding: 7px 15px;
-    font-family: 'sf-bold';
-    letter-spacing: 0.4px;
-  }
-
-  .boton-titulo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    padding: 5px;
-    color: #222;
-    width: auto;
-    height: 35px;
-    border: solid 2px #f2f2f2;
-  }
-
-  .boton-titulo span {
-    margin-right: 5px;
-    padding: 0 10px;
-  }
-
-  .boton-titulo i {
-    margin-left: 3px;
-  }
-
-  .titulo-texto h3 {
-    font-size: 20px;
-    margin: 0;
-    font-weight: bold;
-    color: #333;
-  }
-
-  .titulo-texto span {
-    font-size: 18px;
-  }
-
-  .tarea-contenedor {
-    padding: 10px;
-    overflow-y: auto;
-    max-height: 400px;
-  }
-
-  .contenedor-scroll {
-    overflow: auto;
-  }
-
-  .notas-contenedor ul {
-    padding: 10px;
-    overflow: auto;
-    list-style: none;
-  }
-
-  .notas li {
-    background-color: #f2f2f2;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    padding: 7px 20px;
-    color: #222;
-  }
-
-  .notas a {
-    color: #222;
-  }
-
-  .tarea-contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    height: 100%;
-  }
-
-  .tarea {
-    flex: 1 1 calc(50% - 10px);
-    background-color: #f2f2f2;
-    margin-bottom: 10px;
-    border-radius: 25px;
-    padding: 15px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .tarea strong {
-    font-size: 16px;
-    color: #333;
-  }
-
-  .tarea .descripcion {
-    font-size: 14px;
-    color: #777;
-    margin: 10px 0;
-  }
-
-  .tarea .estado {
-    font-size: 12px;
-    color: #999;
-  }
-
-  .tarea .progress {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    background-color: transparent;
-  }
-
-  .tarea .progress-bar {
-    flex: 1;
-    height: 14px;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .tarea .progress-bar span {
-    display: block;
-    height: 100%;
-    border-radius: 8px;
-    background-color: #11af85;
-  }
-
-  .tarea .progress-text {
-    font-size: 12px;
-    color: #777;
-    margin-left: 10px;
-  }
-
-  a,
-  a:hover {
-    color: #222;
-  }
-
-  /* Ajusta la altura de las filas */
-  .fc-daygrid-day {
-    height: 35px;
-    /* Ajusta el valor según sea necesario */
-  }
-
-  /* Ajusta la altura del calendario */
-  .fc-direction-ltr {
-    height: 82%;
-  }
-
-  /* Centra los números en las celdas y los redondea */
-  .fc-daygrid-day-frame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  .fc-daygrid-day-number {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    /* Ajusta el valor según sea necesario */
-    height: 32px;
-    /* Asegúrate de que el alto sea igual al ancho para hacer un círculo perfecto */
-    border-radius: 50%;
-    /* Hace que el contenedor sea redondeado */
-    background-color: #f0f0f0;
-    /* Color de fondo, ajusta según tu preferencia */
-    text-align: center;
-    /* Centra el texto horizontalmente */
-    font-size: 12px;
-    /* Tamaño de la fuente ajustado */
-    line-height: 24px;
-    /* Alineación vertical del texto */
-  }
-
-  .fc-day-other .fc-daygrid-day-number {
-    background-image: linear-gradient(135deg, #d1d1d1 25%, transparent 25%, transparent 50%, #d1d1d1 50%, #d1d1d1 75%, transparent 75%, transparent);
-    background-size: 10px 10px;
-    background-color: transparent;
-    color: transparent;
-  }
-
-  .fc-day-other .fc-daygrid-day-number:hover {
-    background-image: linear-gradient(135deg, #d1d1d1 25%, transparent 25%, transparent 50%, #d1d1d1 50%, #d1d1d1 75%, transparent 75%, transparent);
-    background-size: 10px 10px;
-    background-color: transparent;
-    color: transparent;
-  }
-
-  .fc-day-today {
-    background-color: transparent !important;
-  }
-
-  .fc-day-today .fc-daygrid-day-number {
-    background-color: #ff5f43 !important;
-    color: white;
-  }
-
-  .fc-has-events .fc-daygrid-day-number {
-    background-color: #11af85 !important;
-    color: white !important;
-  }
-
-  /* Ocultar eventos */
-  .fc-event {
-    display: none !important;
-  }
-
-  /* Añade padding inferior a los encabezados de los días de la semana */
-  .fc-col-header {
-    margin-bottom: 10px;
-    /* Ajusta el valor según sea necesario */
-  }
-
-  /* Estilos para personalizar el <select> */
-  .boton-titulo-opciones select {
-    background-color: transparent;
-    border: solid 1px #f2f2f2;
-    border-radius: 20px;
-    padding: 5px 0 5px 10px;
-    font-size: 14px;
-    color: #222;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-
-  .boton-titulo-opciones select:focus {
-    outline: none;
-  }
-
-  .boton-titulo-opciones select::-ms-expand {
-    display: none;
-  }
-
-  .boton-titulo-opciones {
-    position: relative;
-  }
-
-  .boton-titulo-opciones::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-40%);
-    pointer-events: none;
-    color: #222;
-  }
-
-  .boton-titulo-opciones ion-icon {
-    position: absolute;
-    top: 46%;
-    right: 0px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #222;
-    font-size: 14px;
-  }
-
-  .numero-tareas-totales {
-    background-color: #222;
-    height: 50px;
-    color: #fff;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 0 20px;
-  }
-
-  .numero-tareas-totales svg {
-    margin-right: 10px;
-    height: 20px;
-    width: 20px;
-    color: white;
-  }
-
-  /* Estilos para los estados de las tareas */
-  .tarea-estado-0 {
-    color: #ff5f43 !important;
-    padding: 6px;
-    width: 53%;
-    border-radius: 15px;
-    /* Color para estado 0: pendiente */
-  }
-
-  .tarea-estado-1 {
-    color: #8c6b4c !important;
-    background-color: #fff4ea;
-    width: 53%;
-    /* Color para estado 1: en proceso */
-  }
-
-  .tarea-estado-2 {
-    color: #a35c5b !important;
-    background-color: #fef1f1;
-    width: 53%;
-    /* Color para estado 2: en revisión */
-  }
-
-  .tarea-estado-3 {
-    padding: 0px 10px;
-    border-radius: 15px;
-    color: #63a782 !important;
-    background-color: #eff9f4;
-    width: 53%;
-  }
-
-
-  .pomodoro-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 20px;
-    position: relative;
-    margin: 0 auto;
-    height: 90%;
-  }
-
-  .flex-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .pomodoro-timer {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'graphik-bold';
-  }
-
-  .pomodoro-time-range {
-    font-size: 16px;
-    color: #888;
-    margin-top: 10px;
-  }
-
-  .pomodoro-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .pomodoro-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #f2f2f2;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    color: #222;
-
-  }
-
-  .pomodoro-button:hover {
-    background-color: #222;
-    color: #fff;
-  }
-
-  /* Media Queries para Responsiveness */
-  @media (max-width: 1200px) {
-    .flex-container {
-      flex-direction: column;
-      height: auto;
-    }
-
-    .content-wrapper {
-      overflow: auto;
-
-    }
-
-    .flex-items {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .dashboard-row-1,
-    .dashboard-row-2 {
-      flex-direction: column;
-      height: auto;
-    }
-
-    .dashboard-row-1>div,
-    .dashboard-row-2>div {
-      flex: 1;
-      margin-bottom: 10px;
-    }
-
-    .tarea {
-      flex: 1 1 100%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .titulo-texto h3 {
-      font-size: 16px;
-    }
-
-    .content-wrapper {
-      overflow: auto;
-
-    }
-
-    .titulo-texto span {
-      font-size: 14px;
-    }
-
-    .boton-titulo span {
-      font-size: 12px;
-    }
-
-    .pomodoro-timer {
-      font-size: 24px;
-    }
-
-    .pomodoro-button {
-      font-size: 14px;
-    }
-  }
-</style>
-
+<link rel="stylesheet" href="assets/css/dashboard.css">
 <section>
   <div class="flex-container">
     <div class="flex-items">
       <div class="dashboard-row-1">
+
         <div class="today-tasks">
           <div class="titulo">
             <div class="titulo-icono">
-              <ion-icon name="analytics-outline"></ion-icon>
+              <ion-icon name="copy-outline"></ion-icon>
             </div>
             <div class="titulo-texto">
-              <h3>Tareas de hoy</h3>
+              <h3>Tareas </h3>
             </div>
             <div class="boton-titulo">
               <span>
@@ -570,10 +23,7 @@
               </span>
             </div>
           </div>
-          <div class="tarea-contenedor" id="taskContainer" style="height: calc(100% - 50px);">
-            <!-- Tareas se cargarán aquí -->
-          </div>
-          <div class="numero-tareas-totales">
+          <div class="tarea-contenedor" id="taskContainer">
           </div>
         </div>
 
@@ -585,9 +35,6 @@
             <div class="titulo-texto">
               <h3>Calendario</h3>
             </div>
-            <!-- Incluye la biblioteca Ionicons -->
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
             <div class="boton-titulo-opciones">
               <select id="monthSelector">
                 <option value="1">Enero</option>
@@ -605,11 +52,11 @@
               </select>
               <ion-icon name="chevron-down-outline"></ion-icon>
             </div>
-
           </div>
           <div id="minicalendarioderecha" class="minicalendario"></div>
         </div>
       </div>
+
       <div class="dashboard-row-2 mt-3">
         <div class="progreso-tasks">
           <div class="titulo">
@@ -617,14 +64,33 @@
               <ion-icon name="flash-outline"></ion-icon>
             </div>
             <div class="titulo-texto">
-              <h3>Progreso</h3>
+              <h3>Cronometro</h3>
             </div>
             <div class="boton-titulo-opciones">
               <i class="fa-solid fa-ellipsis"></i>
             </div>
           </div>
+          <div class="contenedor-cronometro">
+            <div class="contenedor-reloj">
+              <div class="reloj" id="Horas">00</div>
+              <div class="reloj" id="Minutos">:00</div>
+              <div class="reloj" id="Segundos">:00</div>
+              <div class="reloj" id="Centesimas">:00</div>
+            </div>
 
-          <canvas id="taskProgressChart" width="300" height="180" style="padding:30px;"></canvas>
+            <div class="crono-buttons">
+              <button class="crono-button" id="inicio" value="Start &#9658;" onclick="inicio();">
+                <i class="fa-solid fa-hourglass-start"></i>
+              </button>
+              <button class="crono-button" id="parar" value="Stop &#8718;" onclick="parar();" disabled><i
+                  class="fa-solid fa-pause"></i></button>
+              <button class="crono-button" id="continuar" value="Resume &#8634;" onclick="inicio();" disabled> <i
+                  class="fa-solid fa-play"></i>
+              </button>
+              <button class="crono-button" id="reinicio" value="Reset &#8635;" onclick="reinicio();" disabled><i
+                  class="fa-solid fa-rotate-right"></i></button>
+            </div>
+          </div>
         </div>
 
         <div class="today-tasks">
@@ -650,6 +116,7 @@
         </div>
       </div>
     </div>
+
     <div class="flex-items">
       <div class="titulo">
         <div class="titulo-icono">
@@ -678,13 +145,12 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-
   <script>document.addEventListener('DOMContentLoaded', function () {
+      // Obtener la fecha actual
+      var currentDate = new Date();
+      var currentMonth = currentDate.getMonth() + 1;
+      document.getElementById("monthSelector").value = currentMonth;
+
       // Función para cargar tareas desde el servidor
       function loadTasks() {
         fetch('<?= base_url('tasks') ?>')
@@ -692,7 +158,7 @@
           .then(data => {
             const taskContainer = document.getElementById('taskContainer');
             taskContainer.innerHTML = '';
-            const tasksToShow = data.tasks.slice(0, 2); // Mostrar solo las dos primeras tareas
+            const tasksToShow = data.tasks.slice(0, 10); // Mostrar solo las dos primeras tareas
             const nonType3Tasks = data.tasks.filter(task => task.estado !== '3'); // Filtrar tareas que no sean de tipo 3
 
             tasksToShow.forEach(task => {
@@ -723,24 +189,9 @@
           <strong>${task.nombre_tarea}</strong>
           <div class="descripcion">${task.descripcion_tarea}</div>
           <div class="estado tarea-estado-${task.estado}">${estadoTexto}</div>
-          <div class="progress">
-            <div class="progress-bar">
-              <span style="width: ${progress}%;"></span>
-            </div>
-            <div class="progress-text">${progress}%</div>
-          </div>
         `;
               taskContainer.appendChild(taskElement);
             });
-
-            // Mostrar el número total de tareas que no sean de tipo 3
-            const totalTasksElement = document.querySelector('.numero-tareas-totales');
-            totalTasksElement.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-          <path d="M10,23c0,.552-.447,1-1,1H5c-2.757,0-5-2.243-5-5V7C0,4.955,1.237,3.198,3,2.424V1c0-.552,.447-1,1-1s1,.448,1,1v1h2V1c0-.552,.447-1,1-1s1,.448,1,1v1h2V1c0-.552,.447-1,1-1s1,.448,1,1v1h2V1c0-.552,.447-1,1-1s1,.448,1,1v1.424c1.763,.774,3,2.531,3,4.576,0,.552-.447,1-1,1s-1-.448-1-1c0-1.654-1.346-3-3-3H5c-1.654,0-3,1.346-3,3v12c0,1.654,1.346,3,3,3h4c.553,0,1,.448,1,1Zm5-15c0-.552-.447-1-1-1H6c-.553,0-1,.448-1,1s.447,1,1,1H14c.553,0,1-.448,1-1Zm9,9c0,3.86-3.141,7-7,7s-7-3.14-7-7,3.141-7,7-7,7,3.14,7,7Zm-2,0c0-2.757-2.243-5-5-5s-5,2.243-5,5,2.243,5,5,5,5-2.243,5-5ZM6,11c-.553,0-1,.448-1,1s.447,1,1,1h2.5c.553,0,1-.448,1-1s-.447-1-1-1h-2.5Zm12.808,4.758l-2.223,2.134c-.144,.14-.379,.143-.522,0l-1.131-1.108c-.396-.385-1.028-.38-1.414,.015-.387,.395-.381,1.027,.014,1.414l1.131,1.108c.46,.45,1.062,.674,1.664,.674s1.2-.224,1.653-.671l2.213-2.124c.398-.383,.411-1.016,.029-1.414s-1.017-.412-1.414-.029Z"/>
-        </svg>
-        Tienes ${nonType3Tasks.length} tareas sin completar. Animo!
-      `;
           })
           .catch(error => console.error('Error al cargar tareas:', error));
       }
@@ -837,137 +288,7 @@
       loadTasks();
       loadNotes();
 
-      // Función para crear el patrón diagonal
-      function createDiagonalPattern(ctx) {
-        const canvas = document.createElement('canvas');
-        canvas.width = 40;  // Ancho del patrón
-        canvas.height = 40; // Altura del patrón
-        const context = canvas.getContext('2d');
 
-        context.fillStyle = '#f1f1f1';
-        context.fillRect(0, 0, 40, 40); // Fondo del patrón
-
-        context.lineWidth = 6; // Ancho de las líneas
-
-        // Dibuja las líneas diagonales grises
-        context.strokeStyle = '#ccc';
-        context.beginPath();
-        context.moveTo(0, 20);
-        context.lineTo(20, 0);
-        context.stroke();
-        context.beginPath();
-        context.moveTo(0, 40);
-        context.lineTo(40, 0);
-        context.stroke();
-        context.beginPath();
-        context.moveTo(20, 40);
-        context.lineTo(40, 20);
-        context.stroke();
-
-        // Dibuja las líneas diagonales blancas
-        context.strokeStyle = '#fff';
-        context.beginPath();
-        context.moveTo(10, 40);
-        context.lineTo(40, 10);
-        context.stroke();
-        context.beginPath();
-        context.moveTo(0, 30);
-        context.lineTo(30, 0);
-        context.stroke();
-        context.beginPath();
-        context.moveTo(30, 40);
-        context.lineTo(40, 30);
-        context.stroke();
-
-        return ctx.createPattern(canvas, 'repeat');
-      }
-
-      fetch('<?= base_url('tareas/progreso') ?>')
-        .then(response => response.json())
-        .then(data => {
-          const ctx = document.getElementById('taskProgressChart').getContext('2d');
-          const gradientPattern = createDiagonalPattern(ctx);
-
-          new Chart(ctx, {
-            type: 'bar',
-            data: {
-              labels: ['En Progreso', 'Revisadas', 'Completadas', 'En Revisión'],
-              datasets: [{
-                label: 'Número de Tareas',
-                data: [data.en_progreso, data.revisadas, data.completadas, data.en_revision],
-                backgroundColor: gradientPattern,
-                borderWidth: 2, // Establecer el grosor del borde
-                borderRadius: 35, // Borde redondeado
-              }]
-            },
-            options: {
-              responsive: true,
-              plugins: {
-                legend: {
-                  display: false, // Ocultar leyenda
-                },
-                title: {
-                  display: false,
-                },
-                tooltip: {
-                  enabled: false
-                },
-                datalabels: {
-                  label: 'Número de Tareas',
-                  data: [data.en_progreso, data.revisadas, data.completadas, data.en_revision],
-                  backgroundColor: function (context) {
-                    let value = context.dataIndex;
-                    switch (value) {
-                      case 0:
-                        return '#f2f2f2'; // Fondo gris para valores 0
-                      case 1:
-                        return '#fff4ea'; // Fondo para valores 1
-                      case 2:
-                        return '#fef1f1'; // Fondo para valores 2
-                      case 3:
-                        return '#eff9f4'; // Fondo rojo para valores 3
-                      default:
-                        return '#000'; // Fondo negro para otros valores
-                    }
-                  },
-                  borderRadius: 13,
-                  borderColor: '#999', // Color del borde
-                  borderWidth: 1, // Grosor del borde
-                  padding: 7,
-                  color: '#222', // Texto blanco
-                  font: {
-                    size: 17
-                  },
-                  formatter: function (value) {
-                    return value + ' tareas'; // Formato del texto de los datalabels
-                  },
-
-                }
-              },
-              scales: {
-                x: {
-                  grid: {
-                    display: false // Ocultar líneas de la cuadrícula en el eje X
-                  },
-                  ticks: {
-                    display: false // Ocultar números en el eje X
-                  }
-                },
-                y: {
-                  beginAtZero: true,
-                  grid: {
-                    display: false // Ocultar líneas de la cuadrícula en el eje Y
-                  },
-                  ticks: {
-                    display: false // Ocultar números en el eje Y
-                  }
-                }
-              }
-            },
-            plugins: [ChartDataLabels] // Asegúrate de incluir el plugin aquí
-          });
-        })
-        .catch(error => console.error('Error al cargar datos de progreso de tareas:', error));
     });
 
   </script>
@@ -1105,6 +426,71 @@
 
     updateTimerDisplay();
     updateRangeDisplay();
+
+  </script>
+  <script>
+    var centesimas = 0;
+    var segundos = 0;
+    var minutos = 0;
+    var horas = 0;
+    function inicio() {
+      control = setInterval(cronometro, 10);
+      document.getElementById("inicio").disabled = true;
+      document.getElementById("parar").disabled = false;
+      document.getElementById("continuar").disabled = true;
+      document.getElementById("reinicio").disabled = false;
+    }
+    function parar() {
+      clearInterval(control);
+      document.getElementById("parar").disabled = true;
+      document.getElementById("continuar").disabled = false;
+    }
+    function reinicio() {
+      clearInterval(control);
+      centesimas = 0;
+      segundos = 0;
+      minutos = 0;
+      horas = 0;
+      Centesimas.innerHTML = ":00";
+      Segundos.innerHTML = ":00";
+      Minutos.innerHTML = ":00";
+      Horas.innerHTML = "00";
+      document.getElementById("inicio").disabled = false;
+      document.getElementById("parar").disabled = true;
+      document.getElementById("continuar").disabled = true;
+      document.getElementById("reinicio").disabled = true;
+    }
+    function cronometro() {
+      if (centesimas < 99) {
+        centesimas++;
+        if (centesimas < 10) { centesimas = "0" + centesimas }
+        Centesimas.innerHTML = ":" + centesimas;
+      }
+      if (centesimas == 99) {
+        centesimas = -1;
+      }
+      if (centesimas == 0) {
+        segundos++;
+        if (segundos < 10) { segundos = "0" + segundos }
+        Segundos.innerHTML = ":" + segundos;
+      }
+      if (segundos == 59) {
+        segundos = -1;
+      }
+      if ((centesimas == 0) && (segundos == 0)) {
+        minutos++;
+        if (minutos < 10) { minutos = "0" + minutos }
+        Minutos.innerHTML = ":" + minutos;
+      }
+      if (minutos == 59) {
+        minutos = -1;
+      }
+      if ((centesimas == 0) && (segundos == 0) && (minutos == 0)) {
+        horas++;
+        if (horas < 10) { horas = "0" + horas }
+        Horas.innerHTML = horas;
+      }
+    }
 
   </script>
 

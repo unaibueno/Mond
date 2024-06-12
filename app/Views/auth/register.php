@@ -389,7 +389,7 @@
                     autocomplete="new-password">
 
                 <button type="submit" value="Register">Continuar</button>
-                <a class="redireccion-auth" href="<?= site_url('auth/login') ?>">Tengo una cuenta, <span
+                <a class="redireccion-auth" href="<?= site_url('auth/login') ?>">Tengo una cuenta. <span
                         class="strong">Iniciar sesión</span></a>
             </form>
         </div>

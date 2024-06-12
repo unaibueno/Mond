@@ -10,7 +10,7 @@
     <div class="row" id="vista-general">
         <div class="col-12">
             <div class="p-3 task-container-title">
-                <div class="tasks-container">
+                <div class="tasks-container-general">
                     <?php foreach ($tasks as $task): ?>
                         <div class="general-task task-item row" data-id="<?= $task['id_tarea'] ?>">
                             <div class="col-12 d-flex justify-content-between align-items-center task-header"
@@ -32,6 +32,8 @@
                                         </div>
                                         <div class="time-display" id="time-display-<?= $task['id_tarea'] ?>">00:00:00
                                         </div>
+
+
                                     </button>
                                 </div>
                             </div>
@@ -73,6 +75,7 @@
                                 <div class="task-item" data-id="<?= $task['id_tarea'] ?>">
                                     <h4 contenteditable="true"><?= $task['nombre_tarea'] ?></h4>
                                     <p contenteditable="true"><?= $task['descripcion_tarea'] ?></p>
+
                                 </div>
                             <?php endif; ?>
                         <?php endforeach; ?>
@@ -119,6 +122,89 @@
             $('#vista-estado').show();
             $('#btn-estado').addClass('btn-active');
             $('#btn-general').removeClass('btn-active');
+        });
+
+        function startTimer(taskId, startTime, elapsedTime) {
+            var timerDisplay = $('#time-display-' + taskId);
+            var playIcon = $('.time-btn[data-task-id="' + taskId + '"] .play-icon');
+            var stopIcon = $('.time-btn[data-task-id="' + taskId + '"] .stop-icon');
+
+            var timer = setInterval(function () {
+                var currentTime = Date.now();
+                var totalTimeElapsed = Math.floor((currentTime - startTime) / 1000) + elapsedTime;
+
+                var hours = Math.floor(totalTimeElapsed / 3600);
+                var minutes = Math.floor((totalTimeElapsed % 3600) / 60);
+                var seconds = totalTimeElapsed % 60;
+
+                timerDisplay.text((hours < 10 ? "0" + hours : hours) + ":" +
+                    (minutes < 10 ? "0" + minutes : minutes) + ":" +
+                    (seconds < 10 ? "0" + seconds : seconds));
+            }, 1000);
+
+            timerDisplay.addClass('running');
+            playIcon.hide();
+            stopIcon.show();
+            $('.time-btn[data-task-id="' + taskId + '"]').addClass('running');
+
+            $(document).on('click', '.stop-icon', function () {
+                var taskId = $(this).closest('.tarea-timer').find('.time-btn').data('task-id');
+                var timerDisplay = $('#time-display-' + taskId);
+                var playIcon = $('.time-btn[data-task-id="' + taskId + '"] .play-icon');
+                var stopIcon = $('.time-btn[data-task-id="' + taskId + '"] .stop-icon');
+
+                console.log("Deteniendo temporizador para la tarea con ID:", taskId);
+
+                clearInterval(window['timer_' + taskId]);
+                timerDisplay.removeClass('running');
+                playIcon.show();
+                stopIcon.hide();
+                $('.time-btn[data-task-id="' + taskId + '"]').removeClass('running');
+
+                var storedTimerData = localStorage.getItem('timer_' + taskId);
+                console.log("Datos de temporizador almacenados:", storedTimerData);
+                if (storedTimerData) {
+                    var storedTimerDataObj = JSON.parse(storedTimerData);
+                    var startTime = storedTimerDataObj.startTime;
+                    var elapsedTime = storedTimerDataObj.elapsedTime;
+
+                    console.log("startTime:", startTime);
+                    console.log("elapsedTime:", elapsedTime);
+
+                    localStorage.setItem('timer_' + taskId, JSON.stringify({ startTime: startTime, elapsedTime: elapsedTime }));
+                }
+            });
+        }
+
+        // Restaurar los temporizadores para las tareas que ya tienen un temporizador en ejecución
+        $('.time-btn').each(function () {
+            var taskId = $(this).data('task-id');
+            var storedTimerData = localStorage.getItem('timer_' + taskId);
+
+            if (storedTimerData) {
+                var storedTimerDataObj = JSON.parse(storedTimerData);
+                var startTime = storedTimerDataObj.startTime;
+                var elapsedTime = storedTimerDataObj.elapsedTime;
+
+                startTimer(taskId, startTime, elapsedTime);
+            }
+        });
+
+        $(document).on('click', '.time-btn:not(.running)', function () {
+            var taskId = $(this).data('task-id');
+            var storedTimerData = localStorage.getItem('timer_' + taskId);
+            var startTime = Date.now();
+            var elapsedTime = 0;
+
+            if (storedTimerData) {
+                var storedTimerDataObj = JSON.parse(storedTimerData);
+                startTime = storedTimerDataObj.startTime;
+                elapsedTime = storedTimerDataObj.elapsedTime;
+
+                clearInterval(window['timer_' + taskId]);
+            }
+
+            startTimer(taskId, startTime, elapsedTime);
         });
 
         // Mostrar detalles de la tarea
@@ -200,7 +286,6 @@
                                 '<div class="task-item" data-id="' + response.id_tarea + '">' +
                                 '<h4 contenteditable="true">' + taskName + '</h4>' +
                                 '<p contenteditable="true">' + taskNotes + '</p>' +
-                                '<i class="fa-solid fa-trash delete-task"></i>' +
                                 '</div>'
                             );
 

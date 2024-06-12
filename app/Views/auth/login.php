@@ -322,6 +322,38 @@
         .redireccion-auth {
             text-align: center;
         }
+
+        .error-form {
+            background-color: #f9d7da;
+            color: #7b272e;
+            padding: 10px;
+            border-radius: 30px;
+            width: 100%;
+            border: solid 2px #f5c6ca;
+        }
+
+        .error-form span {
+            font-size: 15px;
+        }
+
+        .error-form-list {
+            background-color: #f9d7da;
+            color: #7b272e;
+            border-radius: 30px;
+            width: 105%;
+            border: solid 2px #f5c6ca;
+        }
+
+        .error-form-list span {
+            font-size: 15px;
+
+        }
+
+        .errors ul {
+            list-style: none;
+            padding: 0;
+            padding-left: 10px;
+        }
     </style>
 </head>
 
@@ -332,17 +364,19 @@
             </div>
         </div>
         <div class="form-container sign-in-container">
-
             <form action="<?= site_url('auth/dologin') ?>" method="post">
                 <span class="login-title">¡Aloha, organizador!</span>
                 <span class="descripcion-title">¿De vuelta a una sesión de organización?</span>
                 <?php if (session()->getFlashdata('error')): ?>
-                    <p style="color:red;"><?php echo session()->getFlashdata('error'); ?></p>
+                    <div class="error-form">
+                        <span><?php echo session()->getFlashdata('error'); ?></span>
+                    </div>
                 <?php endif; ?>
-
                 <?php if (isset($validation)): ?>
-                    <div style="color:red;">
-                        <?= $validation->listErrors() ?>
+                    <div class="error-form-list">
+                        <span>
+                            <?= $validation->listErrors() ?>
+                        </span>
                     </div>
                 <?php endif; ?>
                 <input type="email" name="email" value="<?= set_value('email') ?>"
