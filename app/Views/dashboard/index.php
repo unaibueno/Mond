@@ -158,43 +158,52 @@
           .then(data => {
             const taskContainer = document.getElementById('taskContainer');
             taskContainer.innerHTML = '';
-            const tasksToShow = data.tasks.slice(0, 10); // Mostrar solo las dos primeras tareas
-            const nonType3Tasks = data.tasks.filter(task => task.estado !== '3'); // Filtrar tareas que no sean de tipo 3
 
-            tasksToShow.forEach(task => {
-              const taskElement = document.createElement('div');
-              taskElement.classList.add('tarea');
-              const progress = Math.floor(Math.random() * 100); // Ejemplo de progreso aleatorio
+            if (data.tasks.length === 0) {
+              taskContainer.innerHTML = '<p>No se encontraron tareas.</p>';
+            } else {
+              const tasksToShow = data.tasks.slice(0, 10); // Mostrar solo las primeras 10 tareas
 
-              // Mapear el estado a texto
-              let estadoTexto;
-              switch (task.estado) {
-                case '0':
-                  estadoTexto = 'Pendiente';
-                  break;
-                case '1':
-                  estadoTexto = 'En Proceso';
-                  break;
-                case '2':
-                  estadoTexto = 'En Revisión';
-                  break;
-                case '3':
-                  estadoTexto = 'Completado';
-                  break;
-                default:
-                  estadoTexto = 'Desconocido';
-              }
+              tasksToShow.forEach(task => {
+                const taskElement = document.createElement('div');
+                taskElement.classList.add('tarea');
+                const progress = Math.floor(Math.random() * 100); // Ejemplo de progreso aleatorio
 
-              taskElement.innerHTML = `
-          <strong>${task.nombre_tarea}</strong>
-          <div class="descripcion">${task.descripcion_tarea}</div>
-          <div class="estado tarea-estado-${task.estado}">${estadoTexto}</div>
-        `;
-              taskContainer.appendChild(taskElement);
-            });
+                // Mapear el estado a texto
+                let estadoTexto;
+                switch (task.estado) {
+                  case '0':
+                    estadoTexto = 'Pendiente';
+                    break;
+                  case '1':
+                    estadoTexto = 'En Proceso';
+                    break;
+                  case '2':
+                    estadoTexto = 'En Revisión';
+                    break;
+                  case '3':
+                    estadoTexto = 'Completado';
+                    break;
+                  default:
+                    estadoTexto = 'Desconocido';
+                }
+
+                taskElement.innerHTML = `
+                        <strong>${task.nombre_tarea}</strong>
+                        <div class="descripcion">${task.descripcion_tarea}</div>
+                        <div class="estado tarea-estado-${task.estado}">${estadoTexto}</div>
+                    `;
+                taskContainer.appendChild(taskElement);
+              });
+            }
           })
-          .catch(error => console.error('Error al cargar tareas:', error));
+          .catch(error => {
+            console.error('Error al cargar tareas:', error);
+            const taskContainer = document.getElementById('taskContainer');
+            taskContainer.innerHTML = '<p>Error al cargar las tareas.</p>';
+          });
       }
+
 
       function loadNotes() {
         fetch('<?= base_url('notes') ?>')
@@ -202,24 +211,32 @@
           .then(data => {
             const noteContainer = document.querySelector('div.notas');
             noteContainer.innerHTML = '';
-            const noteList = document.createElement('ul');
 
-            // Selecciona las últimas cuatro notas y las invierte
-            const lastFourNotes = data.notes.slice(-4).reverse();
+            if (data.notes.length === 0) {
+              noteContainer.innerHTML = '<p class="mt-3 pl-2">No se encontraron notas.</p>';
+            } else {
+              const noteList = document.createElement('ul');
+              const lastFourNotes = data.notes.slice(-4).reverse();
 
-            lastFourNotes.forEach(note => {
-              const noteElement = document.createElement('li');
-              const noteLink = document.createElement('a');
-              noteLink.href = '#';
-              noteLink.textContent = note.titulo_nota;
-              noteLink.onclick = () => showNoteDetails(note);
-              noteElement.appendChild(noteLink);
-              noteList.appendChild(noteElement);
-            });
-            noteContainer.appendChild(noteList);
+              lastFourNotes.forEach(note => {
+                const noteElement = document.createElement('li');
+                const noteLink = document.createElement('a');
+                noteLink.href = '#';
+                noteLink.textContent = note.titulo_nota;
+                noteLink.onclick = () => showNoteDetails(note);
+                noteElement.appendChild(noteLink);
+                noteList.appendChild(noteElement);
+              });
+              noteContainer.appendChild(noteList);
+            }
           })
-          .catch(error => console.error('Error al cargar notas:', error));
+          .catch(error => {
+            console.error('Error al cargar notas:', error);
+            const noteContainer = document.querySelector('div.notas');
+            noteContainer.innerHTML = '<p>Error al cargar las notas.</p>';
+          });
       }
+
 
 
 

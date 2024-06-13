@@ -74,6 +74,19 @@
             console.error('There was a problem initializing the editor.', error);
         });
 
+    function newNote() {
+        document.getElementById('noteId').value = '';
+        document.getElementById('noteTitle').value = '';
+        window.editor.setData(''); // Limpiar el contenido del editor
+        document.getElementById('deleteButton').classList.add('hidden'); // Ocultar botón de eliminar
+        titleSaved = false;
+        currentNoteId = null;
+        currentNoteContent = '';
+
+        var notes = document.querySelectorAll('#noteList li');
+        notes.forEach(note => note.classList.remove('active-note'));
+    }
+
 
     function selectNote(id) {
         autoSaveContent();

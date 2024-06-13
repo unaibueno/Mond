@@ -25,6 +25,7 @@ $routes->post('auth/do_register', 'AuthController::do_register');
 
 // Define las rutas protegidas por el filtro de roles (rol 0 para usuarios normales)
 $routes->group('', ['filter' => 'role:0'], function ($routes) {
+
     $routes->get('/dashboard', 'Dashboard::index');
 
     $routes->get('tareas', 'TareasController::index');
@@ -50,5 +51,8 @@ $routes->group('', ['filter' => 'role:0'], function ($routes) {
 
     $routes->get('/tasks', 'Dashboard::getTasks');
     $routes->get('/notes', 'Dashboard::getNotes');
+    $routes->get('user', 'UsersController::getUser');
+    $routes->post('user/update', 'UsersController::updateUser');
+
 });
 

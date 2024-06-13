@@ -35,6 +35,93 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
+    <div class="ajustes-modal ">
+      <div class="ajustes-contenedor">
+        <div class="ajustes">
+          <div class="ajustes-sidebar">
+            <span class="conf-title">Configuración</span>
+            <ul>
+              <li data-option="cuentas" onclick="showContent('cuentas')">
+                <span>
+                  <ion-icon name="person-outline"></ion-icon>
+                  Mi cuenta
+                </span>
+              </li>
+              <li>
+                <a href="<?= site_url('auth/logout') ?>">
+                  <span>
+                    <ion-icon name="log-out-outline"></ion-icon> Cerrar sesión
+                  </span>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="ajustes-panel">
+            <div class="main-content" id="cuentas">
+              <div class="seccion-ajuste">
+                <div class="contenedor-ajustes-usuario">
+                  <div class="col-12">
+                    <h2 class="titulo-interior-configuracion">Perfil</h2>
+                  </div>
+                  <div class="d-flex align-items-start py-3 seccion-imagen-usuario">
+                    <img
+                      src="https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg"
+                      class="img-usuario" alt="">
+                    <div class="pl-sm-4 pl-2" id="img-section">
+                      <label for="firstname">Nombre</label>
+                      <input type="text" id="nombre" class="form-control" placeholder="Unai Bueno">
+                    </div>
+                  </div>
+
+                  <div class="py-3">
+                    <div class="col-12">
+                      <h2 class="titulo-interior-configuracion">Seguridad</h2>
+                    </div>
+                    <div class="row py-2">
+                      <div class="col-md-7">
+                        <div class="opcion-ajuste-titulo">Correo electrónico</div>
+                        <div class="opcion-ajuste-descripcion" id="correo-electronico">unaibueno@gmail.com</div>
+                      </div>
+                      <div class="col-md-5 pt-md-0 pt-3 d-flex justify-content-end">
+                        <button type="text" class="btn-ajuste">Cambiar correo electronico</button>
+                      </div>
+                    </div>
+                    <div class="row py-2">
+                      <div class="col-md-7">
+                        <div class="opcion-ajuste-titulo">Contraseña</div>
+                        <div class="opcion-ajuste-descripcion">Esta opción cambiará tu contraseña</div>
+                      </div>
+                      <div class="col-md-5 pt-md-0 pt-3 d-flex justify-content-end">
+                        <button type="text" class="btn-ajuste">Cambiar contraseña</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="py-3">
+                    <div class="col-12">
+                      <h2 class="titulo-interior-configuracion">Acciones</h2>
+                    </div>
+                    <div class="row py-2">
+                      <div class="col-md-7">
+                        <div class="opcion-ajuste-titulo text-eliminar-cuenta">Eliminar mi cuenta</div>
+                        <div class="opcion-ajuste-descripcion">¡Cuidado! Esta accion es irreversible</div>
+                      </div>
+                      <div class="col-md-5 pt-md-0 pt-3 d-flex justify-content-end">
+                        <button type="text" class="btn-ajuste">Eliminar mi cuenta</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <aside class="main-sidebar">
       <a href="/">
         <img src="assets/img/logo-white.png" alt="AdminLTE Logo" width="200px" class="brand-image"
@@ -79,9 +166,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a id="ajustes" href="<?= site_url('auth/logout') ?>" class="nav-link">
-                <ion-icon name="log-out-outline"></ion-icon>
-                <p>Salir</p>
+              <a id="ajustes" class="nav-link">
+                <ion-icon name="settings-outline"></ion-icon>
+                <p>Ajustes</p>
               </a>
             </li>
           </ul>
@@ -96,7 +183,7 @@
   </div>
 
   <script>
-    function showContent(option) {
+    function showContent(option = 'cuentas') {
       const sections = document.querySelectorAll(".main-content");
       const sidebarItems = document.querySelectorAll(".ajustes-sidebar li");
 
@@ -128,11 +215,46 @@
         e.stopPropagation();
       });
 
-      // Initialize first tab
-      showContent('insercion');
+      // Initialize with 'cuentas' as the default option
+      showContent('cuentas');
     });
-
   </script>
+  <script>
+    $(document).ready(function () {
+      // Cargar datos del usuario
+      $.ajax({
+        url: '<?= base_url('user') ?>',
+        method: 'GET',
+        success: function (data) {
+          $('#nombre').val(data.nombre);
+          $('#correo-electronico').text(data.email);
+        }
+      });
+
+      // Guardar cambios
+      $('#guardar-cambios').on('click', function () {
+        const nombre = $('#nombre').val();
+        const email = $('#correo-electronico').text();
+
+        $.ajax({
+          url: '<?= base_url('users/updateUser') ?>',
+          method: 'POST',
+          data: {
+            nombre: nombre,
+            email: email
+          },
+          success: function (data) {
+            if (data.success) {
+              alert('Datos actualizados exitosamente.');
+            } else {
+              alert('Error al actualizar los datos.');
+            }
+          }
+        });
+      });
+    });
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>

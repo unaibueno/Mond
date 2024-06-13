@@ -13,12 +13,24 @@ class AuthController extends Controller
 
     public function login()
     {
-        return view('auth/login');
+        $session = session();
+        if ($session->has('isLoggedIn')) {
+            return redirect()->to('dashboard');
+        } else {
+            return view('auth/login');
+
+        }
     }
 
     public function register()
     {
-        return view('auth/register');
+        $session = session();
+        if ($session->has('isLoggedIn')) {
+            return redirect()->to('dashboard');
+        } else {
+            return view('auth/register');
+
+        }
     }
 
     public function do_register()
@@ -71,13 +83,14 @@ class AuthController extends Controller
                 ],
             ],
         ];
-
         if ($this->validate($rules)) {
+            $plainPassword = $this->request->getPost('contraseña');
+            $hashedPassword = password_hash($plainPassword, PASSWORD_DEFAULT);
             $data = [
                 'nombre' => $this->request->getPost('nombre'),
                 'apellidos' => $this->request->getPost('apellidos'),
                 'email' => $this->request->getPost('email'),
-                'contraseña' => password_hash($this->request->getPost('contraseña'), PASSWORD_DEFAULT)
+                'contraseña' => $hashedPassword
             ];
 
             $model->save($data);
@@ -120,15 +133,20 @@ class AuthController extends Controller
 
             $user = $model->where('email', $email)->first();
 
-            if ($user && password_verify($password, $user['contraseña'])) {
-                $session->set([
-                    'id_usuario' => $user['id_usuario'],
-                    'nombre' => $user['nombre'],
-                    'rol' => $user['rol'],
-
-                    'isLoggedIn' => true
-                ]);
-                return redirect()->to('/dashboard');
+            if ($user) {
+                $passwordCheck = password_verify($password, $user['contraseña']);
+                if ($passwordCheck) {
+                    $session->set([
+                        'id_usuario' => $user['id_usuario'],
+                        'nombre' => $user['nombre'],
+                        'rol' => $user['rol'],
+                        'isLoggedIn' => true
+                    ]);
+                    return redirect()->to('/dashboard');
+                } else {
+                    $session->setFlashdata('error', 'Correo electrónico o contraseña inválidos.');
+                    return redirect()->to('/auth/login');
+                }
             } else {
                 $session->setFlashdata('error', 'Correo electrónico o contraseña inválidos.');
                 return redirect()->to('/auth/login');
@@ -139,6 +157,7 @@ class AuthController extends Controller
             ]);
         }
     }
+
 
     public function logout()
     {

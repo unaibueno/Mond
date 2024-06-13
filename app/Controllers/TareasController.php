@@ -45,8 +45,6 @@ class TareasController extends BaseController
             'estado' => $this->request->getPost('estado'),
         ];
 
-        log_message('info', 'Datos recibidos para guardar tarea: ' . json_encode($data));
-
         $result = $this->TareasModel->saveTask($data);
         if ($result['success']) {
             return $this->response->setJSON(['success' => true, 'message' => 'Tarea guardada exitosamente', 'id_tarea' => $result['id']]);
@@ -89,9 +87,7 @@ class TareasController extends BaseController
         $id_usuario = $session->get('id_usuario');
         $id = $this->request->getJSON()->id_tarea;
 
-        log_message('info', 'ID de la tarea recibido para eliminar: ' . $id);
 
-        // Verify that the task belongs to the logged in user
         $task = $this->TareasModel->where('id_usuario', $id_usuario)->find($id);
         if (!$task) {
             return $this->response->setJSON(['success' => false, 'message' => 'No tienes permiso para eliminar esta tarea.']);
@@ -111,7 +107,6 @@ class TareasController extends BaseController
         $id_usuario = $session->get('id_usuario');
         $id = $this->request->getPost('id_tarea');
 
-        // Verify that the task belongs to the logged in user
         $task = $this->TareasModel->where('id_usuario', $id_usuario)->find($id);
         if (!$task) {
             return $this->response->setJSON(['success' => false, 'message' => 'No tienes permiso para actualizar el estado de esta tarea.']);

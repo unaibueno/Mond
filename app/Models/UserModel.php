@@ -15,29 +15,34 @@ class UserModel extends Model
         'contraseña',
         'fecha_creacion',
         'fecha_actualizacion',
-        'rol'  // Añadido el campo rol
+        'rol'
     ];
 
-    protected $beforeInsert = ['beforeInsert'];
-    protected $beforeUpdate = ['beforeUpdate'];
-
-    protected function beforeInsert(array $data)
+    /**
+     * Get user data by ID.
+     *
+     * @param int $id
+     * @return array|null
+     */
+    public function getUserById(int $id)
     {
-        $data = $this->hashPassword($data);
-        return $data;
+        return $this->find($id);
     }
 
-    protected function beforeUpdate(array $data)
+    /**
+     * Update user data by ID.
+     *
+     * @param int $id
+     * @param array $data
+     * @return bool
+     */
+    public function updateUserById(int $id, array $data)
     {
-        $data = $this->hashPassword($data);
-        return $data;
-    }
-
-    protected function hashPassword(array $data)
-    {
-        if (isset($data['data']['contraseña'])) {
-            $data['data']['contraseña'] = password_hash($data['data']['contraseña'], PASSWORD_BCRYPT);
+        // Set the updated_at timestamp
+        if (isset($data['fecha_actualizacion'])) {
+            $data['fecha_actualizacion'] = date('Y-m-d H:i:s');
         }
-        return $data;
+
+        return $this->update($id, $data);
     }
 }

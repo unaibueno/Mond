@@ -38,15 +38,27 @@ class Dashboard extends BaseController
 
     public function getTasks()
     {
-        $tasks = $this->tareasModel->findAll();
+        $session = session();
+        $userId = $session->get('id_usuario'); // Obtener el id_usuario de la sesión
+
+        // Filtrar las tareas por el id_usuario
+        $tasks = $this->tareasModel->where('id_usuario', $userId)->findAll();
+
         return $this->response->setJSON(['tasks' => $tasks]);
     }
 
+
     public function getNotes()
     {
-        $notes = $this->notasModel->findAll();
+        $session = session();
+        $userId = $session->get('id_usuario'); // Obtener el id_usuario de la sesión
+
+        // Filtrar las notas por el id_usuario
+        $notes = $this->notasModel->where('id_usuario', $userId)->findAll();
+
         return $this->response->setJSON(['notes' => $notes]);
     }
+
 }
 
 
