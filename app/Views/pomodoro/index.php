@@ -50,9 +50,11 @@
         <div class="col-12 col-md-5 pomodoro-notas-contenedor">
             <div class="col-12">
                 <div class="col-12 selector-dia" id="selector-dia">
-                    <button id="prevDay" class="btn"><i class="fa-solid fa-angle-left"></i></button>
+                    <button id="prevDay" class="btn-selector-dia-pomodoro"><i
+                            class="fa-solid fa-angle-left"></i></button>
                     <span id="selectedDate" class="selected-date"></span>
-                    <button id="nextDay" class="btn"><i class="fa-solid fa-angle-right"></i></button>
+                    <button id="nextDay" class="btn-selector-dia-pomodoro"><i
+                            class="fa-solid fa-angle-right"></i></button>
                 </div>
             </div>
             <div class="col-12">

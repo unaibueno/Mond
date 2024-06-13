@@ -41,7 +41,7 @@
 }
 
 .contenido-notas {
-  padding: 0px 30px;
+  padding: 0px 50px;
   height: 92vh;
   overflow-y: auto;
 }
@@ -87,6 +87,7 @@
   background: none !important;
   padding: 0;
   margin-left: auto;
+  width: 99%;
 }
 
 .ck-toolbar__items {

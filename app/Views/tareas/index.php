@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-12 task-details closed" id="task-details-<?= $task['id_tarea'] ?>">
                                 <textarea class="form-control" rows="2"
-                                    data-field="notas_tarea"><?= $task['notas_tarea'] ?></textarea>
+                                    data-field="notas_tarea"><?= $task['descripcion_tarea'] ?></textarea>
                                 <button class="task-accion-btn  save-task" data-id="<?= $task['id_tarea'] ?>">Guardar
                                 </button>
                                 <button class="task-accion-btn delete-task" data-id="<?= $task['id_tarea'] ?>">Borrar
@@ -358,7 +358,6 @@
                 data: {
                     id_tarea: taskId,
                     descripcion_tarea: descripcion,
-                    notas_tarea: notas
                 },
                 success: function (response) {
                     if (response.success) {

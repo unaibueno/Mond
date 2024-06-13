@@ -26,15 +26,27 @@
 .fc .fc-daygrid-bg-harness {
   background-color: #e0e0e0 !important;
 }
-
-.fc-event {
+.fc-event-main {
   background-color: #222;
   border-color: #222;
-  color: #222;
+  color: #fff;
+  border-radius: 5px;
+}
+.fc-event {
+  background-color: #222 !important;
+  border-color: #222 !important;
+  color: #fff;
+  margin-left: 10px;
+  border-radius: 10px;
+  padding-left: 5px;
 }
 
 #calendar {
   height: 80vh;
+  margin-top: 18px;
+}
+.pomodoro-notas-contenedor:-webkit-scrollbar {
+  display: none;
 }
 
 /* Asegura que solo haya borde en las horas principales */
@@ -97,4 +109,166 @@
 .fc-timegrid-slot.fc-timegrid-slot-label .fc-timegrid-slot-label-frame::after {
   margin: 0;
   padding: 0;
+}
+
+.selected-date {
+  font-size: 16px;
+}
+
+.pomodoro-container {
+  padding: 43px 0px;
+}
+
+.fullscreen-active {
+  color: lightgray;
+  background-color: black; /* Ejemplo de cambio de fondo */
+  /* Añade otros estilos que quieras cambiar en pantalla completa */
+}
+.fullscreen-active #time {
+  color: lightgray !;
+  font-size: 250px;
+}
+
+.fullscreen-active .btn {
+  background-color: #2d2f32;
+  color: white !important;
+}
+
+.pomodoro-notas-contenedor {
+  background: #f2f2f2;
+  height: 92vh;
+  padding: 20px;
+  border-radius: 0px 30px 30px 0px;
+}
+.pomodoro-calendar {
+  background-color: white;
+  height: 50vh;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+.selector-dia {
+  height: 6vh;
+  background-color: white;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  border: 2px solid #ecebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Asegura que los botones estén a los lados */
+  padding: 0 10px; /* Opcional: Ajusta el espacio interno si es necesario */
+  margin: 0 auto;
+  font-size: 12px;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: none;
+}
+
+.selected-date {
+  display: inline-block;
+  width: 210px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.timeline {
+  border-radius: 25px;
+  height: 73vh;
+  padding: 20px;
+  background: #fff;
+  overflow-y: scroll;
+  position: relative;
+  user-select: none;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.timeline::before {
+  display: none;
+}
+
+.selection-time {
+  position: absolute;
+  left: 10px;
+  top: -25px;
+  background: #000;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  display: none;
+  /* Initially hidden */
+}
+
+.time-slot {
+  height: 10px;
+  /* Adjusted for better visualization */
+  position: relative;
+  user-select: none;
+}
+
+.time-slot[data-hour="true"] {
+  border-bottom: 1px solid #eee;
+}
+
+.time-label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #666;
+}
+
+/* PAGINA POMODORO */
+.btn-pomodoro-container {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-pomodoro {
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #1c1c1c;
+  color: white;
+  border: none;
+  outline: none;
+}
+.btn-pomodoro:focus {
+  outline: none;
+  border: none;
+}
+
+.btn-selector-dia-pomodoro {
+  padding: 5px 11px;
+  border-radius: 40px;
+  background-color: #f2f2f2;
+  color: black;
+  border: none;
+  outline: none;
+}
+
+.fc-col-header {
+  display: none;
+}
+
+.fc-timegrid-event-harness-inset .fc-timegrid-event,
+.fc-timegrid-event.fc-event-mirror,
+.fc-timegrid-more-link {
+  box-shadow: 0 0 5px #444;
 }

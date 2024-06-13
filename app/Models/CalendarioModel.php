@@ -7,7 +7,7 @@ class CalendarioModel extends Model
 {
     protected $table = 'calendario';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['titulo', 'descripcion', 'fecha_inicio', 'fecha_fin', 'color'];
+    protected $allowedFields = ['id_usuario', 'titulo', 'descripcion', 'fecha_inicio', 'fecha_fin', 'color'];
     protected $useTimestamps = true;
 
     public function saveEvent($data)
@@ -46,6 +46,10 @@ class CalendarioModel extends Model
         }
     }
 
+    public function findEventsByUser($userId)
+    {
+        return $this->where('id_usuario', $userId)->findAll();
+    }
     public function deleteEvent($id)
     {
         log_message('info', 'ID del evento recibido para eliminar: ' . $id);

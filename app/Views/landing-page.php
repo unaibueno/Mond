@@ -313,7 +313,7 @@
         </div>
         <div class="navbar-right">
             <a href="#">Docs</a>
-            <a class="boton-inicio-sesion" href="<?= base_url('dashboard') ?>">Iniciar sesión</a>
+            <a class="boton-inicio-sesion" href="<?= base_url('auth/login') ?>">Iniciar sesión</a>
         </div>
     </div>
 
@@ -323,7 +323,7 @@
             mantiene enfocado y
             organizado, haciendo que cada momento cuente</p>
         <div class="buttons">
-            <a href="#">Únete a mond</a>
+            <a href="<?= base_url('auth/register') ?>">Únete a mond</a>
             <a href="#" class="secondary">Descubre las posibilidades</a>
         </div>
     </div>
@@ -339,34 +339,9 @@
     </div>
 
     <footer class="pie-pagina">
-        <div class="grupo-1">
-            <div class="box">
-                <figure>
-                    <a href="#">
-                        <img src="assets/img/logo-white.png" alt="Logo de SLee Dw">
 
-                    </a>
-                </figure>
-            </div>
-            <div class="box">
-                <h2>SOBRE NOSOTROS</h2>
-                <p style="margin: 0;">Mond es un trabajo de fin de grado realizado con el objetivo de
-                    aplicar y demostrar los
-                    conocimientos adquiridos durante el curso. Este proyecto no tiene fines comerciales y no genera
-                    ingresos
-                    económicos. Está destinado exclusivamente a la evaluación académica.</p>
-            </div>
-            <div class="box">
-                <h2>SIGUENOS</h2>
-                <div class="red-social">
-                    <a href="#" class="fa fa-facebook">Contacto</a>
-                    <a href="#" class="fa fa-twitter">Documentación</a>
-                    <a href="#" class="fa fa-instagram">Politica de privacidad</a>
-                </div>
-            </div>
-        </div>
         <div class="grupo-2">
-            <small>&copy; 2024 <b>Unai Bueno</b> - Todos los derechos reservados.</small>
+            <small>&copy; 2024 <b>Mond</b> - Todos los derechos reservados.</small>
         </div>
     </footer>
     <script src="vendor/@fortawesome/fontawesome-free/js/all.min.js"></script>

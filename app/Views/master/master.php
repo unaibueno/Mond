@@ -35,102 +35,6 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-    <div class="ajustes-modal">
-      <div class="ajustes-contenedor">
-        <div class="ajustes">
-          <div class="ajustes-sidebar">
-            <span class="conf-title">Configuración</span>
-            <ul>
-              <li ata-option="cuentas" onclick="showContent('cuentas')">
-                <span>
-                  <ion-icon name="person-outline"></ion-icon>
-                  Cuenta
-                </span>
-              </li>
-              <li data-option="integraciones" onclick="showContent('integraciones')">
-                <span>
-                  <ion-icon name="copy-outline"></ion-icon>
-                  Integraciones
-                </span>
-              </li>
-              <li data-option="social" onclick="showContent('social')">
-                <span>
-                  <ion-icon name="people-outline"></ion-icon> Social
-                </span>
-              </li>
-
-
-              <li data-option="preferencias" onclick="showContent('preferencias')">
-                <span>
-                  <ion-icon name="moon-outline"></ion-icon>
-                  Preferencias
-                </span>
-              </li>
-
-              <li data-option="seguridad" onclick="showContent('seguridad')">
-                <span>
-                  <ion-icon name="lock-closed-outline"></ion-icon>
-                  Seguridad
-                </span>
-              </li>
-
-
-              <li data-option="privacidad" onclick="showContent('privacidad')">
-                <span>
-                  <ion-icon name="finger-print-outline"></ion-icon> Privacidad
-                </span>
-              </li>
-              <form action="<?= site_url('auth/logout') ?>" method="get">
-                <button type="submit">Salir</button>
-              </form>
-            </ul>
-
-          </div>
-          <div class="ajustes-panel">
-            <div class="main-content" id="cuentas">
-              <div class="seccion-ajuste">
-                <h2 class="titulo-configuracion">Insercion</h2>
-                <div class="secciones">s</div>
-
-              </div>
-            </div>
-            <div class="main-content" id="integraciones">
-              <div class="seccion-ajuste">
-                <h2 class="titulo-configuracion">Cuentas</h2>
-                <!-- Your contents -->
-              </div>
-            </div>
-            <div class="main-content" id="social">
-              <div class="seccion-ajuste">
-                <h2 class="titulo-configuracion">Control errores</h2>
-                <!-- Your contents -->
-              </div>
-            </div>
-            <div class="main-content" id="seguridad">
-              <div class="seccion-ajuste">
-                <h2 class="titulo-configuracion">Herramientas</h2>
-                <!-- Your contents -->
-              </div>
-            </div>
-            <div class="main-content" id="preferencias">
-              <div class="seccion-ajuste">
-                <h2 class="titulo-configuracion">Seguridad</h2>
-                <!-- Your contents -->
-              </div>
-            </div>
-            <div class="main-content" id="privacidad">
-              <div class="seccion-ajuste">
-                <h2 class="titulo-configuracion">Seguridad</h2>
-                <!-- Your contents -->
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-
     <aside class="main-sidebar">
       <a href="/">
         <img src="assets/img/logo-white.png" alt="AdminLTE Logo" width="200px" class="brand-image"
@@ -142,21 +46,21 @@
             <li class="nav-item">
               <a href="<?= base_url('dashboard') ?>" class="nav-link <?php if ($page_title == 'Inicio')
                   echo 'active'; ?> ">
-                <i class="nav-icon fa-solid fa-house"></i>
+                <ion-icon name="copy-outline"></ion-icon>
                 <p>Dashboard</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= base_url('tareas') ?>" class="nav-link <?php if ($page_title == 'Tareas')
                   echo 'active'; ?> ">
-                <ion-icon name="chevron-down-circle"></ion-icon>
+                <ion-icon name="layers-outline"></ion-icon>
                 <p>Tareas</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= base_url('pomodoro') ?>" class="nav-link <?php if ($page_title == 'Pomodoro')
                   echo 'active'; ?> ">
-                <ion-icon name="stopwatch"></ion-icon>
+                <ion-icon name="timer-outline"></ion-icon>
                 <p>Pomodoro</p>
               </a>
             </li>
@@ -175,9 +79,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a id="ajustes" class="nav-link">
-                <ion-icon name="hammer"></ion-icon>
-                <p>Ajustes</p>
+              <a id="ajustes" href="<?= site_url('auth/logout') ?>" class="nav-link">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <p>Salir</p>
               </a>
             </li>
           </ul>

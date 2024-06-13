@@ -1,313 +1,6 @@
 <?= $this->extend('master/master') ?>
 <?= $this->section('content') ?>
-<style>
-    /* Tus estilos existentes aquí... */
-    .fc .fc-toolbar {
-        background-color: #4C50;
-        color: #fff;
-    }
-
-    .fc-button {
-        background-color: #4CAF50;
-        border-color: #4CAF50;
-        color: #fff;
-    }
-
-    .fc-button:hover {
-        background-color: #45A049;
-        border-color: #45A049;
-    }
-
-    .fc-daygrid-day {
-        background-color: white;
-        border: solid 1px #e9e9e9 !important;
-    }
-
-    .fc-daygrid-day:hover {
-        background-color: #e0e0e0;
-    }
-
-    .fc .fc-daygrid-bg-harness {
-        background-color: #e0e0e0 !important;
-    }
-
-    .fc-event {
-        background-color: #2196F3;
-        border-color: #2196F3;
-        color: #222;
-    }
-
-
-    .fc-direction-ltr .fc-daygrid-event.fc-event-end,
-    .fc-direction-rtl .fc-daygrid-event.fc-event-start {
-        background-color: #ffe7e4;
-        border: solid 1px #ffe7e4;
-    }
-
-    .fc-direction-ltr .fc-daygrid-event.fc-event-start,
-    .fc-direction-rtl .fc-daygrid-event.fc-event-end {
-        background-color: #ffe7e4;
-        border: solid 1px #ffe7e4;
-        border-left: solid 4px red;
-    }
-
-    .fc-direction-ltr .fc-button-group>.fc-button:not(:first-child) {
-        background-color: #f2f2f2;
-        border: none;
-        border-radius: 16px;
-        margin: 0 5px;
-        color: #000;
-        border: 1px solid #E0E0E0;
-    }
-
-
-    .fc .fc-toolbar {
-        background-color: transparent;
-        color: black;
-    }
-
-    .fc .fc-daygrid-day-number {
-        color: #000;
-        font-size: 14px;
-    }
-
-    .fc-direction-ltr .fc-daygrid-event.fc-event-start,
-    .fc-direction-rtl .fc-daygrid-event.fc-event-end {
-        color: black;
-    }
-
-    .fc-daygrid-event-dot {
-        border: none;
-        border-radius: calc(var(--fc-daygrid-event-dot-width) / 2);
-        box-sizing: content-box;
-        height: 0px;
-        margin: 0px 4px;
-        width: 0px;
-    }
-
-    .fc-direction-ltr .fc-button-group>.fc-button:not(:last-child) {
-        background-color: #f2f2f2;
-        border: none;
-        border-radius: 16px;
-        margin: 0 5px;
-        color: #000;
-        border: 1px solid #E0E0E0;
-        padding: 5px 10px;
-    }
-
-    .fc-direction-ltr .fc-button-group>.fc-button {
-        background-color: #222;
-        border: none;
-        border-radius: 16px;
-        border: 1px solid #E0E0E0;
-        margin: 0 5px;
-        padding: 5px 10px;
-    }
-
-
-    .fc-direction-ltr .fc-toolbar>*> :not(:first-child) {
-        border: none;
-        border-radius: 16px;
-        opacity: 100%;
-    }
-
-    .fc .fc-scrollgrid-section-liquid>td {
-        background-color: transparent;
-    }
-
-    #calendar {
-        height: 92vh;
-        border: none;
-        margin-left: 8px;
-        padding: 0;
-    }
-
-    #eventForm {
-        background-color: #fff;
-        padding: 5px;
-    }
-
-    .buscador {
-        background-color: #fff;
-        padding: 14px;
-        border-radius: 15px;
-        border: 1px solid #E0E0E0;
-        width: 100%;
-    }
-
-    input {
-        background-color: #f2f2f2;
-        border: none;
-        outline: none;
-        font-size: 12px;
-        padding: 5px;
-        border-radius: 5px;
-        color: black;
-        display: block;
-        width: 100%;
-    }
-
-    .apoyo-calendario {
-        background-color: #fff;
-        height: 92vh;
-        border-radius: 0 35px 35px 0;
-        width: 24%;
-        padding: 12px;
-        border-left: 2px solid #f2f2f2;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        justify-content: flex-start;
-    }
-
-    .minicalendario {
-        text-align: center;
-        width: 100%;
-        overflow: auto;
-        padding-bottom: 0px;
-        border-radius: 25px;
-        padding: 12px;
-    }
-
-    .minicalendario ol {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        margin: 0;
-        padding: 0;
-        margin-bottom: 150px;
-        line-height: 2.2;
-    }
-
-    .minicalendario li {
-        font-size: 1.2ch;
-    }
-
-    .minicalendario h2 {
-        margin-bottom: 4px;
-        padding: 0;
-        font-size: 18px;
-        text-transform: capitalize;
-    }
-
-    .minicalendario .first-day {
-        grid-column-start: var(--first-day-start, 0);
-    }
-
-    .minicalendario .day-name span {
-        font-weight: bold;
-        font-size: 12px;
-        margin-bottom: 2px;
-        text-align: center;
-        text-transform: capitalize;
-    }
-
-    .minicalendario .today span {
-        background-color: #f04842;
-        font-weight: bold;
-        border-radius: 20%;
-        color: white;
-        padding: 3px 7px;
-    }
-
-    .minicalendario .other-month {
-        color: #aaa;
-    }
-
-    .minicalendario .prevMonthButton,
-    .minicalendario .nextMonthButton {
-        background-color: transparent;
-        margin-bottom: 10px;
-        font-size: 12px;
-    }
-
-    .minicalendario .prevMonthButton:focus,
-    .minicalendario .nextMonthButton:focus {
-        border: none;
-        outline: none;
-        background-color: #f2f2f2;
-        border-radius: 5px;
-    }
-
-    .fc-toolbar-title {
-        text-transform: lowercase;
-        font-family: "sf-black";
-        color: #272727;
-        padding-left: 14px;
-    }
-
-    .fc .fc-highlight {
-        background-color: #f2f2f2;
-    }
-
-    .fc .fc-daygrid-day-frame:hover {
-        background-color: #fff;
-    }
-
-    .label-form-event {
-        font-size: 14px;
-    }
-
-    .form-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .form-group input {
-        flex: 1;
-        margin-right: 5px;
-        width: 30%;
-    }
-
-    select {
-        background-color: #f2f2f2;
-        border: none;
-        outline: none;
-        font-size: 15px;
-        padding: 6px;
-        border-radius: 5px;
-        color: black;
-        display: block;
-    }
-
-    option {
-        padding: 5px;
-    }
-
-    .fc-h-event .fc-event-main {
-        color: black;
-    }
-
-    .button-group {
-        display: flex;
-        gap: 10px;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .button-group #deleteButton {
-        margin-top: 0;
-        background-color: #f2f2f2;
-        border-radius: 10px;
-        padding: 5px 10px;
-    }
-
-    .button-group #deleteButton:hover {
-        margin-top: 0;
-        background-color: #222;
-        color: white;
-
-    }
-
-    .button-group #deleteButton:focus {
-        margin-top: 0;
-        background-color: #222;
-        color: white;
-        outline: none;
-    }
-</style>
+<link rel="stylesheet" href="assets/css/calendario.css">
 
 <section>
     <div class="row">
@@ -339,6 +32,7 @@
                 </div>
                 <div class="button-group">
                     <button type="button" id="deleteButton" style="display:none;">Borrar</button>
+                    <button type="button" id="saveButton">Guardar</button>
                 </div>
             </form>
             <div id="eventDetails" style="display:none;">
@@ -443,7 +137,7 @@
             headerToolbar: {
                 left: 'title',
                 center: '',
-                right: 'prev,next dayGridMonth,timeGridWeek,timeGridDay'
+                right: 'prev,next'
             },
             buttonText: {
                 month: 'Mes',
@@ -508,8 +202,14 @@
 
         const saveEvent = (event) => {
             var formData = new FormData();
-            var start = document.getElementById('startDate').value + 'T' + document.getElementById('startTime').value;
-            var end = document.getElementById('endDate').value + 'T' + document.getElementById('endTime').value;
+            var startDate = document.getElementById('startDate').value;
+            var startTime = document.getElementById('startTime').value;
+            var endDate = document.getElementById('endDate').value;
+            var endTime = document.getElementById('endTime').value;
+
+            // Combinar fecha y tiempo en formato ISO 8601 para el inicio y fin del evento
+            var start = startDate + 'T' + startTime + ':00';
+            var end = endDate + 'T' + endTime + ':00';
 
             formData.append('title', document.getElementById('title').value);
             formData.append('description', document.getElementById('description').value);
@@ -527,7 +227,6 @@
             }).then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        // alert('Evento ' + (event ? 'actualizado' : 'guardado') + ' con éxito');
                         calendar.refetchEvents();
                     } else {
                         alert('Error al ' + (event ? 'actualizar' : 'guardar') + ' el evento: ' + JSON.stringify(data.error));
@@ -535,13 +234,20 @@
                 }).catch(error => console.error('Error:', error));
         };
 
-        document.getElementById('title').addEventListener('input', () => saveEvent());
-        document.getElementById('description').addEventListener('input', () => saveEvent());
-        document.getElementById('startDate').addEventListener('change', () => saveEvent());
-        document.getElementById('startTime').addEventListener('change', () => saveEvent());
-        document.getElementById('endDate').addEventListener('change', () => saveEvent());
-        document.getElementById('endTime').addEventListener('change', () => saveEvent());
-        document.getElementById('color').addEventListener('change', () => saveEvent());
+
+        document.getElementById('saveButton').addEventListener('click', () => {
+            saveEvent();
+        });
+
+        // Remover los event listeners de los campos individuales para guardar automáticamente
+        // document.getElementById('title').addEventListener('input', () => saveEvent());
+        // document.getElementById('description').addEventListener('input', () => saveEvent());
+        // document.getElementById('startDate').addEventListener('change', () => saveEvent());
+        // document.getElementById('startTime').addEventListener('change', () => saveEvent());
+        // document.getElementById('endDate').addEventListener('change', () => saveEvent());
+        // document.getElementById('endTime').addEventListener('change', () => saveEvent());
+        // document.getElementById('color').addEventListener('change', () => saveEvent());
+
 
         document.getElementById('deleteButton').addEventListener('click', function () {
             var eventId = this.dataset.eventId;

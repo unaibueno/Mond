@@ -19,10 +19,6 @@ class CalendarioController extends BaseController
 
     public function index()
     {
-        $session = session();
-        if (!$session->has('isLoggedIn')) {
-            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
-        }
         $data['title'] = "HAZ RTVE | Calendario";
         $data['page_title'] = "Calendario";
 
@@ -31,24 +27,28 @@ class CalendarioController extends BaseController
 
     public function saveEvent()
     {
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
+
+        log_message('info', $id_usuario);
         $data = [
+            'id_usuario' => $id_usuario,
             'titulo' => $this->request->getPost('title'),
             'descripcion' => $this->request->getPost('description'),
-            'fecha_inicio' => $this->request->getPost('start'),
-            'fecha_fin' => $this->request->getPost('end'),
+            'fecha_inicio' => $this->request->getPost('startDate') . ' ' . $this->request->getPost('startTime'),
+            'fecha_fin' => $this->request->getPost('endDate') . ' ' . $this->request->getPost('endTime'),
             'color' => $this->request->getPost('color')
         ];
 
-        // Verificar los datos recibidos
         log_message('info', 'Datos recibidos para guardar evento: ' . json_encode($data));
 
         try {
-            if ($this->calendarioModel->save($data)) {
+            $result = $this->calendarioModel->saveEvent($data);
+
+            if ($result['success']) {
                 return $this->response->setJSON(['success' => true]);
             } else {
-                $errors = $this->calendarioModel->errors();
-                log_message('error', 'Error al guardar el evento: ' . json_encode($errors));
-                return $this->response->setJSON(['success' => false, 'error' => $errors]);
+                return $this->response->setJSON(['success' => false, 'error' => $result['error']]);
             }
         } catch (\Exception $e) {
             log_message('error', 'Excepción al guardar el evento: ' . $e->getMessage());
@@ -59,6 +59,10 @@ class CalendarioController extends BaseController
     public function updateEvent()
     {
         $id = $this->request->getPost('id');
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
+
+        // ...
         $data = [
             'titulo' => $this->request->getPost('title'),
             'descripcion' => $this->request->getPost('description'),
@@ -67,16 +71,13 @@ class CalendarioController extends BaseController
             'color' => $this->request->getPost('color')
         ];
 
-        // Verificar los datos recibidos
         log_message('info', 'Datos recibidos para actualizar evento: ' . json_encode($data));
 
         try {
-            if ($this->calendarioModel->update($id, $data)) {
+            if ($this->calendarioModel->updateEvent($id, $id_usuario, $data)) {
                 return $this->response->setJSON(['success' => true]);
             } else {
-                $errors = $this->calendarioModel->errors();
-                log_message('error', 'Error al actualizar el evento: ' . json_encode($errors));
-                return $this->response->setJSON(['success' => false, 'error' => $errors]);
+                return $this->response->setJSON(['success' => false, 'error' => 'Unauthorized or event not found']);
             }
         } catch (\Exception $e) {
             log_message('error', 'Excepción al actualizar el evento: ' . $e->getMessage());
@@ -86,36 +87,35 @@ class CalendarioController extends BaseController
 
     public function getEvents()
     {
-        $events = $this->calendarioModel->findAll();
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
+        $events = $this->calendarioModel->findEventsByUser($id_usuario);
         $formattedEvents = array();
-
         foreach ($events as $event) {
             $formattedEvents[] = [
-                'id' => $event['id'], // Asegúrate de incluir el ID del evento
+                'id' => $event['id'],
                 'title' => $event['titulo'],
                 'start' => $event['fecha_inicio'],
                 'end' => $event['fecha_fin'],
-                'color' => $event['color'] // Añadir el color
+                'color' => $event['color']
             ];
         }
-
         return $this->response->setJSON($formattedEvents);
     }
 
     public function deleteEvent()
     {
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
         $id = $this->request->getJSON()->id;
 
-        // Verificar los datos recibidos
         log_message('info', 'ID del evento recibido para eliminar: ' . $id);
 
         try {
-            if ($this->calendarioModel->delete($id)) {
+            if ($this->calendarioModel->deleteEvent($id, $id_usuario)) {
                 return $this->response->setJSON(['success' => true]);
             } else {
-                $errors = $this->calendarioModel->errors();
-                log_message('error', 'Error al eliminar el evento: ' . json_encode($errors));
-                return $this->response->setJSON(['success' => false, 'error' => $errors]);
+                return $this->response->setJSON(['success' => false, 'error' => 'Unauthorized or event not found']);
             }
         } catch (\Exception $e) {
             log_message('error', 'Excepción al eliminar el evento: ' . $e->getMessage());

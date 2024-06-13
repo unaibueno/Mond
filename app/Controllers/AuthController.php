@@ -124,6 +124,8 @@ class AuthController extends Controller
                 $session->set([
                     'id_usuario' => $user['id_usuario'],
                     'nombre' => $user['nombre'],
+                    'rol' => $user['rol'],
+
                     'isLoggedIn' => true
                 ]);
                 return redirect()->to('/dashboard');

@@ -15,8 +15,8 @@
         </div>
         <div class="lista-notas">
             <ul id="noteList">
-                <?php foreach (array_reverse($notes) as $index => $note): ?>
-                    <li id="note-<?= $note['id_nota'] ?>" <?= $index === 0 ? 'data-first="true"' : '' ?>>
+                <?php foreach (array_reverse($notes) as $note): ?>
+                    <li id="note-<?= $note['id_nota'] ?>">
                         <a href="#" onclick="selectNote(<?= $note['id_nota'] ?>)"><?= $note['titulo_nota'] ?></a>
                     </li>
                 <?php endforeach; ?>
@@ -47,7 +47,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         // Seleccionar la primera nota automáticamente al cargar la página
-        var firstNoteElement = document.querySelector('#noteList li[data-first="true"] a');
+        var firstNoteElement = document.querySelector('#noteList li:first-child a');
         if (firstNoteElement) {
             firstNoteElement.click();
         }
@@ -74,21 +74,6 @@
             console.error('There was a problem initializing the editor.', error);
         });
 
-    function newNote() {
-        autoSaveContent();
-
-        document.getElementById('noteId').value = '';
-        document.getElementById('noteTitle').value = '';
-        window.editor.setData('');
-        document.getElementById('deleteButton').classList.add('hidden');
-        document.getElementById('deleteForm').action = '';
-        titleSaved = false;
-        currentNoteId = null;
-        currentNoteContent = '';
-
-        var notes = document.querySelectorAll('#noteList li');
-        notes.forEach(note => note.classList.remove('active-note'));
-    }
 
     function selectNote(id) {
         autoSaveContent();
@@ -150,7 +135,8 @@
                     var newNote = document.createElement('li');
                     newNote.id = 'note-' + data.id;
                     newNote.innerHTML = `<a href="#" onclick="selectNote(${data.id})">${noteTitle}</a>`;
-                    document.getElementById('noteList').appendChild(newNote);
+                    var firstNoteElement = document.querySelector('#noteList li:first-child');
+                    document.getElementById('noteList').insertBefore(newNote, firstNoteElement);
                 }
             } else {
                 console.error('Error al guardar el título:', data.message);

@@ -14,7 +14,8 @@ class UserModel extends Model
         'email',
         'contraseña',
         'fecha_creacion',
-        'fecha_actualizacion'
+        'fecha_actualizacion',
+        'rol'  // Añadido el campo rol
     ];
 
     protected $beforeInsert = ['beforeInsert'];

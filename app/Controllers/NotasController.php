@@ -5,12 +5,14 @@ use App\Models\NotasModel;
 
 class NotasController extends BaseController
 {
-    public $NotasModel = null;
+    private $NotasModel = null;
 
     public function __construct()
     {
         $this->NotasModel = new NotasModel();
         $session = session();
+
+        // Verificar si el usuario está autenticado
         if (!$session->has('isLoggedIn')) {
             return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
         }
@@ -19,32 +21,36 @@ class NotasController extends BaseController
     public function index()
     {
         $session = session();
-        if (!$session->has('isLoggedIn')) {
-            return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
-        }
-        $defaultUserId = 1;
+
+        // Obtener el ID de usuario de la sesión
+        $userId = $session->get('id_usuario'); // Asegúrate de tener esta clave en tu sesión
 
         $data['title'] = "HAZ RTVE | Notas";
         $data['page_title'] = "Notas";
-        $data['notes'] = $this->NotasModel->where('id_usuario', $defaultUserId)->findAll();
+
+        // Obtener todas las notas del usuario actual
+        $data['notes'] = $this->NotasModel->where('id_usuario', $userId)->findAll();
 
         return view('notas/index', $data);
     }
 
     public function saveTitle()
     {
-        $defaultUserId = 1; // Cambia este valor según sea necesario
+        $session = session();
+        $id_usuario = $session->get('id_usuario'); // Obtener el ID de usuario de la sesión
 
         $data = [
-            'id_usuario' => $defaultUserId,
+            'id_usuario' => $id_usuario,
             'titulo_nota' => $this->request->getPost('title'),
             'fecha_actualizacion' => date('Y-m-d H:i:s'),
         ];
 
         if ($this->request->getPost('id')) {
+            // Actualizar la nota existente
             $this->NotasModel->update($this->request->getPost('id'), $data);
             $noteId = $this->request->getPost('id');
         } else {
+            // Insertar nueva nota
             $data['fecha_creacion'] = date('Y-m-d H:i:s');
             $noteId = $this->NotasModel->insert($data);
         }
@@ -60,6 +66,7 @@ class NotasController extends BaseController
         ];
 
         if ($this->request->getPost('id')) {
+            // Actualizar el contenido de la nota
             $this->NotasModel->update($this->request->getPost('id'), $data);
             return $this->response->setJSON(['success' => true]);
         } else {
@@ -69,12 +76,14 @@ class NotasController extends BaseController
 
     public function delete($id)
     {
+        // Eliminar una nota específica
         $this->NotasModel->delete($id);
         return redirect()->to('/notas');
     }
 
     public function getNote($id)
     {
+        // Obtener detalles de una nota específica
         $note = $this->NotasModel->find($id);
         return $this->response->setJSON(['success' => true, 'note' => $note]);
     }

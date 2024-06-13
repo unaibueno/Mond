@@ -10,18 +10,22 @@ class AuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        // Obtener la instancia de la sesión
         $session = session();
-
-        // Verificar si el usuario ha iniciado sesión
-        if (!$session->has('isLoggedIn')) {
-            // Redirigir al usuario a la página de inicio de sesión
+        if (!$session->get('isLoggedIn')) {
             return redirect()->to('/auth/login');
+        }
+
+        // Verifica el rol del usuario si es necesario
+        if (!empty($arguments)) {
+            $role = $session->get('rol');
+            if (!in_array($role, $arguments)) {
+                return redirect()->to('/unauthorized');
+            }
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // No se necesita implementar nada aquí por ahora
+        // No action needed after the request
     }
 }

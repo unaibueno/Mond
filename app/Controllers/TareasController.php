@@ -24,16 +24,22 @@ class TareasController extends BaseController
         if (!$session->has('isLoggedIn')) {
             return redirect()->to('/auth/login')->with('error', 'Por favor, inicia sesión primero.');
         }
+
+        $id_usuario = $session->get('id_usuario');
         $data['title'] = "HAZ RTVE | Tareas";
         $data['page_title'] = "Tareas";
-        $data['tasks'] = $this->TareasModel->findAll();
+        $data['tasks'] = $this->TareasModel->where('id_usuario', $id_usuario)->findAll();
 
         return view('tareas/index', $data);
     }
 
     public function save()
     {
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
+
         $data = [
+            'id_usuario' => $id_usuario,
             'nombre_tarea' => $this->request->getPost('nombre_tarea'),
             'descripcion_tarea' => $this->request->getPost('descripcion_tarea'),
             'estado' => $this->request->getPost('estado'),
@@ -51,7 +57,16 @@ class TareasController extends BaseController
 
     public function update()
     {
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
         $id = $this->request->getPost('id_tarea');
+
+        // Verify that the task belongs to the logged in user
+        $task = $this->TareasModel->where('id_usuario', $id_usuario)->find($id);
+        if (!$task) {
+            return $this->response->setJSON(['success' => false, 'message' => 'No tienes permiso para actualizar esta tarea.']);
+        }
+
         $data = [
             'nombre_tarea' => $this->request->getPost('nombre_tarea'),
             'descripcion_tarea' => $this->request->getPost('descripcion_tarea'),
@@ -70,9 +85,17 @@ class TareasController extends BaseController
 
     public function delete()
     {
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
         $id = $this->request->getJSON()->id_tarea;
 
         log_message('info', 'ID de la tarea recibido para eliminar: ' . $id);
+
+        // Verify that the task belongs to the logged in user
+        $task = $this->TareasModel->where('id_usuario', $id_usuario)->find($id);
+        if (!$task) {
+            return $this->response->setJSON(['success' => false, 'message' => 'No tienes permiso para eliminar esta tarea.']);
+        }
 
         $result = $this->TareasModel->deleteTask($id);
         if ($result['success']) {
@@ -84,7 +107,16 @@ class TareasController extends BaseController
 
     public function updateState()
     {
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
         $id = $this->request->getPost('id_tarea');
+
+        // Verify that the task belongs to the logged in user
+        $task = $this->TareasModel->where('id_usuario', $id_usuario)->find($id);
+        if (!$task) {
+            return $this->response->setJSON(['success' => false, 'message' => 'No tienes permiso para actualizar el estado de esta tarea.']);
+        }
+
         $data = ['estado' => $this->request->getPost('estado')];
 
         log_message('info', 'Datos recibidos para actualizar estado de la tarea: ' . json_encode($data));
@@ -99,8 +131,11 @@ class TareasController extends BaseController
 
     public function getTaskProgress()
     {
+        $session = session();
+        $id_usuario = $session->get('id_usuario');
+
         $db = \Config\Database::connect();
-        $query = $db->query('SELECT estado, COUNT(id_tarea) as count FROM tareas GROUP BY estado');
+        $query = $db->query('SELECT estado, COUNT(id_tarea) as count FROM tareas WHERE id_usuario = ? GROUP BY estado', [$id_usuario]);
         $results = $query->getResult();
 
         $data = [
@@ -129,5 +164,4 @@ class TareasController extends BaseController
 
         return $this->response->setJSON($data);
     }
-
 }
