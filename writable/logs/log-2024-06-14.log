@@ -1,0 +1,292 @@
+INFO - 2024-06-14 09:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:50:38 --> 1
+INFO - 2024-06-14 09:50:38 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventos","descripcion":"","fecha_inicio":"2024-06-14T22:00:00","fecha_fin":"2024-06-16T21:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:50:39 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventos","descripcion":"","fecha_inicio":"2024-06-14T22:00:00","fecha_fin":"2024-06-16T21:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:52:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:52:22 --> ID del evento recibido para eliminar: 99
+INFO - 2024-06-14 09:52:22 --> ID del evento recibido para eliminar: 99
+INFO - 2024-06-14 09:52:22 --> Evento eliminado correctamente
+INFO - 2024-06-14 09:52:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:52:26 --> 1
+INFO - 2024-06-14 09:52:26 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un evento","descripcion":"","fecha_inicio":"2024-06-15T22:00:00","fecha_fin":"2024-06-16T21:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:52:26 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un evento","descripcion":"","fecha_inicio":"2024-06-15T22:00:00","fecha_fin":"2024-06-16T21:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:56:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:56:01 --> 1
+INFO - 2024-06-14 09:56:01 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventos","descripcion":"","fecha_inicio":"2024-06-15T20:00:00","fecha_fin":"2024-06-16T19:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:56:01 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventos","descripcion":"","fecha_inicio":"2024-06-15T20:00:00","fecha_fin":"2024-06-16T19:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:56:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:58:56 --> 1
+INFO - 2024-06-14 09:58:56 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventoss","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:58:57 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventoss","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:58:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:32 --> 1
+INFO - 2024-06-14 09:59:32 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventosbn","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:59:33 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventosbn","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:36 --> 1
+INFO - 2024-06-14 09:59:36 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventosbn","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:59:36 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventosbn","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:37 --> 1
+INFO - 2024-06-14 09:59:37 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventosbn","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:59:37 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventosbn","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 09:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 09:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:00:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:00:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:00:24 --> 1
+INFO - 2024-06-14 10:00:25 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventosbns","descripcion":"","fecha_inicio":"2024-06-15T16:00:00","fecha_fin":"2024-06-16T15:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:00:25 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventosbns","descripcion":"","fecha_inicio":"2024-06-15T16:00:00","fecha_fin":"2024-06-16T15:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:00:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:01 --> ID del evento recibido para eliminar: 117
+INFO - 2024-06-14 10:01:01 --> ID del evento recibido para eliminar: 117
+INFO - 2024-06-14 10:01:01 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:04 --> ID del evento recibido para eliminar: 114
+INFO - 2024-06-14 10:01:04 --> ID del evento recibido para eliminar: 114
+INFO - 2024-06-14 10:01:04 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:06 --> ID del evento recibido para eliminar: 113
+INFO - 2024-06-14 10:01:06 --> ID del evento recibido para eliminar: 113
+INFO - 2024-06-14 10:01:06 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:08 --> ID del evento recibido para eliminar: 116
+INFO - 2024-06-14 10:01:08 --> ID del evento recibido para eliminar: 116
+INFO - 2024-06-14 10:01:08 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:16 --> ID del evento recibido para eliminar: 115
+INFO - 2024-06-14 10:01:16 --> ID del evento recibido para eliminar: 115
+INFO - 2024-06-14 10:01:17 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:19 --> ID del evento recibido para eliminar: 112
+INFO - 2024-06-14 10:01:19 --> ID del evento recibido para eliminar: 112
+INFO - 2024-06-14 10:01:19 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:21 --> ID del evento recibido para eliminar: 111
+INFO - 2024-06-14 10:01:21 --> ID del evento recibido para eliminar: 111
+INFO - 2024-06-14 10:01:21 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:24 --> 1
+INFO - 2024-06-14 10:01:24 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventos","descripcion":"","fecha_inicio":"2024-06-15T20:00:00","fecha_fin":"2024-06-16T19:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:01:24 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventos","descripcion":"","fecha_inicio":"2024-06-15T20:00:00","fecha_fin":"2024-06-16T19:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:28 --> 1
+INFO - 2024-06-14 10:01:28 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventosss","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:01:28 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventosss","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:13 --> ID del evento recibido para eliminar: 119
+INFO - 2024-06-14 10:02:13 --> ID del evento recibido para eliminar: 119
+INFO - 2024-06-14 10:02:13 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:45 --> 1
+INFO - 2024-06-14 10:02:45 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventoss","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:02:45 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventoss","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:03:21 --> 1
+INFO - 2024-06-14 10:03:21 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Esto es un eventoss","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:03:21 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Esto es un eventoss","descripcion":"","fecha_inicio":"2024-06-15T18:00:00","fecha_fin":"2024-06-16T17:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:03:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:06:09 --> Excepción al actualizar el evento: 121
+INFO - 2024-06-14 10:06:09 --> Datos recibidos para actualizar evento: "1"
+CRITICAL - 2024-06-14 10:06:09 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, string given, called in /Users/unaibueno/Desktop/Mond/system/BaseModel.php on line 1875
+[Method: POST, Route: update-event]
+in SYSTEMPATH/BaseModel.php on line 1762.
+ 1 SYSTEMPATH/BaseModel.php(1875): CodeIgniter\BaseModel->timeToString('1')
+ 2 SYSTEMPATH/BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray('1', 'update')
+ 3 SYSTEMPATH/Model.php(854): CodeIgniter\BaseModel->update([...], '1')
+ 4 APPPATH/Models/CalendarioModel.php(37): CodeIgniter\Model->update('121', '1')
+ 5 APPPATH/Controllers/CalendarioController.php(76): App\Models\CalendarioModel->updateEvent('121', '1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CalendarioController->updateEvent()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalendarioController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-06-14 10:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:06:14 --> ID del evento recibido para eliminar: 118
+INFO - 2024-06-14 10:06:14 --> ID del evento recibido para eliminar: 118
+INFO - 2024-06-14 10:06:14 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:06:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:06:17 --> ID del evento recibido para eliminar: 120
+INFO - 2024-06-14 10:06:17 --> ID del evento recibido para eliminar: 120
+INFO - 2024-06-14 10:06:17 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:06:22 --> Excepción al actualizar el evento: 103
+INFO - 2024-06-14 10:06:22 --> Datos recibidos para actualizar evento: "1"
+CRITICAL - 2024-06-14 10:06:22 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, string given, called in /Users/unaibueno/Desktop/Mond/system/BaseModel.php on line 1875
+[Method: POST, Route: update-event]
+in SYSTEMPATH/BaseModel.php on line 1762.
+ 1 SYSTEMPATH/BaseModel.php(1875): CodeIgniter\BaseModel->timeToString('1')
+ 2 SYSTEMPATH/BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray('1', 'update')
+ 3 SYSTEMPATH/Model.php(854): CodeIgniter\BaseModel->update([...], '1')
+ 4 APPPATH/Models/CalendarioModel.php(37): CodeIgniter\Model->update('103', '1')
+ 5 APPPATH/Controllers/CalendarioController.php(76): App\Models\CalendarioModel->updateEvent('103', '1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CalendarioController->updateEvent()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CalendarioController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(57): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/unaibueno/Desktop/Mond/public/index.php')
+INFO - 2024-06-14 10:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:08:27 --> Excepción al actualizar el evento: 110
+INFO - 2024-06-14 10:08:27 --> Datos recibidos para actualizar evento: {"titulo":"Esto es un eventossss","descripcion":"","fecha_inicio":"2024-06-14T20:00:00","fecha_fin":"2024-06-16T19:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:08:27 --> Evento actualizado correctamente: {"titulo":"Esto es un eventossss","descripcion":"","fecha_inicio":"2024-06-14T20:00:00","fecha_fin":"2024-06-16T19:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:08:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:08:31 --> Excepción al actualizar el evento: 110
+INFO - 2024-06-14 10:08:31 --> Datos recibidos para actualizar evento: {"titulo":"Hola","descripcion":"","fecha_inicio":"2024-06-14T20:00:00","fecha_fin":"2024-06-16T19:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:08:32 --> Evento actualizado correctamente: {"titulo":"Hola","descripcion":"","fecha_inicio":"2024-06-14T20:00:00","fecha_fin":"2024-06-16T19:59:00","color":"#eeeaf9"}
+INFO - 2024-06-14 10:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:40 --> 1
+INFO - 2024-06-14 10:08:40 --> Datos recibidos para guardar evento: {"id_usuario":"1","titulo":"Holaaa","descripcion":"","fecha_inicio":"2024-06-17T00:00:00","fecha_fin":"2024-06-18T23:59:00","color":"#f1e6cb"}
+INFO - 2024-06-14 10:08:40 --> Evento guardado correctamente: {"id_usuario":"1","titulo":"Holaaa","descripcion":"","fecha_inicio":"2024-06-17T00:00:00","fecha_fin":"2024-06-18T23:59:00","color":"#f1e6cb"}
+INFO - 2024-06-14 10:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:45 --> ID del evento recibido para eliminar: 122
+INFO - 2024-06-14 10:08:45 --> ID del evento recibido para eliminar: 122
+INFO - 2024-06-14 10:08:45 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:48 --> ID del evento recibido para eliminar: 110
+INFO - 2024-06-14 10:08:48 --> ID del evento recibido para eliminar: 110
+INFO - 2024-06-14 10:08:48 --> Evento eliminado correctamente
+INFO - 2024-06-14 10:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:08:53 --> Excepción al actualizar el evento: 109
+INFO - 2024-06-14 10:08:53 --> Datos recibidos para actualizar evento: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-06T20:00:00","fecha_fin":"2024-06-09T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:08:53 --> Evento actualizado correctamente: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-06T20:00:00","fecha_fin":"2024-06-09T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:08:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:08:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:08:57 --> Excepción al actualizar el evento: 109
+INFO - 2024-06-14 10:08:57 --> Datos recibidos para actualizar evento: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-08T20:00:00","fecha_fin":"2024-06-09T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:08:58 --> Evento actualizado correctamente: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-08T20:00:00","fecha_fin":"2024-06-09T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:08:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:09:03 --> Excepción al actualizar el evento: 109
+INFO - 2024-06-14 10:09:03 --> Datos recibidos para actualizar evento: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-08T20:00:00","fecha_fin":"2024-06-08T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:09:03 --> Evento actualizado correctamente: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-08T20:00:00","fecha_fin":"2024-06-08T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:09:08 --> Excepción al actualizar el evento: 109
+INFO - 2024-06-14 10:09:08 --> Datos recibidos para actualizar evento: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-06T20:00:00","fecha_fin":"2024-06-08T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:09:08 --> Evento actualizado correctamente: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-06T20:00:00","fecha_fin":"2024-06-08T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:09:13 --> Excepción al actualizar el evento: 109
+INFO - 2024-06-14 10:09:13 --> Datos recibidos para actualizar evento: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-07T20:00:00","fecha_fin":"2024-06-08T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:09:13 --> Evento actualizado correctamente: {"titulo":"Otro evento","descripcion":"","fecha_inicio":"2024-06-07T20:00:00","fecha_fin":"2024-06-08T19:59:00","color":"#e9f4f5"}
+INFO - 2024-06-14 10:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-14 10:09:21 --> Excepción al actualizar el evento: 108
+INFO - 2024-06-14 10:09:21 --> Datos recibidos para actualizar evento: {"titulo":"Evento de ejemplo nuevo","descripcion":"","fecha_inicio":"2024-06-04T20:00:00","fecha_fin":"2024-06-07T19:59:00","color":"#fbe4e3"}
+INFO - 2024-06-14 10:09:21 --> Evento actualizado correctamente: {"titulo":"Evento de ejemplo nuevo","descripcion":"","fecha_inicio":"2024-06-04T20:00:00","fecha_fin":"2024-06-07T19:59:00","color":"#fbe4e3"}
+INFO - 2024-06-14 10:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:09:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:01 --> Datos recibidos para actualizar estado de la tarea: {"estado":"1"}
+INFO - 2024-06-14 10:10:01 --> Datos recibidos para actualizar tarea: {"estado":"1"}
+INFO - 2024-06-14 10:10:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:01 --> Datos recibidos para actualizar estado de la tarea: {"estado":"1"}
+INFO - 2024-06-14 10:10:01 --> Datos recibidos para actualizar tarea: {"estado":"1"}
+INFO - 2024-06-14 10:10:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:28 --> Datos recibidos para actualizar estado de la tarea: {"estado":"0"}
+INFO - 2024-06-14 10:10:28 --> Datos recibidos para actualizar tarea: {"estado":"0"}
+INFO - 2024-06-14 10:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:28 --> Datos recibidos para actualizar estado de la tarea: {"estado":"0"}
+INFO - 2024-06-14 10:10:28 --> Datos recibidos para actualizar tarea: {"estado":"0"}
+INFO - 2024-06-14 10:10:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-14 10:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

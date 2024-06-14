@@ -31,16 +31,15 @@ class CalendarioController extends BaseController
         $id_usuario = $session->get('id_usuario');
 
         log_message('info', $id_usuario);
+
         $data = [
             'id_usuario' => $id_usuario,
             'titulo' => $this->request->getPost('title'),
             'descripcion' => $this->request->getPost('description'),
-            'fecha_inicio' => $this->request->getPost('startDate') . ' ' . $this->request->getPost('startTime'),
-            'fecha_fin' => $this->request->getPost('endDate') . ' ' . $this->request->getPost('endTime'),
+            'fecha_inicio' => $this->request->getPost('start'),
+            'fecha_fin' => $this->request->getPost('end'),
             'color' => $this->request->getPost('color')
         ];
-
-        log_message('info', 'Datos recibidos para guardar evento: ' . json_encode($data));
 
         try {
             $result = $this->calendarioModel->saveEvent($data);
@@ -56,13 +55,15 @@ class CalendarioController extends BaseController
         }
     }
 
+
     public function updateEvent()
     {
         $id = $this->request->getPost('id');
         $session = session();
         $id_usuario = $session->get('id_usuario');
+        log_message('error', 'Excepción al actualizar el evento: ' . $id);
 
-        // ...
+
         $data = [
             'titulo' => $this->request->getPost('title'),
             'descripcion' => $this->request->getPost('description'),
@@ -70,8 +71,6 @@ class CalendarioController extends BaseController
             'fecha_fin' => $this->request->getPost('end'),
             'color' => $this->request->getPost('color')
         ];
-
-        log_message('info', 'Datos recibidos para actualizar evento: ' . json_encode($data));
 
         try {
             if ($this->calendarioModel->updateEvent($id, $id_usuario, $data)) {
@@ -84,6 +83,7 @@ class CalendarioController extends BaseController
             return $this->response->setJSON(['success' => false, 'error' => 'Failed to update event']);
         }
     }
+
 
     public function getEvents()
     {

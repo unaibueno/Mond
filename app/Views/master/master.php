@@ -55,7 +55,6 @@
                 </a>
               </li>
             </ul>
-
           </div>
           <div class="ajustes-panel">
             <div class="main-content" id="cuentas">
@@ -84,7 +83,7 @@
                         <div class="opcion-ajuste-descripcion" id="correo-electronico">unaibueno@gmail.com</div>
                       </div>
                       <div class="col-md-5 pt-md-0 pt-3 d-flex justify-content-end">
-                        <button type="text" class="btn-ajuste">Cambiar correo electronico</button>
+                        <button type="text" class="btn-ajuste" id="cambiar-correo">Cambiar correo electronico</button>
                       </div>
                     </div>
                     <div class="row py-2">
@@ -93,7 +92,7 @@
                         <div class="opcion-ajuste-descripcion">Esta opción cambiará tu contraseña</div>
                       </div>
                       <div class="col-md-5 pt-md-0 pt-3 d-flex justify-content-end">
-                        <button type="text" class="btn-ajuste">Cambiar contraseña</button>
+                        <button type="text" class="btn-ajuste" id="cambiar-contrasena">Cambiar contraseña</button>
                       </div>
                     </div>
                   </div>
@@ -108,7 +107,7 @@
                         <div class="opcion-ajuste-descripcion">¡Cuidado! Esta accion es irreversible</div>
                       </div>
                       <div class="col-md-5 pt-md-0 pt-3 d-flex justify-content-end">
-                        <button type="text" class="btn-ajuste">Eliminar mi cuenta</button>
+                        <button type="text" class="btn-ajuste" id="eliminar-cuenta">Eliminar mi cuenta</button>
                       </div>
                     </div>
                   </div>
@@ -121,6 +120,63 @@
       </div>
     </div>
 
+    <!-- Modals -->
+    <div class="modal fade" id="modalCorreo" tabindex="-1" aria-labelledby="modalCorreoLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCorreoLabel">Cambiar correo electrónico</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="email" id="nuevo-correo" class="form-control" placeholder="Nuevo correo electrónico">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-modal" id="guardar-correo">Guardar cambios</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalContrasena" tabindex="-1" aria-labelledby="modalContrasenaLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalContrasenaLabel">Cambiar contraseña</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="modal-body">
+            <input type="password" id="nueva-contrasena" class="form-control mt-2" placeholder="Contraseña actual">
+            <input type="password" id="nueva-contrasena" class="form-control mt-2" placeholder="Nueva contraseña">
+            <input type="password" id="nueva-contrasena" class="form-control mt-2" placeholder="Confirmar contraseña">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-modal" id="guardar-contrasena">Cambiar contraseña</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalEliminarCuenta" tabindex="-1" aria-labelledby="modalEliminarCuentaLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalEliminarCuentaLabel">Eliminar cuenta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>¿Estás seguro de que deseas eliminar tu cuenta? Esta acción no se puede deshacer.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-modal" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn-modal" id="confirmar-eliminar-cuenta">Eliminar cuenta</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <aside class="main-sidebar">
       <a href="/">
@@ -217,10 +273,40 @@
 
       // Initialize with 'cuentas' as the default option
       showContent('cuentas');
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
+
+      // Modal event handlers
+      $('#cambiar-correo').on('click', function () {
+        $('#modalCorreo').modal('show');
+      });
+
+      $('#cambiar-contrasena').on('click', function () {
+        $('#modalContrasena').modal('show');
+      });
+
+      $('#eliminar-cuenta').on('click', function () {
+        $('#modalEliminarCuenta').modal('show');
+      });
+
+      $('#guardar-correo').on('click', function () {
+        const nuevoCorreo = $('#nuevo-correo').val();
+        // Add AJAX request to update email here
+        alert('Correo actualizado a: ' + nuevoCorreo);
+        $('#modalCorreo').modal('hide');
+      });
+
+      $('#guardar-contrasena').on('click', function () {
+        const nuevaContrasena = $('#nueva-contrasena').val();
+        // Add AJAX request to update password here
+        alert('Contraseña actualizada.');
+        $('#modalContrasena').modal('hide');
+      });
+
+      $('#confirmar-eliminar-cuenta').on('click', function () {
+        // Add AJAX request to delete account here
+        alert('Cuenta eliminada.');
+        $('#modalEliminarCuenta').modal('hide');
+      });
+
       // Cargar datos del usuario
       $.ajax({
         url: '<?= base_url('user') ?>',

@@ -18,14 +18,15 @@
                         <option value="#eef3fe">Azul</option>
                     </select>
                 </div>
-                <label class="label-form-event mt-3" for="description">Notas</label>
+                <label class="label-form-event mt-2" for="description">Notas</label>
                 <input type="textarea" id="description" placeholder="Escribe aquí tus notas" name="description">
                 <label class="label-form-event mt-3" for="start">Fecha de inicio</label>
                 <div class="form-group">
                     <input type="date" id="startDate" name="startDate" required>
                     <input type="time" id="startTime" name="startTime" required>
+
                 </div>
-                <label class="label-form-event mt-3" for="end">Fecha de fin</label>
+                <label class="label-form-event mt-2" for="end">Fecha de fin</label>
                 <div class="form-group">
                     <input type="date" id="endDate" name="endDate" required>
                     <input type="time" id="endTime" name="endTime" required>
@@ -146,16 +147,33 @@
                 list: 'Lista'
             },
             events: '<?= base_url('get-events') ?>',
+
             select: function (info) {
-                document.getElementById('startDate').value = info.startStr.split('T')[0];
+                // Obtener las fechas de inicio y fin seleccionadas
+                var startDate = info.startStr.split('T')[0];
+                var endDate = info.endStr ? info.endStr.split('T')[0] : startDate; // Usar fecha de fin si está disponible, de lo contrario usar fecha de inicio
+
+                // Convertir las fechas a objetos Date para comparación
+                var startDateTime = new Date(info.startStr);
+                var endDateTime = info.endStr ? new Date(info.endStr) : startDateTime;
+
+                // Ajustar endDate para que sea el último día seleccionado y no el siguiente
+                endDateTime.setDate(endDateTime.getDate() - 1); // Restar un día
+
+                // Asignar las fechas y horas de inicio y fin
+                document.getElementById('startDate').value = startDate;
                 document.getElementById('startTime').value = '00:00';
-                document.getElementById('endDate').value = info.endStr ? info.endStr.split('T')[0] : '';
+                document.getElementById('endDate').value = endDateTime.toISOString().slice(0, 10);
                 document.getElementById('endTime').value = '23:59';
+
+                // Configurar la visibilidad de los elementos necesarios
                 document.getElementById('eventForm').style.display = 'block';
                 document.getElementById('eventDetails').style.display = 'none';
                 document.getElementById('deleteButton').style.display = 'none';
                 document.getElementById('eventSidebar').style.display = 'block';
             },
+
+
             eventClick: function (info) {
                 document.getElementById('title').value = info.event.title;
                 document.getElementById('description').value = info.event.extendedProps.description || '';
@@ -172,11 +190,12 @@
                 document.getElementById('eventForm').dataset.eventId = info.event.id;
                 document.getElementById('deleteButton').dataset.eventId = info.event.id;
             },
+
             eventDrop: function (info) {
                 if (!confirm("¿Estás seguro de este cambio?")) {
                     info.revert();
                 } else {
-                    saveEvent(info.event);
+                    saveEvent(event);
                 }
             },
             eventRender: function (info) {
@@ -202,6 +221,8 @@
 
         const saveEvent = (event) => {
             var formData = new FormData();
+            var eventId = document.getElementById('eventForm').dataset.eventId; // Obtener el eventId del formulario
+
             var startDate = document.getElementById('startDate').value;
             var startTime = document.getElementById('startTime').value;
             var endDate = document.getElementById('endDate').value;
@@ -217,36 +238,41 @@
             formData.append('end', end);
             formData.append('color', document.getElementById('color').value);
 
-            if (event) {
-                formData.append('id', event.id);
+            // Si hay un eventId (es decir, estamos actualizando), añadirlo al formData
+            if (eventId) {
+                formData.append('id', eventId);
+                console.log('Actualización de evento. ID:', eventId);
             }
 
-            fetch(event ? '<?= base_url('update-event') ?>' : '<?= base_url('save-event') ?>', {
+            var url;
+            if (eventId) {
+                url = '<?= base_url('update-event') ?>';
+            } else {
+                url = '<?= base_url('save-event') ?>';
+            }
+
+            console.log('URL:', url); // Mostrar la URL seleccionada para la solicitud
+
+            fetch(url, {
                 method: 'POST',
                 body: formData
             }).then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        calendar.refetchEvents();
+                        calendar.refetchEvents(); // Actualizar eventos en el calendario
                     } else {
-                        alert('Error al ' + (event ? 'actualizar' : 'guardar') + ' el evento: ' + JSON.stringify(data.error));
+                        alert('Error al ' + (eventId ? 'actualizar' : 'guardar') + ' el evento: ' + JSON.stringify(data.error));
                     }
                 }).catch(error => console.error('Error:', error));
         };
 
 
+
         document.getElementById('saveButton').addEventListener('click', () => {
-            saveEvent();
+            saveEvent(event);
         });
 
-        // Remover los event listeners de los campos individuales para guardar automáticamente
-        // document.getElementById('title').addEventListener('input', () => saveEvent());
-        // document.getElementById('description').addEventListener('input', () => saveEvent());
-        // document.getElementById('startDate').addEventListener('change', () => saveEvent());
-        // document.getElementById('startTime').addEventListener('change', () => saveEvent());
-        // document.getElementById('endDate').addEventListener('change', () => saveEvent());
-        // document.getElementById('endTime').addEventListener('change', () => saveEvent());
-        // document.getElementById('color').addEventListener('change', () => saveEvent());
+
 
 
         document.getElementById('deleteButton').addEventListener('click', function () {

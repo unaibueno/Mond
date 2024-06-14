@@ -1132,6 +1132,10 @@ label {
   padding: 5px 8px;
   font-size: 14px;
 }
+.btn-ajuste:focus{
+  outline: none;
+  border: 1px solid #3c3c3c;
+}
 .contenedor-ajustes-usuario .opcion-ajuste-titulo{
   font-size: 14px;
   padding-left: 7px;
@@ -1146,3 +1150,44 @@ label {
 .text-eliminar-cuenta{
   color: #e85353;
 }
+
+.modal-content{
+  background-color: #222;
+  color: white;
+  border-radius: 20px;
+}
+.modal-header{
+  border: none;
+}
+.modal-footer{
+    border: none;
+
+}
+.modal-content input{
+  background-color: #333;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+.modal-content input:focus{
+  background-color: #333;
+  color: white;
+  border-radius: 20px;
+}
+.modal-content .btn-modal{
+  background-color: #333;
+  border-radius: 25px;
+  padding: 10px;
+  color: #fff;
+}
+.modal-content .btn-modal:focus{
+ outline: none;
+ border: none;
+}
+.btn-close{background-color: transparent;
+color: #fff;}
+.btn-close:focus{
+  border: none;
+  outline: none;
+}
+

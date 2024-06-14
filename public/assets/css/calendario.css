@@ -44,7 +44,7 @@
 .fc-direction-rtl .fc-daygrid-event.fc-event-end {
   background-color: #ffe7e4;
   border: solid 1px #ffe7e4;
-  border-left: solid 4px red;
+  border-left: none;
 }
 
 .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
@@ -157,10 +157,12 @@ input {
 .minicalendario {
   text-align: center;
   width: 100%;
-  overflow: auto;
+  overflow: none;
   padding-bottom: 0px;
   border-radius: 25px;
   padding: 12px;
+
+  padding-top: 40px;
 }
 
 .minicalendario ol {
@@ -231,7 +233,7 @@ input {
 }
 
 .fc .fc-highlight {
-  background-color: #f2f2f2;
+  background-color: #f9f9f9;
 }
 
 .fc .fc-daygrid-day-frame:hover {
@@ -240,6 +242,7 @@ input {
 
 .label-form-event {
   font-size: 14px;
+  color: #000;
 }
 
 .form-group {
@@ -281,22 +284,38 @@ option {
   align-items: center;
 }
 
-.button-group #deleteButton {
-  margin-top: 0;
+.button-group #deleteButton,
+.button-group #saveButton {
+  margin-top: 10px;
   background-color: #f2f2f2;
   border-radius: 10px;
   padding: 5px 10px;
+  font-size: 12px;
 }
 
-.button-group #deleteButton:hover {
-  margin-top: 0;
+.button-group #deleteButton:hover,
+.button-group #saveButton:hover {
+  margin-top: 10px;
   background-color: #222;
-  color: white;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
 }
 
-.button-group #deleteButton:focus {
-  margin-top: 0;
-  background-color: #222;
-  color: white;
-  outline: none;
+.fc-event-time {
+  display: none !important;
+}
+.fc-h-event .fc-event-main {
+  border-radius: 4px;
+  padding-left: 3px;
+  font-size: 13px;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: transparent !important;
+}
+
+.fc-h-event .fc-event-title {
+  text-transform: none;
 }

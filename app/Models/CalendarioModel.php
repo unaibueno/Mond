@@ -16,6 +16,7 @@ class CalendarioModel extends Model
 
         try {
             if ($this->insert($data)) {
+                log_message('info', 'Evento guardado correctamente: ' . json_encode($data));
                 return ['success' => true];
             } else {
                 $errors = $this->errors();
@@ -27,13 +28,16 @@ class CalendarioModel extends Model
             return ['success' => false, 'error' => 'Failed to save event'];
         }
     }
+    // En CalendarioModel.php
 
-    public function updateEvent($id, $data)
+    public function updateEvent($id, $id_usuario, $data)
     {
         log_message('info', 'Datos recibidos para actualizar evento: ' . json_encode($data));
 
         try {
+            // Llama al método update() con los datos correctos
             if ($this->update($id, $data)) {
+                log_message('info', 'Evento actualizado correctamente: ' . json_encode($data));
                 return ['success' => true];
             } else {
                 $errors = $this->errors();
@@ -50,6 +54,7 @@ class CalendarioModel extends Model
     {
         return $this->where('id_usuario', $userId)->findAll();
     }
+
     public function deleteEvent($id)
     {
         log_message('info', 'ID del evento recibido para eliminar: ' . $id);

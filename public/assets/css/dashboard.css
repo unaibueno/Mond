@@ -587,3 +587,7 @@ a:hover {
   cursor: pointer;
   border-radius: 20px;
 }
+
+.fc-has-events .fc-daygrid-day-number .fc-day-today .fc-daygrid-day-number {
+  background-color: red;
+}
