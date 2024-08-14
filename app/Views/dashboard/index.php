@@ -36,7 +36,7 @@
               <h3>Calendario</h3>
             </div>
             <div class="boton-titulo-opciones">
-              <select id="monthSelector">
+              <select id="monthSelector" class="pointer">
                 <option value="1">Enero</option>
                 <option value="2">Febrero</option>
                 <option value="3">Marzo</option>

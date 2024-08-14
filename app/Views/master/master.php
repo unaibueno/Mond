@@ -179,7 +179,7 @@
     </div>
 
     <aside class="main-sidebar">
-      <a href="/">
+      <a href="<?= base_url("") ?>">
         <img src="assets/img/logo-white.png" alt="AdminLTE Logo" width="200px" class="brand-image"
           style="padding:30px;">
       </a>
@@ -221,7 +221,7 @@
                 <p>Notas</p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item pointer" id="nav-ajustes">
               <a id="ajustes" class="nav-link">
                 <ion-icon name="settings-outline"></ion-icon>
                 <p>Ajustes</p>

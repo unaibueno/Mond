@@ -7165,19 +7165,24 @@ var FullCalendar = (function (exports) {
     let classNames = ["fc-day", `fc-day-${DAY_IDS[meta.dow]}`];
     if (meta.isDisabled) {
       classNames.push("fc-day-disabled");
+      classNames.push("pointer-none");
     } else {
       if (meta.isToday) {
         classNames.push("fc-day-today");
         classNames.push(theme.getClass("today"));
+        classNames.push("pointer");
       }
       if (meta.isPast) {
         classNames.push("fc-day-past");
+        classNames.push("pointer");
       }
       if (meta.isFuture) {
         classNames.push("fc-day-future");
+        classNames.push("pointer");
       }
       if (meta.isOther) {
         classNames.push("fc-day-other");
+        classNames.push("pointer-none");
       }
     }
     return classNames;

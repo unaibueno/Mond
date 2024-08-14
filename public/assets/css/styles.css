@@ -473,7 +473,8 @@ button {
   justify-content: center;
 }
 .btn {
-padding: 10px 30px;
+  transition: background-color 0.1s ease-in-out;
+  padding: 10px 30px;
   border-radius: 20px;
   background-color: #f2f2f2;
   color: black;
@@ -481,6 +482,11 @@ padding: 10px 30px;
   outline: none;
   
 }
+
+btn:hover {
+  background-color: #2d2e2f;
+}
+
 .btn:focus {
 outline: none;
 border: none;
@@ -1191,3 +1197,10 @@ color: #fff;}
   outline: none;
 }
 
+.pointer:hover {
+  cursor: pointer;
+}
+
+.pointer-none:hover {
+  cursor: default;
+}

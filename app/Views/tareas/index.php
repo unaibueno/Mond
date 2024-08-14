@@ -222,9 +222,30 @@
 
         // Mostrar el formulario de nueva tarea desde el botón fijo
         $('.add-task-fixed-btn').on('click', function () {
+            if ($('.task-form').is(':visible')) {
+                resetForm();
+            }
             $('.task-form').toggle();
             $(this).toggleClass('rotate');
         });
+
+        // Cerrar el formulario al presionar la tecla "Esc"
+        $(document).on('keydown', function (e) {
+            if (e.key === "Escape" || e.keyCode === 27) {
+                if ($('.task-form').is(':visible')) {
+                    $('.task-form').hide();
+                    $('.add-task-fixed-btn').removeClass('rotate');
+                    resetForm();
+                }
+            }
+        });
+
+        function resetForm() {
+            $('#new-task-title').val('');
+            $('#new-task-notes').val('');
+            $('#new-task-status').prop('selectedIndex', 0);
+        }
+
 
         // Mostrar el formulario de nueva tarea desde los botones "+" en la vista de estado
         $(document).on('click', '.add-task-btn', function () {

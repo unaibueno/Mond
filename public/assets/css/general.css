@@ -12417,7 +12417,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini)
 .hold-transition .control-sidebar,
 .hold-transition .control-sidebar *,
 .hold-transition .main-footer {
-  transition: none !important;
+  transition: none;
 }
 
 .main-header {
@@ -14921,11 +14921,20 @@ body.text-sm .control-sidebar {
 }
 
 .nav-pills .nav-link {
+  border-radius: 20px;
   color: #6c757d;
+  background-color: transparent;
+  transition: all 0.1s ease-in-out;
 }
 
 .nav-pills .nav-link:not(.active):hover {
   color: #007bff;
+background-color: #2d2e2f;
+}
+
+.nav-pills .nav-link:not(.active):hover p, .nav-pills .nav-link:not(.active):hover ion-icon {
+  transition: color 0.1s ease-in-out;
+  color: white !important;
 }
 
 .nav-pills .nav-item.dropdown.show .nav-link:hover {
